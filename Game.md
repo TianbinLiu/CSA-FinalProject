@@ -2,9 +2,7 @@
 title: Game
 ---
 
-<head>
-    <title>Gaming</title>
-</head>
+
 <body>
     <canvas id="canvas" width="1000px" height = "600px"></canvas>
 </body>
