@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>Gaming</title>
-</head>
-<body>
-    <canvas id="canvas" width="1000px" height = "600px"></canvas>
-</body>
-<script src ="assets/js/main.js"></script>
-<script src ="assets/js/inputHandler.js"></script>
-</html>
+---
+layout: default
+---
+{% include Game.html %}
