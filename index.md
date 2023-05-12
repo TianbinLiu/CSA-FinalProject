@@ -1,4 +1,4 @@
 ---
 layout: default
 ---
-{% include Game.html %}
+{% include_relative README.md %}
