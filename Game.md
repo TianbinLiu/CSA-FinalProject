@@ -3,6 +3,18 @@ title: Game
 layout: default
 ---
 
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+</style>
+
 <body onload="update();" onresize="resize()">
     <canvas id="canvas"></canvas>
 </body>
