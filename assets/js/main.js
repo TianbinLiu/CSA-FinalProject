@@ -18,6 +18,7 @@ if (windowRatio < canvasRatio) {
 canvas.style.width = width + 'px';
 canvas.style.height = height + 'px';
 }
+window.addEventListener('resize', resize, false);
 
 const ctx = canvas.getContext("2d")
 
