@@ -9,8 +9,8 @@ addEventListener("keydown", function(event){
 })
 
 addEventListener("keyup", function(event){
-    if (event.code == 'ArrowRight') vxr *= 0.1;
-    if (event.code == 'ArrowLeft') vxl *= 0.1;
-    if (event.code == 'ArrowDown') vy *= 0.1;
-    if (event.code == 'ArrowUp') vy *= 0.1;
+    if (event.code == 'ArrowRight') vxr = 0;
+    if (event.code == 'ArrowLeft') vxl = 0;
+    if (event.code == 'ArrowDown') vy = 0;
+    if (event.code == 'ArrowUp') vy = 0;
 })
