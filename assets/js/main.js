@@ -1,18 +1,22 @@
 console.log("Main.js loaded")
 
-
-
-function resize_canvas(){
+function resize() {
 const canvas = document.getElementById("canvas")
-if (canvas.width  < window.innerWidth)
-{
-    canvas.width  = window.innerWidth;
+var canvasRatio = canvas.height / canvas.width;
+var windowRatio = window.innerHeight / window.innerWidth;
+var width;
+var height;
+
+if (windowRatio < canvasRatio) {
+    height = window.innerHeight;
+    width = height / canvasRatio;
+} else {
+    width = window.innerWidth;
+    height = width * canvasRatio;
 }
 
-if (canvas.height < window.innerHeight)
-{
-    canvas.height = window.innerHeight;
-}
+canvas.style.width = width + 'px';
+canvas.style.height = height + 'px';
 }
 
 const ctx = canvas.getContext("2d")
