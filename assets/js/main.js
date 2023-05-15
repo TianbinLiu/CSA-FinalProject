@@ -15,6 +15,21 @@ let vxl = 0;
 let vxr = 0;
 let  vy = 0;
 
+const character = new Image();
+character.onload = () => {
+    ctx.drawImage(
+        character,
+        0,
+        0,
+        37,
+        50,
+        x,
+        y,
+        37,
+        50,
+    )
+}
+
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
     x += vxl;
