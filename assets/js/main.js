@@ -1,3 +1,5 @@
+console.log("Main.js loaded")
+
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
@@ -8,7 +10,7 @@ let vxr = 0;
 let  vy = 0;
 
 function update(){
-    ctx.clearRect(0,0,canvas.clientWidth,canvas.height)
+    ctx.clearRect(0,0,canvas.width,canvas.height)
     x += vxl;
     x += vxr;
     y += vy;
