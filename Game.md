@@ -3,7 +3,7 @@ title: Game
 layout: default
 ---
 
-<body onload="update();">
+<body onload="update();" onresize="resize_canvas()">
     <canvas id="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
 </body>
 

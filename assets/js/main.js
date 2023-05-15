@@ -1,8 +1,9 @@
 console.log("Main.js loaded")
 
-const canvas = document.getElementById("canvas")
-const ctx = canvas.getContext("2d")
 
+
+function resize_canvas(){
+const canvas = document.getElementById("canvas")
 if (canvas.width  < window.innerWidth)
 {
     canvas.width  = window.innerWidth;
@@ -12,6 +13,9 @@ if (canvas.height < window.innerHeight)
 {
     canvas.height = window.innerHeight;
 }
+}
+
+const ctx = canvas.getContext("2d")
 
 let x = 0;
 let y = 0;
