@@ -16,17 +16,17 @@ function initialize() {
   // Display custom canvas. In this case it's a blue, 5 pixel 
   // border that resizes along with the browser window.
 function redraw() {
-    context.strokeStyle = 'blue';
-    context.lineWidth = '5';
-    context.strokeRect(0, 0, window.innerWidth, window.innerHeight);
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = '5';
+    ctx.strokeRect(0, 0, window.innerWidth, window.innerHeight);
 }
 
   // Runs each time the DOM window resize event fires.
   // Resets the canvas dimensions to match window,
   // then draws the new borders accordingly.
 function resizeCanvas() {
-    htmlCanvas.width = window.innerWidth;
-    htmlCanvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     redraw();
 }
 
