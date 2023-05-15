@@ -4,7 +4,7 @@ layout: default
 ---
 
 <body onload="update();">
-    <canvas id="canvas" style='position:absolute; left:0px; top:0px;' width="100%" height="100%"></canvas>
+    <canvas id="canvas" style='position:absolute; left:0px; top:0px;' width="1000px" height="1000px"></canvas>
 </body>
 
 <script src="{{ '/assets/js/main.js' | relative_url }}" type="text/javascript"></script>
