@@ -15,7 +15,7 @@ canvas {
 }
 </style>
 
-<body onload="update();" onresize="resize()">
+<body onload="update();">
     <canvas id="canvas"></canvas>
 </body>
 
