@@ -1,6 +1,7 @@
 console.log("inputHandler.js loaded")
 
 addEventListener("keydown", function(event){
+    console.log(event.code)
     if (event.code == 'ArrowRight') vxr = 5;
     if (event.code == 'ArrowLeft') vxl = -5;
     if (event.code == 'ArrowDown') vy = 5;
