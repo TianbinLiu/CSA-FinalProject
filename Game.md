@@ -18,7 +18,7 @@ layout: default
 </style>
 
 <body onload="update();">
-    <canvas id="canvas" style='position:absolute; left:0px; top:0px;'></canvas>
+    <canvas id="canvas" style='position:absolute; left:0px; top:0px;' width="window.innerWidth" height="window.innerHeight"></canvas>
 </body>
 
 <script src="{{ '/assets/js/main.js' | relative_url }}" type="text/javascript"></script>
