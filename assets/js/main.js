@@ -3,6 +3,16 @@ console.log("Main.js loaded")
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
+if (canvas.width  < window.innerWidth)
+{
+    canvas.width  = window.innerWidth;
+}
+
+if (canvas.height < window.innerHeight)
+{
+    canvas.height = window.innerHeight;
+}
+
 let x = 0;
 let y = 0;
 let vxl = 0;
