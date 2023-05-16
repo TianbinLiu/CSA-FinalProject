@@ -1,8 +1,8 @@
 class Overworld {
     constructor(config) {
-      this.element = config.element;
-      this.canvas = this.element.querySelector(".game-canvas");
-      this.ctx = this.canvas.getContext("2d");
+      this.element = config.element
+      this.canvas = this.element.querySelector(".game-canvas")
+      this.ctx = this.canvas.getContext("2d")
     }
    
     init() {
@@ -10,8 +10,8 @@ class Overworld {
       image.onload = () => {
         this.ctx.drawImage(image,0,0)
       };
-      image.src = "/CSA-FinalProject/images/maps/DemoLower.png";
-   
+      image.src = "https://tianbinliu.github.io/CSA-FinalProject/images/maps/DemoLower.png"
+
       //Place some Game Objects!
       const hero = new GameObject({
         x: 5,
@@ -20,12 +20,12 @@ class Overworld {
       const npc1 = new GameObject({
        x: 7,
        y: 9,
-       src: "/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
+       src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
      })
    
      setTimeout(() => {
-       hero.sprite.draw(this.ctx);
-       npc1.sprite.draw(this.ctx);
+       hero.sprite.draw(this.ctx)
+       npc1.sprite.draw(this.ctx)
      }, 200)
    
    

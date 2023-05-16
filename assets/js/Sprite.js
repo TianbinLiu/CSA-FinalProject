@@ -12,8 +12,8 @@ class Sprite {
     this.shadow = new Image();
     this.useShadow = true; //config.useShadow || false
     if (this.useShadow) {
-      this.shadow.src = "/CSA-FinalProject/images/character/shadow.png";
-    }
+      this.shadow.src = "https://tianbinliu.github.io/CSA-FinalProject/images/character/shadow.png";
+    }      
     this.shadow.onload = () => {
       this.isShadowLoaded = true;
     }
