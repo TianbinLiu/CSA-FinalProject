@@ -33,7 +33,7 @@ canvas {
 </style>
 
 <html>
-<body onload="update();">
+<body>
 <div class="game-container">
     <canvas id="game-canvas"></canvas>
 </div>
