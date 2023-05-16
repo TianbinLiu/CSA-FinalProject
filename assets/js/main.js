@@ -26,7 +26,23 @@ class Overworld {
     let vxr = 0;
     let  vy = 0;
 
-   
+    const shadow = new Image();
+    shadow.onload = () => {
+        this.ctx.drawImage(
+            shadow,
+            0, //left cut
+            0, //top cut
+            32, //width of cut
+            32, //height of cut
+            x,
+            y,
+            50,
+            37,
+
+        )
+    }
+    shadow.src="https://tianbinliu.github.io/CSA-FinalProject/images/character/shadow.png";
+
     const character = new Image();
     character.onload = () => {
         this.ctx.drawImage(
