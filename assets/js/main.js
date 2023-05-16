@@ -29,7 +29,7 @@ character.onload = () => {
         50,
     )
 }
-character.src="images/character/adventurer-v1.5-Sheet.png";
+character.src="https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png";
 
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
