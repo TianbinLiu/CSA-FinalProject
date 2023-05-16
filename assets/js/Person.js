@@ -13,7 +13,9 @@ class Person extends GameObject {
             this.x += this.vxr;
             this.y += this.vy;
         }
-        requestAnimationFrame(update)
+        requestAnimationFrame(() => {
+          update();   
+        })
     }
     
   
