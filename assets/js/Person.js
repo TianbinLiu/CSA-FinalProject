@@ -7,6 +7,12 @@ class Person extends GameObject {
       this.vy = 0;
     }
   
-
+    update(){
+      if (this.isPlayerControlled){
+          this.x += this.vxl;
+          this.x += this.vxr;
+          this.y += this.vy;
+      }
+    }
     
   }
