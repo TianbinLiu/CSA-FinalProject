@@ -33,7 +33,7 @@ body {
 <html>
 <body>
 <div class="game-container">
-    <canvas id="game-canvas" width="352" height="198"></canvas>
+    <canvas class="game-canvas" width="352" height="198"></canvas>
 </div>
 </body>
 
