@@ -4,30 +4,28 @@ layout: default
 ---
 
 <style>
-*{
+* {
   box-sizing:border-box;
 }
-html, body {
+
+body {
   background: #333;
-  padding:0;
-  margin:0;
-  overflow:hidden;
-}
-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.game-container{
-  position: relative;
-  width: 100%;
-  height:100%;
-  margin:0;
-  margin-top:20px;
-  outline:1px solid #fff; 
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-.game-container canvas{
+.game-container {
+  position: relative; 
+  width: 352px;
+  height: 198px;
+  margin: 0 auto;
+  outline: 1px solid #fff;
+
+  transform: scale(3) translateY(50%);
+}
+
+.game-container canvas {
   image-rendering: pixelated;
 }
 </style>
@@ -35,7 +33,7 @@ canvas {
 <html>
 <body>
 <div class="game-container">
-    <canvas id="game-canvas"></canvas>
+    <canvas id="game-canvas" width="352" height="198"></canvas>
 </div>
 </body>
 
