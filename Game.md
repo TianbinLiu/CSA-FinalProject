@@ -13,12 +13,13 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  height: 100%;
 }
 
 .game-container {
   position: relative; 
-  width: 352px;
-  height: 198px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   outline: 1px solid #fff;
 
@@ -27,6 +28,9 @@ body {
 
 .game-container canvas {
   image-rendering: pixelated;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 </style>
 

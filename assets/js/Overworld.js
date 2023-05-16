@@ -3,6 +3,11 @@ class Overworld {
     this.element = config.element;
     this.canvas = this.element.querySelector(".game-canvas");
     this.ctx = this.canvas.getContext("2d");
+    this.observer = new ResizeObserver((entries) => {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+  });
+  observer.observe(canvas)
   }
  
   init() {
