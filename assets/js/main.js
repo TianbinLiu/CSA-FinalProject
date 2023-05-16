@@ -2,8 +2,13 @@ console.log("Main.js loaded")
 
 class Overworld {
     constructor(config) {
+      this.x=0;  
+      this.y=0;
+      this.vxl=0;
+      this.vxr=0;
+      this.vy=0;
       this.element = config.element;
-      this.canvas = this.element.querySelector("canvas");
+      this.canvas = this.element.querySelector(".game-canvas");
       this.ctx = this.canvas.getContext("2d");
       this.observer = new ResizeObserver((entries) => {
         canvas.width = canvas.clientWidth;
@@ -17,14 +22,9 @@ class Overworld {
         image.onload = () => {
         this.ctx.drawImage(image,0,0)
     };
-    image.src = "/images/maps/DemoLower.png";
-   
-      
-    let x = 0;
-    let y = 0;
-    let vxl = 0;
-    let vxr = 0;
-    let  vy = 0;
+    image.src = "https://tianbinliu.github.io/CSA-FinalProject/images/maps/DemoLower.png";
+
+    
 
     const shadow = new Image();
     shadow.onload = () => {
@@ -59,17 +59,15 @@ class Overworld {
         )
     }
     character.src="https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png";
-
-    function update(){
-        ctx.clearRect(0,0,canvas.width,canvas.height)
+    }
+    
+    update(){
+        this.ctx.clearRect(0,0,canvas.width,canvas.height)
         x += vxl;
         x += vxr;
         y += vy;
-        ctx.fillRect(x,y,50,50)
+        this.ctx.fillRect(x,y,50,50)
         requestAnimationFrame(update)
     }
     update()
-   
-    }
-   
-   }
+}
