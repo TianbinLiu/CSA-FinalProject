@@ -9,10 +9,16 @@ layout: default
 }
 
 body {
-  height: 100%;
+  background: #333;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 .game-container {
+  position: relative; 
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   outline: 1px solid #fff;
   transform: scale(3) translateY(50%);
@@ -20,16 +26,13 @@ body {
 
 .game-container canvas {
   image-rendering: pixelated;
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 </style>
 
 <html>
 <body>
 <div class="game-container">
-    <canvas class="game-canvas"></canvas>
+    <canvas class="game-canvas" width="352" height="198"></canvas>
 </div>
 </body>
 
