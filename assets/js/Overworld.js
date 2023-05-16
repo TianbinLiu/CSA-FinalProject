@@ -33,8 +33,8 @@ class Overworld {
   init() {
    this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
  
-   this.directionInput = new DirectionInput();
-   this.directionInput.init();
+   this.inputHandler = new inputHandler();
+   this.inputHandler.init();
  
    this.startGameLoop();
   }
