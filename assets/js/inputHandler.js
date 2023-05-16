@@ -10,10 +10,10 @@ addEventListener("keydown", function(event){
 })
 
 addEventListener("keyup", function(event){
-    if (event.code == 'ArrowRight') vxr = 0;
-    if (event.code == 'ArrowLeft') vxl = 0;
-    if (event.code == 'ArrowDown') vy = 0;
-    if (event.code == 'ArrowUp') vy = 0;
+    if (event.code == 'ArrowRight') this.Person.vxr = 0;
+    if (event.code == 'ArrowLeft') this.Person.vxl = 0;
+    if (event.code == 'ArrowDown') this.Person.vy = 0;
+    if (event.code == 'ArrowUp') this.Person.vy = 0;
 })
 
 
