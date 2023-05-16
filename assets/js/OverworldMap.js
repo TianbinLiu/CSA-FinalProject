@@ -39,7 +39,8 @@ window.OverworldMaps = {
     lowerSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/KitchenLower.png",
     upperSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/KitchenUpper.png",
     gameObjects: {
-      hero: new GameObject({
+      hero: new Person({
+        isPlayerControlled: true,
         x: 3,
         y: 5,
       }),
