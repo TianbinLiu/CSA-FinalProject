@@ -25,12 +25,12 @@ window.OverworldMaps = {
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: 4*16,
-        y: 5*16,
+        x: utils.withGrid(4),
+        y: utils.withGrid(5),
       }),
       npc1: new GameObject({
-        x: 7*16,
-        y: 7*16,
+        x: utils.withGrid(5),
+        y: utils.withGrid(6),
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
       })
     }
