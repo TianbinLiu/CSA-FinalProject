@@ -25,12 +25,12 @@ window.OverworldMaps = {
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: 5,
-        y: 6,
+        x: 5*16,
+        y: 6*16,
       }),
       npc1: new GameObject({
-        x: 7,
-        y: 9,
+        x: 7*16,
+        y: 9*16,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
       })
     }
@@ -41,17 +41,17 @@ window.OverworldMaps = {
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: 3,
-        y: 5,
+        x: 3*16,
+        y: 5*16,
       }),
       npcA: new GameObject({
-        x: 9,
-        y: 6,
+        x: 9*16,
+        y: 6*16,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
       }),
       npcB: new GameObject({
-        x: 10,
-        y: 8,
+        x: 10*16,
+        y: 8*16,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
       })
     }
