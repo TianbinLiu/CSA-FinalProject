@@ -4,18 +4,18 @@ let vxr = 0;
 let vxl = 0;
 let vy = 0;
 
-let direction;
+let persondirection;
 let checkifwalking;
 
 addEventListener("keydown", function(event){
     console.log(event.code)
     if (event.code == 'ArrowRight'){
-        direction="right";
+        persondirection="right";
         checkifwalking = true;
         vxr = 1;
     } 
     if (event.code == 'ArrowLeft') {
-        direction="left";
+        persondirection="left";
         checkifwalking = true;
         vxl = -1;
     }
