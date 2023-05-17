@@ -1,81 +1,45 @@
 <!Doctype html>
 <html>
 <body>
-    <style>
-        #nav {
-            list-style: none inside;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+<style>
+body, html {
+  font-family: monospace;
+  background: #ffffff;
+  color:#efefef;
+  height:100%;
+  
+}
+.btn {
+  border: none;
+  text-align:center;
+  cursor: pointer;
+  padding: 25px 80px;
+  margin: 25px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  position: relative;
+  background-color:rgba(133, 126, 123, 0.11);
+  border: solid 1px transparent;
+  border-radius:10px;
+}
 
-        #nav li {
-            display: block;
-            position: relative;
-            float: left;
-            background: rgb(255,255,255); 
-            /* menu background color */
-        }
-
-        #nav li a {
-            display: block;
-            padding: 0;
-            text-decoration: none;
-            width: 130px;
-            /* this is the width of the menu items */
-            line-height: 35px;
-            /* this is the hieght of the menu items */
-            color: rgb(0,0,0);
-            /* list item font color */
-        }
-        
-
-        #nav li li a {
-            font-size: 80%;
-        }
-
-        /* smaller font size for sub menu items */
-
-        #nav li:hover {
-            background: #D1D1D1;
-        }
-
-        /* highlights current hovered list item and the parent list items when hovering over sub menues */
-
-        #nav ul {
-            position: absolute;
-            padding: 0;
-            left: 0;
-            display: none;
-            /* hides sublists */
-        }
-
-        #nav li:hover ul ul {
-            display: none;
-        }
-
-        /* hides sub-sublists */
-
-        #nav li:hover ul {
-            display: block;
-        }
-
-        /* shows sublist on hover */
-
-        #nav li li:hover ul {
-            display: block;
-            /* shows sub-sublist on hover */
-            margin-left: 130px;
-            /* this should be the same width as the parent list item */
-            margin-top: -35px;
-            /* aligns top of sub menu with top of list item */
-        }
-    </style>
-    </head>
-    <ul id="nav">
-        <li><a href="/CSA-FinalProject/">Home</a></li>
-        <li><a href="/CSA-FinalProject/Game">Game</a></li>
-        <li><a href="/CSA-FinalProject/dialogue">Dialogue</a></li>
+.nav {
+  position:relative;
+  width:350px;
+  margin: auto;
+  overflow:hidden;
+  background-color:#ffffff;
+  height:100%;
+}
+</style>
+</head>
+    <ul class="nav">
+      <li class="btn"><a href="/CSA-FinalProject/">Home</a></li>
+      <li class="btn"><a href="/CSA-FinalProject/Game">Game</a></li>
+      <li class="btn"><a href="/CSA-FinalProject/dialogue">Dialogue</a></li>
     </ul>
+    </html>
 </body>
-</html>
+
+
