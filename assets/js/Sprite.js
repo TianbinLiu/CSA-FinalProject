@@ -28,7 +28,7 @@ class Sprite {
     this.currentAnimation = config.currentAnimation || "idle-right";
     this.currentAnimationFrame = 0;
 
-    this.animationFrameLimit = config.animationFrameLimit || 8;
+    this.animationFrameLimit = config.animationFrameLimit || 16;
     this.animationFrameProgress = this.animationFrameLimit;
     
 
