@@ -6,10 +6,10 @@ let vy = 0;
 
 addEventListener("keydown", function(event){
     console.log(event.code)
-    if (event.code == 'ArrowRight') vxr = 2;
-    if (event.code == 'ArrowLeft') vxl = -2;
-    if (event.code == 'ArrowDown') vy = 2;
-    if (event.code == 'ArrowUp') vy = -2;
+    if (event.code == 'ArrowRight') vxr = 1;
+    if (event.code == 'ArrowLeft') vxl = -1;
+    if (event.code == 'ArrowDown') vy = 1;
+    if (event.code == 'ArrowUp') vy = -1;
 })
         
 addEventListener("keyup", function(event){
