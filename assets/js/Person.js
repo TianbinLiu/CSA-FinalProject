@@ -15,7 +15,7 @@ class Person extends GameObject {
 
     updateSprite() {
 
-      if (this.isPlayerControlled) {
+      if (this.isPlayerControlled && !checkifwalking) {
         this.sprite.setAnimation("idle-"+this.direction);
         return;
       }
