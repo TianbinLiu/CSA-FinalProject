@@ -20,12 +20,12 @@ class Sprite {
 
     //Configure Animation & Initial State
     this.animations = config.animations || {
-      "idle-right": [ [7,0],[8,0],[9,0] ],
-      "idle-left" : [ [6,0],[5,0],[4,0] ],
+      "idle-right": [ [7,0],[8,0],[9,0], ],
+      "idle-left" : [ [6,0],[5,0],[4,0], ],
       "walk-right": [ [5,1],[4,1],[3,1],[2,1],[1,1], ],
       "walk-left" : [ [8,1],[9,1],[10,1],[11,1],[12,1], ]
     }
-    this.currentAnimation = "idle-right";
+    this.currentAnimation = config.currentAnimation || "idle-right";
     this.currentAnimationFrame = 0;
 
     this.animationFrameLimit = config.animationFrameLimit || 8;

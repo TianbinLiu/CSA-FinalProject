@@ -31,7 +31,7 @@ window.OverworldMaps = {
       npc1: new GameObject({
         x: utils.withGrid(5),
         y: utils.withGrid(6),
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
       })
     }
   },
@@ -47,12 +47,12 @@ window.OverworldMaps = {
       npcA: new GameObject({
         x: 7*16,
         y: 7*16,
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
       }),
       npcB: new GameObject({
         x: 6*16,
         y: 6*16,
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png"
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
       })
     }
   },
