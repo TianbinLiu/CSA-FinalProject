@@ -25,7 +25,7 @@ class Sprite {
       "walk-right": [ [5,1],[4,1],[3,1],[2,1],[1,1], ],
       "walk-left" : [ [8,1],[9,1],[10,1],[11,1],[12,1], ]
     }
-    this.currentAnimation = config.currentAnimation || "idle-right";
+    this.currentAnimation = "idle-right";
     this.currentAnimationFrame = 0;
 
     this.animationFrameLimit = config.animationFrameLimit || 8;
