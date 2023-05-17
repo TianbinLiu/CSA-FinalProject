@@ -37,6 +37,7 @@ body {
 </div>
 </body>
 
+<script src="{{ '/assets/js/utils.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/inputHandler.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/Overworld.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/GameObject.js' | relative_url }}" type="text/javascript"></script>
