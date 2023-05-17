@@ -16,12 +16,12 @@ class Person extends GameObject {
     updateSprite() {
 
       if (this.isPlayerControlled && !checkifwalking) {
-        this.sprite.setAnimation("idle-"+persondirection);
+        this.sprite.setAnimation("idle-"+ persondirection);
         return;
       }
   
       if (checkifwalking) {
-        this.sprite.setAnimation("walk-"+persondirection);
+        this.sprite.setAnimation("walk-"+ persondirection);
       }
     }
   }

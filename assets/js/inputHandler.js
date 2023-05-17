@@ -4,7 +4,7 @@ let vxr = 0;
 let vxl = 0;
 let vy = 0;
 
-let persondirection;
+let persondirection = "right";
 let checkifwalking;
 
 addEventListener("keydown", function(event){
