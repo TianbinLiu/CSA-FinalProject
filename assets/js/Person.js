@@ -3,13 +3,12 @@ class Person extends GameObject {
       super(config);
       this.isPlayerControlled = config.isPlayerControlled || false;
     }
-  
-    update(){
+
+    update() {
       if (this.isPlayerControlled){
-          this.x += vxl;
-          this.x += vxr;
-          this.y += vy;
-      }
+        this.x += vxl;
+        this.x += vxr;
+        this.y += vy;
     }
-    
+    }
   }

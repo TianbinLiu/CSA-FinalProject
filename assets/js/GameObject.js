@@ -7,4 +7,7 @@ class GameObject {
       src: config.src || "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheet.png",
     });
   }
+  update() {
+
+  }
 }
