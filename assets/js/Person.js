@@ -21,7 +21,7 @@ class Person extends GameObject {
         return;
       }
   
-      if (checkifwalking) {
+      if (this.checkifwalking) {
         this.sprite.setAnimation("walk-"+ persondirection);
       }
     }
