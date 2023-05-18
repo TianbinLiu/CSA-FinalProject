@@ -36,7 +36,7 @@ window.OverworldMaps = {
         x: utils.withGrid(5),
         y: utils.withGrid(6),
       }),
-      npc1: new Person({
+      npc1: new GameObject({
         x: utils.withGrid(7),
         y: utils.withGrid(9),
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
