@@ -4,46 +4,50 @@ let vxr = 0;
 let vxl = 0;
 let vy = 0;
 
+
 let persondirection = "right";
-let checkifwalking;
+let checkifwalkingright;
+let checkifwalkingup;
+let checkifwalkingdown;
+let checkifwalkingleft;
 
 addEventListener("keydown", function(event){
     console.log(event.code)
     if (event.code == 'ArrowRight'){
         persondirection="right";
-        checkifwalking = true;
+        checkifwalkingright = true;
         vxr = 1;
     } 
     if (event.code == 'ArrowLeft') {
         persondirection="left";
-        checkifwalking = true;
+        checkifwalkingleft = true;
         vxl = -1;
     }
     if (event.code == 'ArrowDown') {
-        checkifwalking = true;
+        checkifwalkingdown = true;
         vy = 1;
     }
     if (event.code == 'ArrowUp') {
-        checkifwalking = true;
+        checkifwalkingup = true;
         vy = -1
     };
 })
         
 addEventListener("keyup", function(event){
     if (event.code == 'ArrowRight') {
-        checkifwalking = false;
+        checkifwalkingright = false;
         vxr = 0
     };
     if (event.code == 'ArrowLeft') {
-        checkifwalking = false;
+        checkifwalkingleft = false;
         vxl = 0
     };
     if (event.code == 'ArrowDown') {
-        checkifwalking = false;
+        checkifwalkingdown = false;
         vy = 0
     };
     if (event.code == 'ArrowUp') {
-        checkifwalking = false;
+        checkifwalkingup = false;
         vy = 0
     };
 })
