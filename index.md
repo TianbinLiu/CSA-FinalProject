@@ -9,14 +9,13 @@ body, html {
   background: #ffffff;
   color:#efefef;
   height:100%;
-  
 }
+
 .btn {
   border: none;
   text-align:center;
   cursor: pointer;
   padding: 25px 80px;
-  margin: 25px 30px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
