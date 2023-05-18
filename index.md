@@ -7,7 +7,7 @@ layout: default
 body, html {
   font-family: monospace;
   background: #ffffff;
-  color:#efefef;
+  color:#000;
   height:100%;
 }
 
