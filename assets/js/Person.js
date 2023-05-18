@@ -2,7 +2,6 @@ class Person extends GameObject {
     constructor(config) {
       super(config);
       this.isPlayerControlled = config.isPlayerControlled || false;
-      this.checkifwalkingResult = checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup;
     }
 
     update() {
@@ -15,13 +14,13 @@ class Person extends GameObject {
     }
 
     updateSprite() {
-
-      if (this.isPlayerControlled && !this.checkifwalkingResult) {
+      let checkifwalkingResult = checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup;
+      if (this.isPlayerControlled && !(checkifwalkingResult)) {
         this.sprite.setAnimation("idle-"+ persondirection);
         return;
       }
   
-      if (this.checkifwalkingResult) {
+      if (checkifwalkingResult) {
         this.sprite.setAnimation("walk-"+ persondirection);
       }
     }
