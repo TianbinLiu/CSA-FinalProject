@@ -14,20 +14,32 @@ let checkifwalkingleft;
 addEventListener("keydown", function(event){
     console.log(event.code)
     if (event.code == 'ArrowRight'){
+        if(event.code == 'ArrowLeft'){
+            return;
+        }
         persondirection="right";
         checkifwalkingright = true;
         vxr = 1;
     } 
     if (event.code == 'ArrowLeft') {
+        if(event.code == 'ArrowRight'){
+            return;
+        }
         persondirection="left";
         checkifwalkingleft = true;
         vxl = -1;
     }
     if (event.code == 'ArrowDown') {
+        if(event.code == 'ArrowUp'){
+            return;
+        }
         checkifwalkingdown = true;
         vy = 1;
     }
     if (event.code == 'ArrowUp') {
+        if(event.code == 'ArrowDown'){
+            return;
+        }
         checkifwalkingup = true;
         vy = -1
     };
