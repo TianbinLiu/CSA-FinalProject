@@ -15,6 +15,7 @@ addEventListener("keydown", function(event){
     console.log(event.code)
     if (event.code == 'ArrowRight'){
         if(event.code == 'ArrowLeft'){
+            checkifwalkingright = false;
             return;
         }
         persondirection="right";
@@ -23,6 +24,7 @@ addEventListener("keydown", function(event){
     } 
     if (event.code == 'ArrowLeft') {
         if(event.code == 'ArrowRight'){
+            checkifwalkingleft = false;
             return;
         }
         persondirection="left";
@@ -31,6 +33,7 @@ addEventListener("keydown", function(event){
     }
     if (event.code == 'ArrowDown') {
         if(event.code == 'ArrowUp'){
+            checkifwalkingdown = false;
             return;
         }
         checkifwalkingdown = true;
@@ -38,6 +41,7 @@ addEventListener("keydown", function(event){
     }
     if (event.code == 'ArrowUp') {
         if(event.code == 'ArrowDown'){
+            checkifwalkingup = false;
             return;
         }
         checkifwalkingup = true;
