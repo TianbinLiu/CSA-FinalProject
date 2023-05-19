@@ -4,7 +4,7 @@ class Person extends GameObject {
       this.isPlayerControlled = config.isPlayerControlled || false;
     }
 
-    update() {
+    update(state) {
       this.updateSprite();
       if (this.isPlayerControlled){
         console.log(state.map.isSpaceTaken(this.x,this.y, persondirection))
