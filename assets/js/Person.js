@@ -16,6 +16,7 @@ class Person extends GameObject {
           this.x += vxl;
           this.x += vxr;
           this.y += vy;
+          console.log("x position: " + this.x + ", y position: " + this.y)
         }
 
       }
