@@ -6,7 +6,7 @@ class Person extends GameObject {
 
     update(state) {
       this.updateSprite();
-      if (this.isPlayerControlled){
+      if (this.isPlayerControlled && checkifwalkin1gResult){
         console.log(state.map.isSpaceTaken(this.x,this.y, persondirection))
         this.x += vxl;
         this.x += vxr;
