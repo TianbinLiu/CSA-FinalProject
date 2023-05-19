@@ -29,8 +29,8 @@ class OverworldMap {
   isSpaceTaken(currentX, currentY, direction) {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
     console.log("move next position(x): " + x + ", " + "(y): " + y)
-    console.log("wall position(x): " + this.walls.wall1.x + ", " + "(y): " + this.walls.wall1.y)
-    return (utils.isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && (utils.isInRange(x, this.walls.wall1.x, this.walls.wall1.x + 16)));
+    console.log("wall position(x): " + this.walls.wall1.x + ", " + "(y): " + this.walls.wall1.y + ", size: " + this.walls.wall1.size)
+    return (x >= this.walls.wall1.x && x <= (this.walls.wall1.x + this.walls.wall1.size)) && (y >= this.walls.wall1.y + (this.walls.wall1.y + this.walls.wall.size));
   }
 
 }
@@ -53,8 +53,9 @@ window.OverworldMaps = {
     },
     walls: {
       wall1: new GameObject({
-        x: [utils.withGrid(7)],
-        y: [utils.withGrid(6)],
+        x: utils.withGrid(7),
+        y: utils.withGrid(6),
+        size: utils.withGrid(1),
       })
     }
   },
