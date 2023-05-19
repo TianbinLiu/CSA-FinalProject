@@ -31,7 +31,8 @@ class OverworldMap {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
     console.log("move next position(x): " + x + ", " + "(y): " + y)
     console.log("wall position(x): " + this.walls.wall1.x + ", " + "(y): " + this.walls.wall1.y + ", size: " + this.wallsize)
-    return ((x >= (this.walls.wall1.x-4)) && (x <= (this.walls.wall1.x + this.wallsize + 4))) && ((y >= this.walls.wall1.y) &&  (y <= (this.walls.wall1.y + this.wallsize)));
+    return ((x >= (this.walls.wall1.x-5)) && (x <= (this.walls.wall1.x + this.wallsize + 5))) && ((y >= this.walls.wall1.y) &&  (y <= (this.walls.wall1.y + this.wallsize)));
+    //add 5 because of the size of "hero" sprite sheet was not 32 px (50px long) 
   }
 
 }
