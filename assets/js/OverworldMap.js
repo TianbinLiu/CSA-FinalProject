@@ -30,7 +30,7 @@ class OverworldMap {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
     console.log("move next position(x): " + x + ", " + "(y): " + y)
     console.log("wall position(x): " + this.walls.wall1.x + ", " + "(y): " + this.walls.wall1.y + ", size: " + this.walls.wall1.size)
-    return (x >= this.walls.wall1.x && x <= (this.walls.wall1.x + this.walls.wall1.size)) && (y >= this.walls.wall1.y + (this.walls.wall1.y + this.walls.wall.size));
+    return ((x >= this.walls.wall1.x) && (x <= (this.walls.wall1.x + this.walls.wall1.size))) && ((y >= this.walls.wall1.y) &&  (y <= (this.walls.wall1.y + this.walls.wall.size)));
   }
 
 }
@@ -55,7 +55,7 @@ window.OverworldMaps = {
       wall1: new GameObject({
         x: utils.withGrid(7),
         y: utils.withGrid(6),
-        size: utils.withGrid(1),
+        size: utils.withGrid(2),
       })
     }
   },
