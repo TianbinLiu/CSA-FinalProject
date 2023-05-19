@@ -16,9 +16,10 @@ class Overworld {
  
        //Update all objects
        Object.values(this.map.gameObjects).forEach(object => {
-        object.update({
-          map: this.map,
-        })
+         object.update({
+           arrow: persondirection,
+           map: this.map,
+         })
        })
  
        //Draw Lower layer
@@ -41,7 +42,8 @@ class Overworld {
  
   init() {
    this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
-   console.log(this.map.walls);
+   this.map.mountObjects();
+ 
    this.startGameLoop();
   }
  }
