@@ -54,8 +54,8 @@ window.OverworldMaps = {
     },
     walls: {
       wall1: new GameObject({
-        x: utils.withGrid(7),
-        y: utils.withGrid(6),
+        x: utils.withGrid(6),
+        y: utils.withGrid(5),
       })
     }
   },
