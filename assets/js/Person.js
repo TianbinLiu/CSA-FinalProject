@@ -2,19 +2,25 @@ class Person extends GameObject {
     constructor(config) {
       super(config);
       this.isPlayerControlled = config.isPlayerControlled || false;
+
     }
 
     update(state) {
       this.updateSprite();
-      if (this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)) {
+      if(canMove){
+        if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+          canMove = false;
+        }
+        this.x += vxl;
+        this.x += vxr;
+        this.y += vy;
+      }
+      else if (this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)) {
         console.log(state.map.isSpaceTaken(this.x,this.y, persondirection))
         this.startBehavior(state, {
           type: "walk",
           direction: state.arrow
         })
-        this.x += vxl;
-        this.x += vxr;
-        this.y += vy;
     }
     }
 
@@ -31,6 +37,7 @@ class Person extends GameObject {
   
         //Ready to walk!
         state.map.moveWall(this.x, this.y, this.direction);
+        canMove = true;
       }
     }
 
