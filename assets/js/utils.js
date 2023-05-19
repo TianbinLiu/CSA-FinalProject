@@ -7,16 +7,16 @@ const utils = {
     let x = initialX;
     let y = initialY;
     if (direction === "left") { 
-      x += vxr;
+      x += -1;
     }
     if (direction === "right") {
-      x += vxl;
+      x += 1;
     }
     if (direction === "up") {
-      y += vy;
+      y += -1;
     }
     if (direction === "down") {
-      y += vy;
+      y += 1;
     }
     return {x,y};
   },
