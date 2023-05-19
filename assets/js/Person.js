@@ -4,33 +4,14 @@ class Person extends GameObject {
       this.isPlayerControlled = config.isPlayerControlled || false;
     }
 
-    update(state) {
-
-      if (this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
-        this.startBehavior(state, {
-          type: "walk",
-        })
+    update() {
+      this.updateSprite();
+      if (this.isPlayerControlled){
+        console.log(state.map.isSpaceTaken(this.x,this.y, persondirection))
         this.x += vxl;
         this.x += vxr;
         this.y += vy;
-      }
-      this.updateSprite();
     }
-
-    startBehavior(state, behavior) {
-      //Set character direction to whatever behavior has
-      this.direction = persondirection;
-      
-      if (behavior.type === "walk") {
-  
-        //Stop here if space is not free
-        if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
-          return;
-        }
-  
-        //Ready to walk!
-        state.map.moveWall(this.x, this.y, this.direction);
-      }
     }
 
     updateSprite() {
