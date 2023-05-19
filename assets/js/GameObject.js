@@ -8,12 +8,7 @@ class GameObject {
       src: config.src || "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
     });
   }
-
-  mount(map) {
-    console.log("mounting!")
-    this.isMounted = true;
-    map.addWall(this.x, this.y);
-  }
+  
   update() {
 
   }
