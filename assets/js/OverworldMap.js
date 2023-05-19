@@ -2,6 +2,7 @@ class OverworldMap {
   constructor(config) {
     this.gameObjects = config.gameObjects;
     this.walls = config.walls || {};
+    this.wallsize = utils.withGrid(2),
 
     this.lowerImage = new Image();
     this.lowerImage.src = config.lowerSrc;
@@ -29,8 +30,8 @@ class OverworldMap {
   isSpaceTaken(currentX, currentY, direction) {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
     console.log("move next position(x): " + x + ", " + "(y): " + y)
-    console.log("wall position(x): " + this.walls.wall1.x + ", " + "(y): " + this.walls.wall1.y + ", size: " + this.walls.wall1.size)
-    return ((x >= this.walls.wall1.x) && (x <= (this.walls.wall1.x + this.walls.wall1.size))) && ((y >= this.walls.wall1.y) &&  (y <= (this.walls.wall1.y + this.walls.wall.size)));
+    console.log("wall position(x): " + this.walls.wall1.x + ", " + "(y): " + this.walls.wall1.y + ", size: " + this.wallsize)
+    return ((x >= this.walls.wall1.x) && (x <= (this.walls.wall1.x + this.wallsize))) && ((y >= this.walls.wall1.y) &&  (y <= (this.walls.wall1.y + this.wallsize)));
   }
 
 }
@@ -55,7 +56,6 @@ window.OverworldMaps = {
       wall1: new GameObject({
         x: utils.withGrid(7),
         y: utils.withGrid(6),
-        size: utils.withGrid(2),
       })
     }
   },
