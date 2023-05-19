@@ -30,10 +30,7 @@ class OverworldMap {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
     console.log("move next position(x): " + x + ", " + "(y): " + y)
     console.log("wall position(x): " + this.walls.wall1.x + ", " + "(y): " + this.walls.wall1.y)
-    return (utils.isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && ((x) == this.walls.wall1.x))||
-    ((utils.isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && ((x+50) == this.walls.wall1.x)))||
-    ((utils.isInRange((y+50), this.walls.wall1.y, this.walls.wall1.y + 16) && ((x) == this.walls.wall1.x)))||
-    ((utils.isInRange((y+50), this.walls.wall1.y, this.walls.wall1.y + 16) && ((x+50) == this.walls.wall1.x)));
+    return (utils.isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && (utils.isInRange(x, this.walls.wall1.x, this.walls.wall1.x + 16)));
   }
 
 }
