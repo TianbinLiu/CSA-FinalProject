@@ -19,5 +19,9 @@ const utils = {
       y += vy;
     }
     return {x,y};
+  },
+
+  isInRange(value, min, max) {
+    return value >= min && value <= max;
   }
 }
