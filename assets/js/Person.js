@@ -7,7 +7,7 @@ class Person extends GameObject {
 
     update(state) {
       this.updateSprite();
-      if(canMove && this.isPlayerControlled){
+      if(canMove && this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
         if (state.map.isSpaceTaken(this.x, this.y, state.arrow)) {
           canMove = false;
         }
