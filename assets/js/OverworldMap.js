@@ -1,6 +1,7 @@
 class OverworldMap {
   constructor(config) {
     this.gameObjects = config.gameObjects;
+    this.walls = config.walls || {};
 
     this.lowerImage = new Image();
     this.lowerImage.src = config.lowerSrc;
@@ -41,6 +42,13 @@ window.OverworldMaps = {
         y: utils.withGrid(9),
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
       })
+    },
+    walls: {
+      //"16,16": true
+      [utils.asGridCoords(7,6)] : true,
+      [utils.asGridCoords(8,6)] : true,
+      [utils.asGridCoords(7,7)] : true,
+      [utils.asGridCoords(8,7)] : true,
     }
   },
   Kitchen: {

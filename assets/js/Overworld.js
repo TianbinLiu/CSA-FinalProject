@@ -39,6 +39,7 @@ class Overworld {
  
   init() {
    this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
+   console.log(this.map.walls);
    this.startGameLoop();
   }
  }
