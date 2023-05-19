@@ -71,11 +71,10 @@ window.OverworldMaps = {
       })
     },
     walls: {
-      //"16,16": true
-      [utils.asGridCoords(7,6)] : true,
-      [utils.asGridCoords(8,6)] : true,
-      [utils.asGridCoords(7,7)] : true,
-      [utils.asGridCoords(8,7)] : true,
+      [utils.asGridCoord(7,6)] : true,
+      [utils.asGridCoord(8,6)] : true,
+      [utils.asGridCoord(7,7)] : true,
+      [utils.asGridCoord(8,7)] : true,
     }
   },
   Kitchen: {
