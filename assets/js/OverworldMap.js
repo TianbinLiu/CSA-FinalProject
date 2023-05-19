@@ -28,7 +28,10 @@ class OverworldMap {
 
   isSpaceTaken(currentX, currentY, direction) {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
-    return (isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && ((x) == this.walls.wall1.x))||((isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && ((x+50) == this.walls.wall1.x)))||((isInRange((y+50), this.walls.wall1.y, this.walls.wall1.y + 16) && ((x) == this.walls.wall1.x)))||((isInRange((y+50), this.walls.wall1.y, this.walls.wall1.y + 16) && ((x+50) == this.walls.wall1.x)));
+    return (isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && ((x) == this.walls.wall1.x))||
+    ((isInRange(y, this.walls.wall1.y, this.walls.wall1.y + 16) && ((x+50) == this.walls.wall1.x)))||
+    ((isInRange((y+50), this.walls.wall1.y, this.walls.wall1.y + 16) && ((x) == this.walls.wall1.x)))||
+    ((isInRange((y+50), this.walls.wall1.y, this.walls.wall1.y + 16) && ((x+50) == this.walls.wall1.x)));
   }
 
 }
