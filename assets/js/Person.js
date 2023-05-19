@@ -16,7 +16,6 @@ class Person extends GameObject {
           this.x += vxl;
           this.x += vxr;
           this.y += vy;
-          state.map.moveWall(this.x, this.y, state.arrow);
         }
 
       }
@@ -24,7 +23,6 @@ class Person extends GameObject {
         console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
         if (!state.map.isSpaceTaken(this.x, this.y, state.arrow)) {
           canMove = true;
-          state.map.moveWall(this.x, this.y, state.arrow);
         }
     }
     }
