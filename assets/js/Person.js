@@ -23,9 +23,9 @@ class Person extends GameObject {
       else if ((checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)) {
         console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
         if (!state.map.isSpaceTaken(this.x, this.y, state.arrow)) {
-          canMove = true;;
+          canMove = true;
+          state.map.moveWall(this.x, this.y, state.arrow);
         }
-        state.map.moveWall(this.x, this.y, state.arrow);
     }
     }
 

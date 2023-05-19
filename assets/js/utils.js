@@ -12,11 +12,14 @@ const utils = {
     let y = initialY;
     if (direction === "left") { 
       x += vxr;
-    } else if (direction === "right") {
+    }
+    if (direction === "right") {
       x += vxl;
-    } else if (direction === "up") {
+    }
+    if (direction === "up") {
       y += vy;
-    } else if (direction === "down") {
+    }
+    if (direction === "down") {
       y += vy;
     }
     return {x,y};
