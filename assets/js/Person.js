@@ -49,7 +49,7 @@ class Person extends GameObject {
             console.log("y position: " + this.y)
           }
         }else if (!state.map.isSpaceTaken(this.x, this.y, "up")) {
-          console.log("canMove(x up): " +state.map.isSpaceTaken(this.x,this.y, "up"))
+          console.log("canMove(y up): " +state.map.isSpaceTaken(this.x,this.y, "up"))
           canMoveyup = true;
         }
 
@@ -63,7 +63,7 @@ class Person extends GameObject {
             console.log("y position: " + this.y)
           }
         }else if (!state.map.isSpaceTaken(this.x, this.y, "down")) {
-          console.log("canMove(x down): " + state.map.isSpaceTaken(this.x,this.y, "down"))
+          console.log("canMove(y down): " + state.map.isSpaceTaken(this.x,this.y, "down"))
           canMoveydown = true;
         }
 
