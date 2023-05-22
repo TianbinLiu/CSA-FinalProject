@@ -36,8 +36,7 @@ class Person extends GameObject {
           }
           else{
             console.log("canMove(x left): " + canMovexl)
-            this.x += vxr;
-            console.log("x position: " + this.x)
+            this.x += vxl;
           }
         }
 
@@ -49,7 +48,6 @@ class Person extends GameObject {
           else{
             console.log("canMove(x right): " + canMovexr)
             this.x += vxr;
-            console.log("x position: " + this.x)
           }
         }
 
@@ -62,7 +60,6 @@ class Person extends GameObject {
           else{
             console.log("canMove(y up) : " + canMoveyup)
             this.y += vyup;
-            console.log("y position: " + this.y)
           }
         }
 
@@ -73,9 +70,9 @@ class Person extends GameObject {
           else{
             console.log("canMove(y down) : " + canMoveydown)
             this.y += vydown;
-            console.log("y position: " + this.y)
           }
         }
+        console.log("x position: " + this.x + ", y position: " + this.y)
 
       }
     }
