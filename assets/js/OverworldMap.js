@@ -33,7 +33,7 @@ class OverworldMap {
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
         console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
-        if(((x >= (npc.x -8)) && (x <= (npc.x + 8))) && ((y >= npc.y + 8) &&  (y <= (npc.y)))){
+        if(((x >= (npc.x -8)) && (x <= (npc.x + 8))) && ((y <= npc.y + 8) &&  (y >= (npc.y)))){
           isReach = true;
         }
       }
