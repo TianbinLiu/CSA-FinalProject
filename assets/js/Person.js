@@ -31,6 +31,7 @@ class Person extends GameObject {
 
 
         if(canMovey){
+          console.log("check if can move(y): " + state.map.isSpaceTaken(this.x, this.y, persondirection))
           if (state.map.isSpaceTaken(this.x, this.y, persondirection) && (persondirection === "up" || persondirection === "down")) {
             canMovey = false;
           }
