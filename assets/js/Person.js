@@ -8,6 +8,28 @@ class Person extends GameObject {
     update(state) {
       this.updateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
+        
+        if (!state.map.isSpaceTaken(this.x, this.y, "left")) {
+          console.log("canMove(x left): " + state.map.isSpaceTaken(this.x,this.y, "left"))
+          canMovexl = true;
+        }
+        
+        if (!state.map.isSpaceTaken(this.x, this.y, "right")) {
+          console.log("canMove(x right): " + state.map.isSpaceTaken(this.x,this.y, "right"))
+          canMovexr = true;
+        }
+
+        if (!state.map.isSpaceTaken(this.x, this.y, "up")) {
+          console.log("canMove(y up): " +state.map.isSpaceTaken(this.x,this.y, "up"))
+          canMoveyup = true;
+        }
+        
+        if (!state.map.isSpaceTaken(this.x, this.y, "down")) {
+          console.log("canMove(y down): " + state.map.isSpaceTaken(this.x,this.y, "down"))
+          canMoveydown = true;
+        }
+
+
         if(canMovexl){
           if (state.map.isSpaceTaken(this.x, this.y, "left")) {
             canMovexl = false;
@@ -17,9 +39,6 @@ class Person extends GameObject {
             this.x += vxr;
             console.log("x position: " + this.x)
           }
-        }else if (!state.map.isSpaceTaken(this.x, this.y, "left")) {
-          console.log("canMove(x left): " + state.map.isSpaceTaken(this.x,this.y, "left"))
-          canMovexl = true;
         }
 
 
@@ -32,9 +51,6 @@ class Person extends GameObject {
             this.x += vxr;
             console.log("x position: " + this.x)
           }
-        }else if (!state.map.isSpaceTaken(this.x, this.y, "right")) {
-          console.log("canMove(x right): " + state.map.isSpaceTaken(this.x,this.y, "right"))
-          canMovexr = true;
         }
 
 
@@ -48,9 +64,6 @@ class Person extends GameObject {
             this.y += vyup;
             console.log("y position: " + this.y)
           }
-        }else if (!state.map.isSpaceTaken(this.x, this.y, "up")) {
-          console.log("canMove(y up): " +state.map.isSpaceTaken(this.x,this.y, "up"))
-          canMoveyup = true;
         }
 
         if(canMoveydown){
@@ -62,9 +75,6 @@ class Person extends GameObject {
             this.y += vydown;
             console.log("y position: " + this.y)
           }
-        }else if (!state.map.isSpaceTaken(this.x, this.y, "down")) {
-          console.log("canMove(y down): " + state.map.isSpaceTaken(this.x,this.y, "down"))
-          canMoveydown = true;
         }
 
       }
