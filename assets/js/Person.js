@@ -7,40 +7,67 @@ class Person extends GameObject {
 
     update(state) {
       this.updateSprite();
-      if(canMovex && this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
-        console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
-        if (state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "left" || state.arrow === "right")) {
-          canMovex = false;
+      if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
+        if(canMovexl){
+          if (state.map.isSpaceTaken(this.x, this.y, "left")) {
+            canMovexl = false;
+          }
+          else{
+            console.log("canMove(x left): " + canMovexl)
+            this.x += vxr;
+            console.log("x position: " + this.x)
+          }
+        }else if (!state.map.isSpaceTaken(this.x, this.y, "left")) {
+          console.log("canMove(x left): " + state.map.isSpaceTaken(this.x,this.y, "left"))
+          canMovexl = true;
         }
-        else{
-          console.log("canMove(x): " + canMovex)
-          this.x += vxl;
-          this.x += vxr;
-          console.log("x position: " + this.x)
+
+
+        if(canMovexr){
+          if (state.map.isSpaceTaken(this.x, this.y, "right")) {
+            canMovexr = false;
+          }
+          else{
+            console.log("canMove(x right): " + canMovexr)
+            this.x += vxr;
+            console.log("x position: " + this.x)
+          }
+        }else if (!state.map.isSpaceTaken(this.x, this.y, "right")) {
+          console.log("canMove(x right): " + state.map.isSpaceTaken(this.x,this.y, "right"))
+          canMovexr = true;
+        }
+
+
+
+        if(canMoveyup){
+          if (state.map.isSpaceTaken(this.x, this.y, "up")) {
+            canMoveyup = false;
+          }
+          else{
+            console.log("canMove(y up) : " + canMoveyup)
+            this.y += vyup;
+            console.log("y position: " + this.y)
+          }
+        }else if (!state.map.isSpaceTaken(this.x, this.y, "up")) {
+          console.log("canMove(x up): " +state.map.isSpaceTaken(this.x,this.y, "up"))
+          canMoveyup = true;
+        }
+
+        if(canMoveydown){
+          if (state.map.isSpaceTaken(this.x, this.y, "down")) {
+            canMoveydown = false;
+          }
+          else{
+            console.log("canMove(y down) : " + canMoveydown)
+            this.y += vydown;
+            console.log("y position: " + this.y)
+          }
+        }else if (!state.map.isSpaceTaken(this.x, this.y, "down")) {
+          console.log("canMove(x down): " + state.map.isSpaceTaken(this.x,this.y, "down"))
+          canMoveydown = true;
         }
 
       }
-      if(canMovey && this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
-        console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
-        if (state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "up" || state.arrow === "down")) {
-          canMovey = false;
-        }
-        else{
-          console.log("canMove(y): " + canMovey)
-          this.y += vy;
-          console.log("y position: " + this.y)
-        }
-
-      }
-      if ((!canMovex || !canMovey) && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)) {
-        console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
-        if (!state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "left" || state.arrow === "right")) {
-          canMovex = true;
-        }
-        if (!state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "up" || state.arrow === "down")) {
-          canMovey = true;
-        }
-    }
     }
 
     updateSprite() {

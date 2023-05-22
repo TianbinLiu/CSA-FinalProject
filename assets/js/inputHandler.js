@@ -2,13 +2,15 @@ console.log("inputHandler.js loaded")
 
 let vxr = 0;
 let vxl = 0;
-let vy = 0;
-
+let vyup = 0;
+let vydown = 0;
 
 let persondirection = "right";
 let realdirection = "right";
-let canMovex = false;
-let canMovey = false;
+let canMovexl = false;
+let canMoveyup = false;
+let canMovexr = false;
+let canMoveydown = false;
 let checkifwalkingright;
 let checkifwalkingup;
 let checkifwalkingdown;
@@ -31,12 +33,12 @@ addEventListener("keydown", function(event){
     if (event.code == 'ArrowDown') {
         realdirection = "down";
         checkifwalkingdown = true;
-        vy = 1;
+        vyup = 1;
     }
     if (event.code == 'ArrowUp') {
         realdirection = "up";
         checkifwalkingup = true;
-        vy = -1
+        vydown = -1;
     };
 })
         
@@ -62,14 +64,14 @@ addEventListener("keyup", function(event){
             realdirection = "down";
         }
         checkifwalkingdown = false;
-        vy = 0
+        vydown = 0
     };
     if (event.code == 'ArrowUp') {
         if(checkifwalkingup){
             realdirection = "up";
         }
         checkifwalkingup = false;
-        vy = 0
+        vyup = 0
     };
 })
   
