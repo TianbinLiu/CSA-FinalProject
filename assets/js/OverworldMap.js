@@ -29,23 +29,23 @@ class OverworldMap {
   isSpaceTaken(currentX, currentY, direction) {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
     console.log("character(control) move next position(x): " + x + ", " + "(y): " + y)
-
+    let isReach = false;
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
         console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
         if(((x >= (npc.x-5)) && (x <= (npc.x + npc.sizex + 5))) && ((y >= npc.y) &&  (y <= (npc.y + npc.sizey)))){
-          return true;
+          isReach = true;
         }
       }
     })
     Object.values(this.walls).forEach(wall => {
       console.log("wall position(x): " + wall.x + ", " + "(y): " + wall.y + ", length: " + wall.sizex + ", width: " + wall.sizey)
       if(((x >= (wall.x-5)) && (x <= (wall.x + wall.sizex + 5))) && ((y >= wall.y) &&  (y <= (wall.y + wall.sizey)))){
-        return true;
+        isReach = true;
       }
     })
 
-    return false;
+    return isReach;
   }
 
 }
