@@ -13,7 +13,7 @@ class Person extends GameObject {
           canMovex = false;
         }
         else{
-          console.log("canMove(x): " + canMove)
+          console.log("canMove(x): " + canMovex)
           this.x += vxl;
           this.x += vxr;
           console.log("x position: " + this.x)
@@ -26,7 +26,7 @@ class Person extends GameObject {
           canMovey = false;
         }
         else{
-          console.log("canMove(y): " + canMove)
+          console.log("canMove(y): " + canMovey)
           this.y += vy;
           console.log("y position: " + this.y)
         }
