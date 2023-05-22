@@ -9,16 +9,6 @@ class Person extends GameObject {
       this.updateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
         
-        if (!state.map.isSpaceTaken(this.x, this.y, persondirection)) {
-          if(persondirection === "left" || persondirection === "right"){
-            console.log("canMove(x): " + state.map.isSpaceTaken(this.x,this.y, persondirection))
-            canMovex = true;
-          }
-          if(persondirection === "up" || persondirection === "down")
-            console.log("canMove(y): " +state.map.isSpaceTaken(this.x,this.y, persondirection))
-            canMovey = true;
-        }
-
         if(canMovex){
           if (state.map.isSpaceTaken(this.x, this.y, persondirection) && (persondirection === "left" || persondirection === "right")) {
             canMovex = false;
@@ -27,6 +17,10 @@ class Person extends GameObject {
             console.log("canMove(x): " + canMovex)
             this.x += vx;
           }
+        }
+        else if(!state.map.isSpaceTaken(this.x, this.y, persondirection) && persondirection === "left" || persondirection === "right"){
+            console.log("canMove(x): " + state.map.isSpaceTaken(this.x,this.y, persondirection))
+            canMovex = true;
         }
 
 
@@ -39,6 +33,10 @@ class Person extends GameObject {
             console.log("canMove(y) : " + canMovey)
             this.y += vy;
           }
+        }
+        else if (!state.map.isSpaceTaken(this.x, this.y, persondirection) && persondirection === "up" || persondirection === "down"){
+            console.log("canMove(y): " +state.map.isSpaceTaken(this.x,this.y, persondirection))
+            canMovey = true;
         }
         
         console.log("x position: " + this.x + ", y position: " + this.y)
