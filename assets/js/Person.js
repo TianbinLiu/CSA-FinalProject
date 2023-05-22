@@ -7,24 +7,38 @@ class Person extends GameObject {
 
     update(state) {
       this.updateSprite();
-      if(canMove && this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
+      if(canMovex && this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
         console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
-        if (state.map.isSpaceTaken(this.x, this.y, state.arrow)) {
-          canMove = false;
+        if (state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "left" || state.arrow === "right")) {
+          canMovex = false;
         }
         else{
-          console.log("canMove: " + canMove)
+          console.log("canMove(x): " + canMove)
           this.x += vxl;
           this.x += vxr;
-          this.y += vy;
-          console.log("x position: " + this.x + ", y position: " + this.y)
+          console.log("x position: " + this.x)
         }
 
       }
-      else if ((checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)) {
+      if(canMovey && this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
         console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
-        if (!state.map.isSpaceTaken(this.x, this.y, state.arrow)) {
-          canMove = true;
+        if (state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "up" || state.arrow === "down")) {
+          canMovey = false;
+        }
+        else{
+          console.log("canMove(y): " + canMove)
+          this.y += vy;
+          console.log("y position: " + this.y)
+        }
+
+      }
+      if ((!canMovex || !canMovey) && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)) {
+        console.log(state.map.isSpaceTaken(this.x,this.y, state.arrow))
+        if (!state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "left" || state.arrow === "right")) {
+          canMovex = true;
+        }
+        if (!state.map.isSpaceTaken(this.x, this.y, state.arrow) && (state.arrow === "up" || state.arrow === "down")) {
+          canMovey = true;
         }
     }
     }

@@ -7,7 +7,8 @@ let vy = 0;
 
 let persondirection = "right";
 let realdirection = "right";
-let canMove = false;
+let canMovex = false;
+let canMovey = false;
 let checkifwalkingright;
 let checkifwalkingup;
 let checkifwalkingdown;
