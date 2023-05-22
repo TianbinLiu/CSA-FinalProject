@@ -1,16 +1,12 @@
 console.log("inputHandler.js loaded")
 
-let vxr = 0;
-let vxl = 0;
-let vyup = 0;
-let vydown = 0;
+let vx = 0;
+let vy = 0;
+
 
 let persondirection = "right";
-let realdirection = "right";
-let canMovexl = false;
-let canMoveyup = false;
-let canMovexr = false;
-let canMoveydown = false;
+let canMovex = false;
+let canMovey = false;
 let checkifwalkingright;
 let checkifwalkingup;
 let checkifwalkingdown;
@@ -19,59 +15,51 @@ let checkifwalkingleft;
 addEventListener("keydown", function(event){
     console.log(event.code)
     if (event.code == 'ArrowRight'){
-        realdirection = "right";
         persondirection="right";
         checkifwalkingright = true;
-        vxr = 1;
+        vx = 1;
     } 
     if (event.code == 'ArrowLeft') {
-        realdirection = "left";
         persondirection="left";
         checkifwalkingleft = true;
-        vxl = -1;
+        vx = -1;
     }
     if (event.code == 'ArrowDown') {
-        realdirection = "down";
         checkifwalkingdown = true;
-        vyup = 1;
+        vy = 1;
     }
     if (event.code == 'ArrowUp') {
-        realdirection = "up";
         checkifwalkingup = true;
-        vydown = -1;
+        vy = -1;
     };
 })
         
 addEventListener("keyup", function(event){
     if (event.code == 'ArrowRight') {
-        if(checkifwalkingleft){
-            realdirection = "left";
-            persondirection="left";
+        if(!checkifwalkingleft){
+            vx = 0
         }
         checkifwalkingright = false;
-        vxr = 0
     };
     if (event.code == 'ArrowLeft') {
-        if(checkifwalkingright){
-            realdirection = "right";
-            persondirection="right";
+        if(!checkifwalkingright){
+            vx = 0
         }
         checkifwalkingleft = false;
-        vxl = 0
     };
     if (event.code == 'ArrowDown') {
-        if(checkifwalkingdown){
-            realdirection = "down";
+        if(!checkifwalkingup){
+            vy = 0
         }
         checkifwalkingdown = false;
-        vydown = 0
+
     };
     if (event.code == 'ArrowUp') {
-        if(checkifwalkingup){
-            realdirection = "up";
+        if(!checkifwalkingdown){
+            vy = 0
         }
         checkifwalkingup = false;
-        vyup = 0
+
     };
 })
   
