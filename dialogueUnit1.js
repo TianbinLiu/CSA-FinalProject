@@ -66,100 +66,165 @@ function findPreviousTextNodeId(textNodeIndex) {
 const textNodes = [
   {
     id: 1,
-    text: 'You wake up in a strange place and you see a jar of blue goo near you.',
+    text: 'What\'s this, you want to challenge me on my Java knowledge of Unit 1: Primitive Types?',
     options: [
       {
-        text: 'Take the goo',
-        setState: { blueGoo: true },
+        text: 'Yes, It\'ll be an equal exchange.',
         nextText: 2
       },
       {
-        text: 'Leave Goo',
+        text: 'I heard you were the best in the class on this unit.',
         nextText: 2
       }
     ]
   },
   {
     id: 2,
-    text: 'You venture forth in search of answers to where you are when you come across a merchant.',
+    text: 'I don\'t get how this is going to benefit me, but sure, I get that you\'re on a grand quest or something.',
     options: [
       {
-        text: 'Trade the goo for a sword',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, sword: true },
-        nextText: 3
-      },
-      {
-        text: 'Trade the goo for a shield',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, shield: true },
-        nextText: 3
-      },
-      {
-        text: 'Ignore the merchant',
+        text: 'Ask me anything, I can give as much as I take.',
         nextText: 3
       }
     ]
   },
   {
     id: 3,
-    text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
+    text: 'Tell me some key characteristic of Primitives Data Types.',
     options: [
       {
-        text: 'Explore the castle',
+        text: 'Primitives are predefined, can be null, can call methods, and have all the same sizes.',
         nextText: 10
       },
       {
-        text: 'Find a room to sleep at in the town',
-        nextText: 5
+        text: 'Primitives are predefined, always have a value, can\'t call methods, and have type dependent sizes.',
+        nextText: 4
       },
       {
-        text: 'Find some hay in a stable to sleep in',
-        nextText: 6
+        text: 'Primitives are defined by you, can be null, can call methods, and have type dependent sizes.',
+        nextText: 10
       }
     ]
   },
   {
     id: 4,
-    text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
+    text: 'Impressive. In turn, do you have any questions I can answer?',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'I\'m unsure about casting.',
+        nextText: 5
+      },
+      {
+        text: 'Can we go over compound operators?',
+        nextText: 6
+      },
+      {
+        text: 'How do you join different things into one string?',
+        nextText: 7
       }
     ]
   },
   {
     id: 5,
-    text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
+    text: 'There are two types of casting: \nWidening is when you\'re going from a smaller data type to a bigger one; in division, when you want decimal values, you should cast from an int to a float. \nNarrowing is going from a bigger data type to a smaller one; when truncating or rounding, you could convert your number to the lesser whole number by casting from float to int.',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Gotcha, but I\'ve got more questions.',
+        previousText: true
+      },
+      {
+        text: 'Thanks! Let\'s move on.',
+        nextText: 8
+      }
+    ]
+  },
+  {
+    id: 6,
+    text: 'Compound Operators do a math operation and then assign the new value back to the variable: \n(+=) adds \n(-=) subtracts \n(*=) multiplies \n(/=) divides \n(%=) finds the remainder',
+    options: [
+      {
+        text: 'Gotcha, but I\'ve got more questions.',
+        previousText: true
+      },
+      {
+        text: 'Thanks! Let\'s move on.',
+        nextText: 8
+      }
+    ]
+  },
+  {
+    id: 7,
+    text: 'Concatenation is the process of combining two or more strings to form a new string by appending the next string to the end of the previous strings: \nfirstString.concat(nextString) \nYou can concatenate mixed primitive types by using the + operator: \nint waffNum = 3; \nSystem.out.println("I ate " + waffNum + " waffles this morning.");',
+    options: [
+      {
+        text: 'Gotcha, but I\'ve got more questions.',
+        previousText: true
+      },
+      {
+        text: 'Thanks! Let\'s move on.',
+        nextText: 8
+      }
+    ]
+  },
+  {
+    id: 8,
+    text: 'Before we go ahead, let\'s make sure you actually know your basics. There are many primitive data types, but only some that are the most useful and relevant in this class. Jog my memory?',
+    options: [
+      {
+        text: 'They are boolean, int, float, long, char, and double.',
+        nextText: 9
+      },
+      {
+        text: 'They are boolean, int, short, long, char, double, and float.',
+        nextText: 10
+      },
+      {
+        text: 'They are boolean, int, double, char, byte, and float.',
+        nextText: 10
+      }
+    ]
+  },
+  {
+    id: 9,
+    text: 'Oh nice, that sounds about right. Anything else you wanna go over before you go?',
+    options: [
+      {
+        text: 'What are some standard methods that are used with primitives?',
+        nextText: 11
       }
     ]
   },
   {
     id: 10,
-    text: 'The monster laughed as you hid behind your shield and ate you.',
+    text: 'That\'s not quite right. Try Again.',
     options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      },
       {
         text: 'Go Back',
         previousText: true
+      },
+      {
+        text: 'Restart',
+        nextText: -1
       }
     ]
   },
   {
     id: 11,
-    text: 'You threw your jar of goo at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing your victory you decide to claim this castle as your and live out the rest of your days there.',
+    text: 'Here\'s some good ones to remember: \n.toString() is a method used to get a String object representing a data type or element converted to a String. \n.equals() is used to compare 2 strings and returns if the content of the strings are equal. \n.hashCode() method computes the hash values of given input objects.',
     options: [
       {
-        text: 'Congratulations. Play Again.',
-        nextText: -1
+        text: 'Thanks, I think I\'ve got it now.',
+        nextText: 12
+      }
+    ]
+  },
+  {
+    id: 12,
+    text: 'I\'ve taught you all I know. I\'ve got to go now, or i\'ll be late to my art class. Farewell!',
+    options: [
+      {
+        text: 'Oh Bye . . I mean, Farewell.',
+        nextText: 13
       }
     ]
   }
