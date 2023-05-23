@@ -8,60 +8,32 @@ class Person extends GameObject {
     update(state) {
       this.updateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
-        if(!state.map.isSpaceTaken(this.x, this.y, "left")){
-          canMovexl = true;
+        if(!state.map.isSpaceTaken(this.x, this.y, realdirectionx)){
+          canMovex = true;
+        }
+        if (!state.map.isSpaceTaken(this.x, this.y, realdirectiony)){
+          canMovey = true;
         }
 
-        if(!state.map.isSpaceTaken(this.x, this.y, "right")){
-          canMovexr = true;
-        }
-
-        if(!state.map.isSpaceTaken(this.x, this.y, "up")){
-          canMoveyup = true;
-        }
-
-        if(!state.map.isSpaceTaken(this.x, this.y, "down")){
-          canMoveydown = true;
-        }
-
-
-        if(canMovexl){
-          if (state.map.isSpaceTaken(this.x, this.y, "left")) {
-            canMovexl = false;
+        if(canMovex){
+          if (state.map.isSpaceTaken(this.x, this.y, realdirectionx)) {
+            canMovex = false;
           }
           else{
-            console.log("canMove(x left): " + canMovexl)
-            this.x += vxl;
+            console.log("canMove(x): " + canMovex)
+            this.x += vx;
           }
         }
 
-        if(canMovexr){
-          if (state.map.isSpaceTaken(this.x, this.y, "right")) {
-            canMovexr = false;
-          }
-          else{
-            console.log("canMove(x right): " + canMovexr)
-            this.x += vxr;
-          }
-        }
 
-        if(canMoveyup){
-          if (state.map.isSpaceTaken(this.x, this.y, "up")) {
-            canMoveyup = false;
+        if(canMovey){
+          
+          if (state.map.isSpaceTaken(this.x, this.y, realdirectiony)) {
+            canMovey = false;
           }
           else{
-            console.log("canMove(y up) : " + canMoveyup)
-            this.y += vyup;
-          }
-        }
-
-        if(canMoveydown){
-          if (state.map.isSpaceTaken(this.x, this.y, "down")) {
-            canMoveydown = false;
-          }
-          else{
-            console.log("canMove(y down) : " + canMoveydown)
-            this.y += vydown;
+            console.log("canMove(y) : " + canMovey)
+            this.y += vy;
           }
         }
         
