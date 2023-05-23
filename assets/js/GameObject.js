@@ -2,6 +2,7 @@ class GameObject {
   constructor(config) {
     this.id = null;
     this.isMounted = config.isMounted || false;
+    this.direction = config.direction || "right";
     this.x = config.x || 0;
     this.y = config.y || 0;
     this.sizex = config.sizex || 0;

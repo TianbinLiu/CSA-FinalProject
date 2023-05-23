@@ -13,7 +13,7 @@ class Person extends GameObject {
     }
 
     update(state) {
-      this.updateSprite();
+      this.heroupdateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
         if(!state.map.isSpaceTaken(this.x, this.y, realdirectionx)){
           canMovex = true;
@@ -97,7 +97,7 @@ class Person extends GameObject {
       }
     }
 
-    updateSprite() {
+    heroupdateSprite() {
       let checkifwalkingResult = checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup;
       if (this.isPlayerControlled && !(checkifwalkingResult)) {
         this.sprite.setAnimation("idle-"+ persondirection);
@@ -107,13 +107,13 @@ class Person extends GameObject {
       if (this.isPlayerControlled && checkifwalkingResult) {
         this.sprite.setAnimation("walk-"+ persondirection);
       }
+    }
 
-      if (this.movingProgressRemaining > 0 && !this.isPlayerControlled) {
+    updateSprite() {
+      if (this.movingProgressRemaining > 0) {
         this.sprite.setAnimation("walk-"+this.direction);
         return;
       }
-      if(!this.isPlayerControlled){
-        this.sprite.setAnimation("idle-"+this.direction);
-      }
+      this.sprite.setAnimation("idle-"+this.direction);    
     }
   }
