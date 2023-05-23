@@ -61,8 +61,8 @@ class OverworldMap {
       object.id = key;
 
       //TODO: determine if this object should actually mount
-      if(!(object.id === "hero")){
-      object.mount(this);
+      if(key.isMounted){
+        object.mount(this);
       }
     })
   }
