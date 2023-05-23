@@ -50,7 +50,7 @@ class Person extends GameObject {
       if(!this.isPlayerControlled && this.movingProgressRemaining > 0){
         this.updatePosition();
       }
-      else{
+      else if(!this.isPlayerControlled && this.movingProgressRemaining === 0){
         this.updateSprite(state)
       }
     }
