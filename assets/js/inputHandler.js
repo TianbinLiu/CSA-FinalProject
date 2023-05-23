@@ -45,26 +45,26 @@ addEventListener("keydown", function(event){
         
 addEventListener("keyup", function(event){
     if (event.code == 'ArrowRight') {
-        if(!checkifwalkingleft){
+        if(checkifwalkingleft){
             vxr = 0
         }
         checkifwalkingright = false;
     };
     if (event.code == 'ArrowLeft') {
-        if(!checkifwalkingright){
+        if(checkifwalkingright){
             vxl = 0
         }
         checkifwalkingleft = false;
     };
     if (event.code == 'ArrowDown') {
-        if(!checkifwalkingup){
+        if(checkifwalkingup){
             vydown = 0
         }
         checkifwalkingdown = false;
 
     };
     if (event.code == 'ArrowUp') {
-        if(!checkifwalkingdown){
+        if(checkifwalkingdown){
             vyup = 0
         }
         checkifwalkingup = false;
