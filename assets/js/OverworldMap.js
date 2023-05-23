@@ -44,8 +44,33 @@ class OverworldMap {
         isReach = true;
       }
     })
-
     return isReach;
+  }
+
+  mountObjects() {
+    Object.keys(this.gameObjects).forEach(key => {
+
+      let object = this.gameObjects[key];
+      object.id = key;
+
+      //TODO: determine if this object should actually mount
+      object.mount(this);
+
+    })
+  }
+
+  async startCutscene(events) {
+    this.isCutscenePlaying = true;
+
+    for (let i=0; i<events.length; i++) {
+      const eventHandler = new OverworldEvent({
+        event: events[i],
+        map: this,
+      })
+      await eventHandler.init();
+    }
+
+    this.isCutscenePlaying = false;
   }
 
 }
@@ -68,7 +93,13 @@ window.OverworldMaps = {
         y: utils.withGrid(9),
         sizex: 50,
         sizey: 37,
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
+        behaviorLoop: [
+          { type: "stand",  direction: "left", time: 800 },
+          { type: "stand",  direction: "up", time: 800 },
+          { type: "stand",  direction: "right", time: 1200 },
+          { type: "stand",  direction: "up", time: 300 },
+        ]
       })
     },
     walls: {

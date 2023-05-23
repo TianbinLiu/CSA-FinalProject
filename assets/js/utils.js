@@ -23,5 +23,12 @@ const utils = {
 
   isInRange(value, min, max) {
     return value >= min && value <= max;
+  },
+
+  emitEvent(name, detail) {
+    const event = new CustomEvent(name, {
+      detail
+    });
+    document.dispatchEvent(event);
   }
 }
