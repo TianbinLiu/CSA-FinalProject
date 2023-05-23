@@ -94,6 +94,7 @@ window.OverworldMaps = {
         y: utils.withGrid(6),
         sizex: 50,
         sizey: 37,
+        id: "hero",
       }),
       npcA: new Person({
         isMounted: true,
@@ -101,6 +102,7 @@ window.OverworldMaps = {
         y: utils.withGrid(9),
         sizex: 50,
         sizey: 37,
+        id: "npcA",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
         behaviorLoop: [
           { type: "stand",  direction: "left", time: 800 },

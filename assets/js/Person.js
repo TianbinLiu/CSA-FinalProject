@@ -103,20 +103,20 @@ class Person extends GameObject {
     heroupdateSprite() {
       let checkifwalkingResult = checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup;
       if (this.isPlayerControlled && !(checkifwalkingResult)) {
-        this.sprite.setAnimation("idle-"+ persondirection);
+        this.sprite.setAnimation(this.id + "-idle-"+ persondirection);
         return;
       }
   
       if (this.isPlayerControlled && checkifwalkingResult) {
-        this.sprite.setAnimation("walk-"+ persondirection);
+        this.sprite.setAnimation(this.id + "-walk-"+ persondirection);
       }
     }
 
     updateSprite() {
       if (this.movingProgressRemaining > 0) {
-        this.sprite.setAnimation("walk-"+this.direction);
+        this.sprite.setAnimation(this.id + "-walk-"+ this.direction);
         return;
       }
-      this.sprite.setAnimation("idle-"+this.direction);    
+      this.sprite.setAnimation(this.id + "-idle-"+ this.direction);    
     }
   }
