@@ -113,6 +113,43 @@ body {
     width: 0%;
 }
 
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .choice-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    width: 15rem;
+    height: 15rem;
+    border: 0.2rem solid rgb(18, 93, 255);
+    border-radius: 4px;
+    background: rgb(18, 93, 255);
+    font-size: 3rem;
+    color: white;
+    cursor: grab;
+  }
+  
+  .choice-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(6, 103, 247, 0.5);
+  }
+  
+  .drop-text {
+    font-size: 2rem;
+    color: white;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+    border: 0.2rem dashed white;
+    border-radius: 4px;
+  }
+
 @media screen and (max-width: 760px) {
     .choice-container {
         min-width: 40rem;
