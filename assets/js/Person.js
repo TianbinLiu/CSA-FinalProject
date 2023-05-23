@@ -13,7 +13,7 @@ class Person extends GameObject {
     }
 
     update(state) {
-      this.updateSprite(state);
+      this.updateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
         if(!state.map.isSpaceTaken(this.x, this.y, realdirectionx)){
           canMovex = true;
