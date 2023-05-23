@@ -15,15 +15,15 @@ class Person extends GameObject {
     update(state) {
       this.heroupdateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
-        if(!state.map.isSpaceTaken(this.x, this.y, realdirectionx)){
+        if(!state.map.heroisSpaceTaken(this.x, this.y, realdirectionx)){
           canMovex = true;
         }
-        if (!state.map.isSpaceTaken(this.x, this.y, realdirectiony)){
+        if (!state.map.heroisSpaceTaken(this.x, this.y, realdirectiony)){
           canMovey = true;
         }
 
         if(canMovex){
-          if (state.map.isSpaceTaken(this.x, this.y, realdirectionx)) {
+          if (state.map.heroisSpaceTaken(this.x, this.y, realdirectionx)) {
             canMovex = false;
           }
           else{
@@ -35,7 +35,7 @@ class Person extends GameObject {
 
         if(canMovey){
           
-          if (state.map.isSpaceTaken(this.x, this.y, realdirectiony)) {
+          if (state.map.heroisSpaceTaken(this.x, this.y, realdirectiony)) {
             canMovey = false;
           }
           else{

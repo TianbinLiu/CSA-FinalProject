@@ -27,9 +27,14 @@ class OverworldMap {
       utils.withGrid(6) - cameraPerson.y
     )
   } 
-
+  
   isSpaceTaken(currentX, currentY, direction) {
     const {x,y} = utils.nextPosition(currentX, currentY, direction);
+    return this.walls[`${x},${y}`] || false;
+  }
+
+  heroisSpaceTaken(currentX, currentY, direction) {
+    const {x,y} = utils.heronextPosition(currentX, currentY, direction);
     console.log("character(control) move next position(x): " + x + ", " + "(y): " + y)
     let isReach = false;
     Object.values(this.gameObjects).forEach(npc => {

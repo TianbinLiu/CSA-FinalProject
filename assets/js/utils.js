@@ -3,7 +3,7 @@ const utils = {
     return n * 16;
   },
 
-  nextPosition(initialX, initialY, direction) {
+  heronextPosition(initialX, initialY, direction) {
     let x = initialX;
     let y = initialY;
     if (direction === "left") { 
@@ -17,6 +17,22 @@ const utils = {
     }
     if (direction === "down") {
       y += 1;
+    }
+    return {x,y};
+  },
+
+  nextPosition(initialX, initialY, direction) {
+    let x = initialX;
+    let y = initialY;
+    const size = 16;
+    if (direction === "left") { 
+      x -= size;
+    } else if (direction === "right") {
+      x += size;
+    } else if (direction === "up") {
+      y -= size;
+    } else if (direction === "down") {
+      y += size;
     }
     return {x,y};
   },
