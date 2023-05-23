@@ -96,9 +96,8 @@ window.OverworldMaps = {
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
         behaviorLoop: [
           { type: "stand",  direction: "left", time: 800 },
-          { type: "stand",  direction: "up", time: 800 },
           { type: "stand",  direction: "right", time: 1200 },
-          { type: "stand",  direction: "up", time: 300 },
+
         ]
       })
     },
