@@ -18,19 +18,15 @@ class GameObject {
 
 
   mount(map) {
-    if(!this.isPlayerControlled){
-
     //If we have a behavior, kick off after a short delay
     setTimeout(() => {
       this.doBehaviorEvent(map);
     }, 10)
   }
-  }
 
   update() {}
 
   async doBehaviorEvent(map) { 
-    if(!this.isPlayerControlled){
     //Don't do anything if there is a more important cutscene or I don't have config to do anything
     //anyway.
     if (map.isCutscenePlaying || this.behaviorLoop.length === 0) {
@@ -56,5 +52,4 @@ class GameObject {
     
 
   }
-}
 }
