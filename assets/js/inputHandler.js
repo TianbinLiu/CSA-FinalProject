@@ -46,6 +46,7 @@ addEventListener("keyup", function(event){
             vx = 0
         }
         else{
+            persondirection="left";
             realdirectionx = "left";
             vx = -1;
         }
@@ -56,6 +57,7 @@ addEventListener("keyup", function(event){
             vx = 0
         }
         else{
+            persondirection= "right";
             realdirectionx = "right"
             vx = 1;
         }
