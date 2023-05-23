@@ -8,33 +8,60 @@ class Person extends GameObject {
     update(state) {
       this.updateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
-        if(!state.map.isSpaceTaken(this.x, this.y, "left") || !state.map.isSpaceTaken(this.x, this.y, "right")){
-          canMovex = true;
+        if(!state.map.isSpaceTaken(this.x, this.y, "left")){
+          canMovexl = true;
         }
 
-        if (!state.map.isSpaceTaken(this.x, this.y, "up") || !state.map.isSpaceTaken(this.x, this.y, "down")){
-          canMovey = true;
+        if(!state.map.isSpaceTaken(this.x, this.y, "right")){
+          canMovexr = true;
         }
 
-        if(canMovex){
-          if (state.map.isSpaceTaken(this.x, this.y, realdirection) && (realdirection === "left" || realdirection === "right")) {
-            canMovex = false;
+        if(!state.map.isSpaceTaken(this.x, this.y, "up")){
+          canMoveyup = true;
+        }
+
+        if(!state.map.isSpaceTaken(this.x, this.y, "down")){
+          canMoveydown = true;
+        }
+
+
+        if(canMovexl){
+          if (state.map.isSpaceTaken(this.x, this.y, "left")) {
+            canMovexl = false;
           }
           else{
-            console.log("canMove(x): " + canMovex)
-            this.x += vx;
+            console.log("canMove(x left): " + canMovexl)
+            this.x += vxl;
           }
         }
 
-
-        if(canMovey){
-          console.log("check if can move(y): " + state.map.isSpaceTaken(this.x, this.y, realdirection))
-          if (state.map.isSpaceTaken(this.x, this.y, realdirection) && (realdirection === "up" || realdirection === "down")) {
-            canMovey = false;
+        if(canMovexr){
+          if (state.map.isSpaceTaken(this.x, this.y, "right")) {
+            canMovexr = false;
           }
           else{
-            console.log("canMove(y) : " + canMovey)
-            this.y += vy;
+            console.log("canMove(x right): " + canMovexr)
+            this.x += vxr;
+          }
+        }
+
+        if(canMoveyup){
+          if (state.map.isSpaceTaken(this.x, this.y, "up")) {
+            canMoveyup = false;
+          }
+          else{
+            console.log("canMove(y up) : " + canMoveyup)
+            this.y += vyup;
+          }
+        }
+
+        if(canMoveydown){
+          if (state.map.isSpaceTaken(this.x, this.y, "down")) {
+            canMoveydown = false;
+          }
+          else{
+            console.log("canMove(y down) : " + canMoveydown)
+            this.y += vydown;
           }
         }
         
