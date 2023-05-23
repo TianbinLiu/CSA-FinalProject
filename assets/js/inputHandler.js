@@ -45,11 +45,19 @@ addEventListener("keyup", function(event){
         if(!checkifwalkingleft){
             vx = 0
         }
+        else{
+            realdirectionx = "left";
+            vx = -1;
+        }
         checkifwalkingright = false;
     };
     if (event.code == 'ArrowLeft') {
         if(!checkifwalkingright){
             vx = 0
+        }
+        else{
+            realdirectionx = "right"
+            vx = 1;
         }
         checkifwalkingleft = false;
     };
@@ -57,12 +65,20 @@ addEventListener("keyup", function(event){
         if(!checkifwalkingup){
             vy = 0
         }
+        else{
+            realdirectionx = "up"
+            vy = -1;
+        }
         checkifwalkingdown = false;
 
     };
     if (event.code == 'ArrowUp') {
         if(!checkifwalkingdown){
             vy = 0
+        }
+        else{
+            realdirectionx = "down"
+            vy = 1;
         }
         checkifwalkingup = false;
 
