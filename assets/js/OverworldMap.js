@@ -87,7 +87,7 @@ window.OverworldMaps = {
         sizex: 50,
         sizey: 37,
       }),
-      npc1: new GameObject({
+      npcA: new GameObject({
         isMounted: true,
         x: utils.withGrid(7),
         y: utils.withGrid(9),
