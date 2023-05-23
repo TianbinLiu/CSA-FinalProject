@@ -5,6 +5,7 @@ let vy = 0;
 
 
 let persondirection = "right";
+let realdirection = "right";
 let canMovex = false;
 let canMovey = false;
 let checkifwalkingright;
@@ -16,20 +17,24 @@ addEventListener("keydown", function(event){
     console.log(event.code)
     if (event.code == 'ArrowRight'){
         persondirection="right";
+        realdirection = "right";
         checkifwalkingright = true;
         vx = 1;
     } 
     if (event.code == 'ArrowLeft') {
         persondirection="left";
+        realdirection = "left";
         checkifwalkingleft = true;
         vx = -1;
     }
     if (event.code == 'ArrowDown') {
         checkifwalkingdown = true;
+        realdirection = "down";
         vy = 1;
     }
     if (event.code == 'ArrowUp') {
         checkifwalkingup = true;
+        realdirection = "up";
         vy = -1;
     };
 })
