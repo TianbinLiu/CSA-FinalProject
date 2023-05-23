@@ -18,7 +18,7 @@ class Person extends GameObject {
             this.x += vx;
           }
         }
-        else if(!state.map.isSpaceTaken(this.x, this.y, persondirection) && persondirection === "left" || persondirection === "right"){
+        else if(!state.map.isSpaceTaken(this.x, this.y, persondirection) && (persondirection === "left" || persondirection === "right")){
             console.log("canMove(x): " + state.map.isSpaceTaken(this.x,this.y, persondirection))
             canMovex = true;
         }
@@ -34,7 +34,7 @@ class Person extends GameObject {
             this.y += vy;
           }
         }
-        else if (!state.map.isSpaceTaken(this.x, this.y, persondirection) && persondirection === "up" || persondirection === "down"){
+        else if (!state.map.isSpaceTaken(this.x, this.y, persondirection) && (persondirection === "up" || persondirection === "down")){
             console.log("canMove(y): " +state.map.isSpaceTaken(this.x,this.y, persondirection))
             canMovey = true;
         }
