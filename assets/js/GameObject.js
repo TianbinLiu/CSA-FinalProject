@@ -18,11 +18,13 @@ class GameObject {
 
 
   mount(map) {
+    if(!this.isPlayerControlled){
 
     //If we have a behavior, kick off after a short delay
     setTimeout(() => {
       this.doBehaviorEvent(map);
     }, 10)
+  }
   }
 
   update() {}
