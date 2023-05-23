@@ -47,7 +47,7 @@ class OverworldMap {
     })
     Object.values(this.walls).forEach(wall => {
       console.log("wall position(x): " + wall.x + ", " + "(y): " + wall.y + ", length: " + wall.sizex + ", width: " + wall.sizey)
-      if(((x >= (wall.x-5)) && (x <= (wall.x + wall.sizex + 5))) && ((y >= wall.y) &&  (y <= (wall.y + wall.sizey)))){
+      if(((x >= (wall.x+3)) && (x <= (wall.x + wall.sizex + 13))) && ((y >= wall.y) &&  (y <= (wall.y + wall.sizey)))){
         isReach = true;
       }
     })
