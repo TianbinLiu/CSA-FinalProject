@@ -21,10 +21,6 @@ const utils = {
     return {x,y};
   },
 
-  isInRange(value, min, max) {
-    return value >= min && value <= max;
-  },
-
   emitEvent(name, detail) {
     const event = new CustomEvent(name, {
       detail
