@@ -1,9 +1,7 @@
 class Person extends GameObject {
     constructor(config) {
       super(config);
-      this.isPlayerControlled = config.isPlayerControlled || false;
       this.movingProgressRemaining = 0;
-
       this.isPlayerControlled = config.isPlayerControlled || false;
   
       this.directionUpdate = {
