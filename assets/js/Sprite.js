@@ -20,7 +20,6 @@ class Sprite {
 
     //Configure Animation & Initial State
     this.animations = config.animations || {
-      "idle-right": [ [7,0],[8,0],[9,0], ],
       "hero-idle-right": [ [7,0],[8,0],[9,0], ],
       "hero-idle-left" : [ [6,0],[5,0],[4,0], ],
       "hero-walk-left": [ [5,1],[4,1],[3,1],[2,1],[1,1], ],
@@ -30,7 +29,7 @@ class Sprite {
       "npcA-idle-up": [ [7,0],[8,0],[9,0], ],
       "npcA-idle-down": [ [7,0],[8,0],[9,0], ],
     }
-    this.currentAnimation = config.currentAnimation || ("idle-right");
+    this.currentAnimation = config.currentAnimation || "hero-idle-right";
     this.currentAnimationFrame = 0;
 
     this.animationFrameLimit = config.animationFrameLimit || 16;
