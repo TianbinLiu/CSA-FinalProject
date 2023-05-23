@@ -8,7 +8,14 @@ class Person extends GameObject {
     update(state) {
       this.updateSprite();
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
-        
+        if(!state.map.isSpaceTaken(this.x, this.y, "left") || !state.map.isSpaceTaken(this.x, this.y, "right")){
+          canMovex = true;
+        }
+
+        if (!state.map.isSpaceTaken(this.x, this.y, "up") || !state.map.isSpaceTaken(this.x, this.y, "down")){
+          canMovey = true;
+        }
+
         if(canMovex){
           if (state.map.isSpaceTaken(this.x, this.y, realdirection) && (realdirection === "left" || realdirection === "right")) {
             canMovex = false;
@@ -17,10 +24,6 @@ class Person extends GameObject {
             console.log("canMove(x): " + canMovex)
             this.x += vx;
           }
-        }
-        else if(!state.map.isSpaceTaken(this.x, this.y, realdirection) && (realdirection === "left" || realdirection === "right")){
-            console.log("canMove(x): " + state.map.isSpaceTaken(this.x,this.y, realdirection))
-            canMovex = true;
         }
 
 
@@ -33,10 +36,6 @@ class Person extends GameObject {
             console.log("canMove(y) : " + canMovey)
             this.y += vy;
           }
-        }
-        else if (!state.map.isSpaceTaken(this.x, this.y, realdirection) && (realdirection === "up" || realdirection === "down")){
-            console.log("canMove(y): " +state.map.isSpaceTaken(this.x,this.y, realdirection))
-            canMovey = true;
         }
         
         console.log("x position: " + this.x + ", y position: " + this.y)
