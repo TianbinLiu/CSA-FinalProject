@@ -57,6 +57,7 @@ class Person extends GameObject {
 
     startBehavior(state, behavior) {
       //Set character direction to whatever behavior has
+      if(!this.isPlayerControlled){
       this.direction = behavior.direction;
       
       if (behavior.type === "walk") {
@@ -82,7 +83,7 @@ class Person extends GameObject {
           })
         }, behavior.time)
       }
-  
+    }
     }
 
     updatePosition() {
