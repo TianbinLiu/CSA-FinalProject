@@ -91,13 +91,23 @@ class Sprite {
 
     const [frameX, frameY] = this.frame;
 
+    if(this.image.id === "hero" || this.image.id === "npcA"){
+      this.isLoaded && ctx.drawImage(this.image,
+        frameX * this.image.sizex, frameY * this.image.sizey,
+        this.image.sizex,this.image.sizey,
+        x,y,
+        this.image.sizex,this.image.sizey,
+      );
+    }
+    else if(this.image.id === "Wizard"){
+      this.isLoaded && ctx.drawImage(this.image,
+        frameX * this.image.sizex, frameY * this.image.sizey,
+        this.image.sizex,this.image.sizey,
+        x,y,
+        25,35,
+      );
+    }
 
-    this.isLoaded && ctx.drawImage(this.image,
-      frameX * this.image.sizex, frameY * this.image.sizey,
-      this.image.sizex,this.image.sizey,
-      x,y,
-      25,35,
-    );
 
     this.updateAnimationProgress();
   }
