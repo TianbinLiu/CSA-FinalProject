@@ -82,13 +82,24 @@ class Sprite {
     const x = this.gameObject.x - 8 + utils.withGrid(10) - cameraPerson.x;
     const y = this.gameObject.y - 18 + utils.withGrid(6) - cameraPerson.y;
 
+    if(this.image.id === "hero" || this.image.id === "npcA"){
     this.isShadowLoaded && ctx.drawImage(this.shadow, 
       0,0, 
       32,32,
       x, y, 
       this.image.sizex,this.image.sizey
     );
+    }
+    else if(this.image.id === "Wizard"){
+      this.isShadowLoaded && ctx.drawImage(this.shadow, 
+        0,0, 
+        32,32,
+        x, y, 
+        25,35
+      );
+    }
 
+    
     const [frameX, frameY] = this.frame;
 
     if(this.image.id === "hero" || this.image.id === "npcA"){

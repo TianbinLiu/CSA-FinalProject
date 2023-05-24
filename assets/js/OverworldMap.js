@@ -40,8 +40,15 @@ class OverworldMap {
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
         console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
-        if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
-          isReach = true;
+        if(npc.id === "hero" || npc.id === "npcA"){
+          if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
+            isReach = true;
+          }
+        }
+        else if(npc.id === "Wizard"){
+          if(((x >= (npc.x - (npc.sizex/8)) && (x <= (npc.x + (npc.sizex/8)))) && ((y >= (npc.y - (npc.sizey/40))) &&  (y <= (npc.y + (npc.sizey/40)))))){
+            isReach = true;
+          }
         }
       }
     })
