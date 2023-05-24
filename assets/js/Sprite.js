@@ -110,7 +110,7 @@ class Sprite {
     }
     else if(this.image.id === "Wizard"){
       this.isLoaded && ctx.drawImage(this.image,
-        frameX * this.image.sizex, frameY * this.image.sizey,
+        0 * this.image.sizex, 0 * this.image.sizey,
         this.image.sizex,this.image.sizey,
         x,y,
         25,35,
