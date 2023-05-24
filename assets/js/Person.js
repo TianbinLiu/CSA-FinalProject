@@ -59,7 +59,7 @@ class Person extends GameObject {
       //Set character direction to whatever behavior has
       if(!this.isPlayerControlled){
       this.direction = behavior.direction;
-      
+      this.spritedirection = behavior.spritedirection;
       if (behavior.type === "walk") {
         //Stop here if space is not free
         if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
@@ -114,7 +114,7 @@ class Person extends GameObject {
 
     updateSprite() {
       if (this.movingProgressRemaining > 0) {
-        this.sprite.setAnimation(this.id + "-walk-"+ this.direction);
+        this.sprite.setAnimation(this.id + "-walk-"+ this.spritedirection);
         return;
       }
       this.sprite.setAnimation(this.id + "-idle-"+ this.direction);    

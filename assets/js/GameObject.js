@@ -10,6 +10,8 @@ class GameObject {
     this.sprite = new Sprite({
       gameObject: this,
       id: config.id || null,
+      sizex : config.sizex || 0,
+      sizey : config.sizey || 0,
       src: config.src || "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
     });
 

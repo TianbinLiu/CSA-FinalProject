@@ -31,6 +31,7 @@ class OverworldEvent {
     }, {
       type: "walk",
       direction: this.event.direction,
+      spritedirection: this.event.spritedirection,
       retry: true
     })
 
