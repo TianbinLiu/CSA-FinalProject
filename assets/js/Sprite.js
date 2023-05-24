@@ -79,8 +79,8 @@ class Sprite {
   
 
   draw(ctx, cameraPerson) {
-    const x = this.gameObject.x - cameraPerson.x;
-    const y = this.gameObject.y - cameraPerson.y;
+    const x = this.gameObject.x + utils.withGrid(10.5) - cameraPerson.x;
+    const y = this.gameObject.y + utils.withGrid(6) - cameraPerson.y;
 
     if(this.image.id === "hero" || this.image.id === "npcA"|| this.image.id === "npcB"){
     this.isShadowLoaded && ctx.drawImage(this.shadow, 
