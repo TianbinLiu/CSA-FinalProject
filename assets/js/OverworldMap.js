@@ -46,7 +46,7 @@ class OverworldMap {
           }
         }
         else if(npc.id === "Wizard"){
-          if(((x >= (npc.x - (npc.sizex/8)) && (x <= (npc.x + (npc.sizex/8)))) && ((y >= (npc.y - (npc.sizey/40))) &&  (y <= (npc.y + (npc.sizey/40)))))){
+          if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/20))) &&  (y <= (npc.y + (npc.sizey/20)))))){
             isReach = true;
           }
         }
@@ -114,7 +114,6 @@ window.OverworldMaps = {
         behaviorLoop: [
           { type: "stand",  direction: "left", time: 800 },
           { type: "stand",  direction: "right", time: 1200 },
-
         ]
       }),
       Wizard: new Person({
