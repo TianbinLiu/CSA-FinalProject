@@ -120,8 +120,8 @@ window.OverworldMaps = {
         isMounted: true,
         x: utils.withGrid(3),
         y: utils.withGrid(7),
-        sizex: 50,
-        sizey: 70,
+        sizex: 80,
+        sizey: 149,
         id: "Wizard",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
         behaviorLoop: [
