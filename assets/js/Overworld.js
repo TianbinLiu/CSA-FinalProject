@@ -48,9 +48,7 @@ class Overworld {
    this.startGameLoop();
  
    this.map.startCutscene([
-     { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
-     { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
-     { who: "npcA", type: "stand",  direction: "right", time: 800 },
+
    ])
  
   }
