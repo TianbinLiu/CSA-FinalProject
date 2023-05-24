@@ -21,12 +21,52 @@ let questions = [
         answer: 2, //answer is choice2
     },
     {
+        question: 'What is 3*7',
+        choice1: '2',
+        choice2: '4',
+        choice3: '21',
+        choice4: '17',
+        answer: 3, 
+    },
+    {
         question: 'What is 2+2',
         choice1: '2',
         choice2: '4',
         choice3: '21',
         choice4: '17',
-        answer: 2, 
+        answer: 2,  
+    },
+    {
+        question: 'What is 2+2',
+        choice1: '2',
+        choice2: '4',
+        choice3: '21',
+        choice4: '17',
+        answer: 2,  
+    },
+    {
+        question: 'What is 2+2',
+        choice1: '2',
+        choice2: '4',
+        choice3: '21',
+        choice4: '17',
+        answer: 2,  
+    },
+    {
+        question: 'What is 2+2',
+        choice1: '2',
+        choice2: '4',
+        choice3: '21',
+        choice4: '17',
+        answer: 2,  
+    },
+    {
+        question: 'What is 2+2',
+        choice1: '2',
+        choice2: '4',
+        choice3: '21',
+        choice4: '17',
+        answer: 2,  
     },
     {
         question: 'What is 2+2',
@@ -47,7 +87,7 @@ let questions = [
 ];
 
 const SCORE_POINTS = 100; // Points awarded for each correct answer
-const MAX_QUESTIONS = 4; // Maximum number of questions in the game
+const MAX_QUESTIONS = 9; // Maximum number of questions in the game
 
 // Function to start the game
 startGame = () => {
@@ -87,37 +127,33 @@ getNewQuestion = () => {
 
     acceptingAnswers = true;
 };
+
+const dropArea = document.getElementById('drop-area');
+
 // Drag and drop event listeners
-cardContainer.addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', e.target.dataset.number);
+dropArea.addEventListener('dragover', (e) => {
+  e.preventDefault();
 });
 
-cardContainer.addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
+dropArea.addEventListener('drop', (e) => {
+  e.preventDefault();
+  if (!acceptingAnswers) return;
 
-cardContainer.addEventListener('drop', (e) => {
-    e.preventDefault();
-    if (!acceptingAnswers) return;
+  const selectedChoice = e.dataTransfer.getData('text/plain');
+  const selectedAnswer = selectedChoice;
 
-    const selectedChoice = e.dataTransfer.getData('text/plain');
-    const selectedAnswer = selectedChoice;
+  let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'; //if true, toggle green css bar; if false, red
+  if (classToApply === 'correct') {
+    incrementScore(SCORE_POINTS);
+  }
 
-    if (classToApply === 'correct') { //if correct, increment score by 100 points
-        incrementScore(SCORE_POINTS);
-    }
+  dropArea.classList.add(classToApply);
 
-    const choiceCards = Array.from(cardContainer.getElementsByClassName('choice-card'));
-    const selectedCard = choiceCards.find((card) => card.dataset.number === selectedChoice);
-
-    selectedCard.classList.add(classToApply);
-
-    setTimeout(() => {
-        selectedCard.classList.remove(classToApply);
-        getNewQuestion();
-    }, 1000);
+  setTimeout(() => {
+    dropArea.classList.remove(classToApply);
+    getNewQuestion();
+  }, 1000);
 });
 
 // Function to increment the score
