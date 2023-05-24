@@ -31,10 +31,6 @@ class Sprite {
       "npcA-idle-left": [ [6,0],[5,0],[4,0], ],
       "npcA-walk-left": [ [5,1],[4,1],[3,1],[2,1],[1,1], ],
       "npcA-walk-right" : [ [8,1],[9,1],[10,1],[11,1],[12,1], ],
-      "npcB-idle-right": [ [7,0],[8,0],[9,0], ],
-      "npcB-idle-left": [ [6,0],[5,0],[4,0], ],
-      "npcB-walk-left": [ [5,1],[4,1],[3,1],[2,1],[1,1], ],
-      "npcB-walk-right" : [ [8,1],[9,1],[10,1],[11,1],[12,1], ],
       "Wizard-idle-right": [ [14,0],[15,0],[16,0],[17,0],[18,0],[19,0],],
       "Wizard-idle-left": [ [13,0],[12,0],[11,0],[10,0],[9,0],[8,0], ],
       "Wizard-walk-left": [ [7,0],[6,0],[5,0],[4,0],[3,0],[2,0],[1,0],[0,0], ],
@@ -83,10 +79,10 @@ class Sprite {
   
 
   draw(ctx, cameraPerson) {
-    const x = this.gameObject.x + utils.withGrid(10) - cameraPerson.x;
-    const y = this.gameObject.y + utils.withGrid(6) - cameraPerson.y;
+    const x = this.gameObject.x - 8 + utils.withGrid(10) - cameraPerson.x;
+    const y = this.gameObject.y - 18 + utils.withGrid(6) - cameraPerson.y;
 
-    if(this.image.id === "hero" || this.image.id === "npcA"){
+    if(this.image.id === "hero" || this.image.id === "npcA"|| this.image.id === "npcB"){
     this.isShadowLoaded && ctx.drawImage(this.shadow, 
       0,0, 
       32,32,
