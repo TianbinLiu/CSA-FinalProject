@@ -83,10 +83,10 @@ class Sprite {
   
 
   draw(ctx, cameraPerson) {
-    const x = this.gameObject.x - 8 + utils.withGrid(10) - cameraPerson.x;
-    const y = this.gameObject.y - 18 + utils.withGrid(6) - cameraPerson.y;
+    const x = this.gameObject.x + utils.withGrid(10) - cameraPerson.x;
+    const y = this.gameObject.y + utils.withGrid(6) - cameraPerson.y;
 
-    if(this.image.id === "hero" || this.image.id === "npcA"|| this.image.id === "npcB"){
+    if(this.image.id === "hero" || this.image.id === "npcA"){
     this.isShadowLoaded && ctx.drawImage(this.shadow, 
       0,0, 
       32,32,
@@ -106,7 +106,7 @@ class Sprite {
     
     const [frameX, frameY] = this.frame;
 
-    if(this.image.id === "hero" || this.image.id === "npcA"|| this.image.id === "npcB"){
+    if(this.image.id === "hero" || this.image.id === "npcA"){
       this.isLoaded && ctx.drawImage(this.image,
         frameX * this.image.sizex, frameY * this.image.sizey,
         this.image.sizex,this.image.sizey,

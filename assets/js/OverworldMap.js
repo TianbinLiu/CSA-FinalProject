@@ -40,7 +40,7 @@ class OverworldMap {
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
         console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
-        if(npc.id === "hero" || npc.id === "npcA"|| this.image.id === "npcB"){
+        if(npc.id === "hero" || npc.id === "npcA"){
           if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
             isReach = true;
           }
@@ -110,19 +110,6 @@ window.OverworldMaps = {
         sizex: 50,
         sizey: 37,
         id: "npcA",
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
-        behaviorLoop: [
-          { type: "stand",  direction: "left", time: 800 },
-          { type: "stand",  direction: "right", time: 1200 },
-        ]
-      }),
-      npcB: new Person({
-        isMounted: true,
-        x: utils.withGrid(1),
-        y: utils.withGrid(3),
-        sizex: 50,
-        sizey: 37,
-        id: "npcB",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
         behaviorLoop: [
           { type: "stand",  direction: "left", time: 800 },
