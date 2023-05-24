@@ -116,7 +116,7 @@ window.OverworldMaps = {
           { type: "stand",  direction: "right", time: 1200 },
         ]
       }),
-      Wizard: new Person({
+      Wizard: new GameObject({
         isMounted: true,
         x: utils.withGrid(3),
         y: utils.withGrid(7),
@@ -124,10 +124,6 @@ window.OverworldMaps = {
         sizey: 70,
         id: "Wizard",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
-        behaviorLoop: [
-          { type: "stand",  direction: "left", time: 800 },
-          { type: "stand",  direction: "right", time: 1200 },
-        ]
       }),
     },
     walls: {
