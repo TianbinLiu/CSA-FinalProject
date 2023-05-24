@@ -66,7 +66,7 @@ function findPreviousTextNodeId(textNodeIndex) {
 const textNodes = [
   {
     id: 1,
-    text: 'What\'s this, you want to challenge me on my Java knowledge of Unit 1: Primitive Types?',
+    text: 'What\'s this, you want to challenge me on my Java knowledge of Unit 1: Primitive Types? \n\n(Marlene will ask you two conceptual questions and explain several concepts. Pay close attention as they will be useful to you later on. Estimated time: 10 minutes.)',
     options: [
       {
         text: 'Yes, It\'ll be an equal exchange.',
@@ -80,7 +80,7 @@ const textNodes = [
   },
   {
     id: 2,
-    text: 'I don\'t get how this is going to benefit me, but sure, I get that you\'re on a grand quest or something.',
+    text: 'I don\'t get how this is going to benefit me, but sure, I get that you\'re on a grand quest or something. I only have 10 minutes before I need to leave, so make it quick.',
     options: [
       {
         text: 'Ask me anything, I can give as much as I take.',
@@ -154,7 +154,7 @@ const textNodes = [
   },
   {
     id: 7,
-    text: 'Concatenation is the process of combining two or more strings to form a new string by appending the next string to the end of the previous strings: \nfirstString.concat(nextString) \nYou can concatenate mixed primitive types by using the + operator: \nint waffNum = 3; \nSystem.out.println("I ate " + waffNum + " waffles this morning.");',
+    text: 'Concatenation is the process of combining two or more strings to form a new string by appending the next string to the end of the previous strings: \nfirstString.concat(nextString) \n\nYou can concatenate mixed primitive types by using the + operator: \nint waffNum = 3; \nSystem.out.println("I ate " + waffNum + " waffles this morning.");',
     options: [
       {
         text: 'Gotcha, but I\'ve got more questions.',
@@ -210,7 +210,7 @@ const textNodes = [
   },
   {
     id: 11,
-    text: 'Here\'s some good ones to remember: \n.toString() is a method used to get a String object representing a data type or element converted to a String. \n.equals() is used to compare 2 strings and returns if the content of the strings are equal. \n.hashCode() method computes the hash values of given input objects.',
+    text: '.toString() is a method used to get a String object representing a data type or element converted to a String. \n\n.equals() is used to compare 2 strings and returns if the content of the strings are equal. \n\n.hashCode() method computes the hash values of given input objects.',
     options: [
       {
         text: 'Thanks, I think I\'ve got it now.',
@@ -220,7 +220,7 @@ const textNodes = [
   },
   {
     id: 12,
-    text: 'I\'ve taught you all I know. I\'ve got to go now, or i\'ll be late to my art class. Farewell!',
+    text: 'I\'ve taught you all I know. I\'ve got to go now, or I\'ll be late to my art class. Farewell!',
     options: [
       {
         text: 'Oh Bye . . I mean, Farewell.',
