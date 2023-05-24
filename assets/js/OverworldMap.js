@@ -116,6 +116,19 @@ window.OverworldMaps = {
           { type: "stand",  direction: "right", time: 1200 },
         ]
       }),
+      npcB: new Person({
+        isMounted: true,
+        x: utils.withGrid(1),
+        y: utils.withGrid(3),
+        sizex: 50,
+        sizey: 37,
+        id: "npcB",
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
+        behaviorLoop: [
+          { type: "stand",  direction: "left", time: 800 },
+          { type: "stand",  direction: "right", time: 1200 },
+        ]
+      }),
       Wizard: new Person({
         isMounted: true,
         x: utils.withGrid(3),
