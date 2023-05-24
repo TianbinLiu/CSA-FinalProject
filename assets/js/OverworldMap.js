@@ -119,11 +119,8 @@ window.OverworldMaps = {
         id: "Wizard",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
         behaviorLoop: [
-          { type: "walk",  direction: "left" ,spritedirection: "left"},
           { type: "stand",  direction: "left", time: 800 },
-          { type: "walk",  direction: "up" , spritedirection: "left"},
-          { type: "walk",  direction: "right", spritedirection: "right" },
-          { type: "walk",  direction: "down", spritedirection: "right" },
+          { type: "stand",  direction: "right", time: 1200 },
         ]
       }),
     },
