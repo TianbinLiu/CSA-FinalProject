@@ -25,13 +25,6 @@ const utils = {
     return {x,y};
   },
 
-  oppositeDirection(direction) {
-    if (direction === "left") { return "right" }
-    if (direction === "right") { return "left" }
-    if (direction === "up") { return "down" }
-    return "up"
-  },
-
   nextPosition(initialX, initialY, direction) {
     let x = initialX;
     let y = initialY;
