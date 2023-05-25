@@ -5,6 +5,7 @@ let vy = 0;
 
 
 let persondirection = "right";
+let realdirection = "right";
 let realdirectionx = "right";
 let realdirectiony = "up";
 let canMovex = false;
@@ -19,23 +20,27 @@ addEventListener("keydown", function(event){
     if (event.code == 'ArrowRight'){
         persondirection="right";
         realdirectionx = "right";
+        realdirection = "right";
         checkifwalkingright = true;
         vx = 1;
     } 
     if (event.code == 'ArrowLeft') {
         persondirection="left";
         realdirectionx = "left";
+        realdirection = "left";
         checkifwalkingleft = true;
         vx = -1;
     }
     if (event.code == 'ArrowDown') {
         checkifwalkingdown = true;
         realdirectiony = "down";
+        realdirection = "down";
         vy = 1;
     }
     if (event.code == 'ArrowUp') {
         checkifwalkingup = true;
         realdirectiony = "up";
+        realdirection = "up";
         vy = -1;
     };
 })

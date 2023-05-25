@@ -110,7 +110,7 @@ class OverworldMap {
           }
         }
         else if(object.id === "Wizard"){
-          if(((nextCoords.x >= ((object.x - object.sizex/4) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/4) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/20))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/20)))))){
+          if(((nextCoords.x >= ((object.x - object.sizex/8) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/8) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/40))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/40)))))){
             ifisReach = true;
           }
         }

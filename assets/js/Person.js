@@ -14,6 +14,9 @@ class Person extends GameObject {
 
     update(state) {
       this.heroupdateSprite();
+      if(this.isPlayerControlled){
+        this.direction = realdirection;
+      }
       if(this.isPlayerControlled && (checkifwalkingright || checkifwalkingleft || checkifwalkingdown|| checkifwalkingup)){
         if(!state.map.heroisSpaceTaken(this.x, this.y, realdirectionx)){
           canMovex = true;
