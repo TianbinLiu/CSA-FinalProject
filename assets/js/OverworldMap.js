@@ -297,6 +297,89 @@ window.OverworldMaps = {
           }
         ]
       }),
+    },
+    walls: {
+      wall1: new GameObject({
+        id: "wall1",
+        wall: true,
+        x: utils.withGrid(0), //table left 1
+        y: utils.withGrid(5),
+        sizex: utils.withGrid(3),
+        sizey: utils.withGrid(5),
+      }),
+      wall2: new GameObject({
+        id: "wall2",
+        wall: true,
+        x: utils.withGrid(0),
+        y: utils.withGrid(2),
+        sizex: utils.withGrid(19),
+        sizey: utils.withGrid(1),
+      }),
+      wall3: new GameObject({
+        id: "wall3",
+        wall: true,
+        x: utils.withGrid(0),
+        y: utils.withGrid(3),
+        sizex: utils.withGrid(0),
+        sizey: utils.withGrid(22),
+      }),
+      wall4: new GameObject({
+        id: "wall4",
+        wall: true,
+        x: utils.withGrid(0),
+        y: utils.withGrid(25),
+        sizex: utils.withGrid(19),
+        sizey: utils.withGrid(0),
+      }),
+      wall5: new GameObject({
+        id: "wall5",
+        wall: true,
+        x: utils.withGrid(19),
+        y: utils.withGrid(2),
+        sizex: utils.withGrid(0),
+        sizey: utils.withGrid(25),
+      }),
+      wall6: new GameObject({
+        id: "wall6",             //chair left 1
+        wall: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(7),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+      wall7: new GameObject({
+        id: "wall7",               //table middle 1
+        wall: true,
+        x: utils.withGrid(6.5),
+        y: utils.withGrid(5.5),
+        sizex: utils.withGrid(6),
+        sizey: utils.withGrid(6.5),
+      }),
+      wall8: new GameObject({
+        id: "wall8",               // chair middle 1
+        wall: true,
+        x: utils.withGrid(8),
+        y: utils.withGrid(12),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+      door1: new GameObject({
+        id: "door1",
+        event: true,
+        x: utils.withGrid(4),
+        y: utils.withGrid(9),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
+      }),
+    },
+    cutsceneSpaces: {
+      ["door1"]: [
+        {
+          events: [
+            { type: "changeMap", map: "DemoRoom" }
+          ]
+        }
+      ]
     }
   },
 }
