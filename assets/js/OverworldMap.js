@@ -212,21 +212,21 @@ window.OverworldMaps = {
     }
   },
   classroom: {
-    lowerSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/blurBGimg.png",
+    lowerSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/classroom.png",
     upperSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/transparent.png",
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: utils.withGrid(5),
-        y: utils.withGrid(5),
+        x: utils.withGrid(3),
+        y: utils.withGrid(3),
         sizex: 50,
         sizey: 37,
         id: "hero",
       }),
       Wizard: new Person({
         isMounted: true,
-        x: utils.withGrid(3),
-        y: utils.withGrid(3),
+        x: utils.withGrid(13),
+        y: utils.withGrid(20),
         sizex: 80,
         sizey: 149,
         id: "Wizard",
