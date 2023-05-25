@@ -211,6 +211,22 @@ window.OverworldMaps = {
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(0.5),
       }),
+      wall7: new GameObject({
+        id: "wall7",
+        wall: true,
+        x: utils.withGrid(5),
+        y: utils.withGrid(3),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
+      }),
+      wall8: new GameObject({
+        id: "wall8",
+        wall: true,
+        x: utils.withGrid(7),
+        y: utils.withGrid(3),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
+      }),
       event1: new GameObject({
         id: "event1",
         event: true,
