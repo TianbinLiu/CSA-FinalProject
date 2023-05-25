@@ -142,7 +142,7 @@ window.OverworldMaps = {
       }),
       npcA: new Person({
         isMounted: true,
-        x: utils.withGrid(7),
+        x: utils.withGrid(6),
         y: utils.withGrid(9),
         sizex: 50,
         sizey: 37,
@@ -171,6 +171,22 @@ window.OverworldMaps = {
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
       }),
+      wall2: new GameObject({
+        id: "wall2",
+        wall: true,
+        x: utils.withGrid(0),
+        y: utils.withGrid(2),
+        sizex: utils.withGrid(10),
+        sizey: utils.withGrid(1),
+      }),
+      wall3: new GameObject({
+        id: "wall2",
+        wall: true,
+        x: utils.withGrid(0),
+        y: utils.withGrid(2),
+        sizex: utils.withGrid(10),
+        sizey: utils.withGrid(1),
+      }),
       event1: new GameObject({
         id: "event1",
         event: true,
@@ -193,7 +209,6 @@ window.OverworldMaps = {
       ["event1"]: [
         {
           events: [
-            { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
             { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
             { who: "npcA", type: "stand",  direction: "right", time: 500 },
             { type: "textMessage", text:"You can't be in there!"},
