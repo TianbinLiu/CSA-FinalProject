@@ -57,10 +57,12 @@ class OverworldMap {
     Object.values(this.walls).forEach(wall => {
       console.log("wall position(x): " + wall.x + ", " + "(y): " + wall.y + ", length: " + wall.sizex + ", width: " + wall.sizey)
       if(((x >= (wall.x+3)) && (x <= (wall.x + wall.sizex + 13))) && ((y >= wall.y) &&  (y <= (wall.y + wall.sizey)))){
-        isReach = true;
+        if(wall.wall){
+          isReach = true;
+        }
         if(!this.isCutscenePlaying && wall.event){
           this.startCutscene( this.cutsceneSpaces[wall.id][0].events );
-          isReach = false;
+          wall.event = false;
         }
       }
     })
@@ -163,6 +165,7 @@ window.OverworldMaps = {
     walls: {
       wall1: new GameObject({
         id: "wall1",
+        wall: true,
         x: utils.withGrid(6),
         y: utils.withGrid(5),
         sizex: utils.withGrid(2),
