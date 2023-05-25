@@ -3,6 +3,10 @@ const utils = {
     return n * 16;
   },
 
+  asGridCoord(x,y) {
+    return `${x*16},${y*16}`
+  },
+  
   heronextPosition(initialX, initialY, direction) {
     let x = initialX;
     let y = initialY;
@@ -20,7 +24,7 @@ const utils = {
     }
     return {x,y};
   },
-  
+
   oppositeDirection(direction) {
     if (direction === "left") { return "right" }
     if (direction === "right") { return "left" }
