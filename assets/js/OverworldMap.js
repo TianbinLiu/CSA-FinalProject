@@ -155,7 +155,7 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              { type: "textMessage", text: "I'm busy...", backHero: "npcA" },
+              { type: "textMessage", text: "I'm busy..."},
               { type: "textMessage", text: "Go away!"},
             ]
           }
@@ -238,7 +238,7 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              { type: "textMessage", text: "You made it!", backHero:"Wizard" },
+              { type: "textMessage", text: "You made it!"},
             ]
           }
         ]
