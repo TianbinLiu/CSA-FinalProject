@@ -41,17 +41,45 @@ class Overworld {
      step();
   }
  
-  init() {
-   this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
-   this.map.mountObjects();
- 
-   this.startGameLoop();
- 
-   this.map.startCutscene([
-     { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
-     { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
-     { who: "npcA", type: "stand",  direction: "right", time: 800 },
-   ])
- 
+  bindActionInput() {
+    new KeyPressListener("Enter", () => {
+      //Is there a person here to talk to?
+      this.map.checkForActionCutscene()
+    })
   }
+ 
+  bindHeroPositionCheck() {
+    document.addEventListener("PersonWalkingComplete", e => {
+      if (e.detail.whoId === "hero") {
+        //Hero's position has changed
+        this.map.checkForFootstepCutscene()
+      }
+    })
+  }
+ 
+  startMap(mapConfig) {
+   this.map = new OverworldMap(mapConfig);
+   this.map.overworld = this;
+   this.map.mountObjects();
+  }
+
+  init() {
+    this.startMap(window.OverworldMaps.DemoRoom);
+  
+  
+    this.bindActionInput();
+    this.bindHeroPositionCheck();
+  
+    this.startGameLoop();
+  
+  
+    // this.map.startCutscene([
+    //   { type: "textMessage", text: "WHY HELLO THERE!"}
+    //   // { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
+    //   // { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
+    //   // { who: "npcA", type: "stand",  direction: "right", time: 800 },
+    // ])
+
+  
+   }
  }

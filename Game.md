@@ -4,6 +4,16 @@ layout: default
 ---
 
 <style>
+:root {
+  --border-color: #291D4D;
+  --dialog-background: #FFF3B4;
+
+  --menu-background: #FFE8D2;
+  --menu-border-color: #A48465;
+  --menu-font-color: #3A160D;
+  --menu-selected-background: #7fc2ff;
+}
+
 * {
   box-sizing:border-box;
 }
@@ -27,6 +37,36 @@ body {
 
 .game-container canvas {
   image-rendering: pixelated;
+}
+
+.TextMessage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 36px;
+  padding: 4px;
+  background: var(--menu-background);
+  border-top: 1px solid var(--menu-border-color);
+  color: var(--menu-font-color);
+}
+.TextMessage_p {
+  margin: 0;
+  font-size: 12px;
+}
+.TextMessage_button {
+  margin: 0;
+  font-size: 8px;  
+  padding:0;
+  -webkit-appearance: none;
+  background:none;
+  border:0;
+  font-family: inherit;
+  cursor: pointer;
+
+  position: absolute;
+  right: 2px;
+  bottom: 0;
 }
 </style>
 

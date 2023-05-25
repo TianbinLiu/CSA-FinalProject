@@ -1,6 +1,8 @@
 class OverworldMap {
   constructor(config) {
+    this.overworld = null;
     this.gameObjects = config.gameObjects;
+    this.cutsceneSpaces = config.cutsceneSpaces || {};
     this.walls = config.walls || {};
 
     this.lowerImage = new Image();
@@ -40,7 +42,7 @@ class OverworldMap {
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
         console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
-        if(npc.id === "hero" || npc.id === "npcA"){
+        if(npc.id === "npcA"){
           if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
             isReach = true;
           }
@@ -90,7 +92,42 @@ class OverworldMap {
     Object.values(this.gameObjects).forEach(object => object.doBehaviorEvent(this))
   }
 
+  checkForActionCutscene() {
+    const hero = this.gameObjects["hero"];
+    const nextCoords = utils.heronextPosition(hero.x, hero.y, hero.direction);
+    const match = Object.values(this.gameObjects).find(object => {
+      let ifisReach = false;
+      if(object.isMounted){
+        if(object.id === "npcA"){
+          if(((nextCoords.x >= (object.x - (object.sizex/4)) && (nextCoords.x <= (object.x + (object.sizex/4)))) && ((nextCoords.y >= (object.y - (object.sizey/10))) &&  (nextCoords.y <= (object.y + (object.sizey/10)))))){
+            ifisReach = true;
+          }
+        }
+        else if(object.id === "Wizard"){
+          if(((nextCoords.x >= ((object.x - object.sizex/4) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/4) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/20))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/20)))))){
+            ifisReach = true;
+          }
+        }
+
+      return ifisReach;
+      }
+    });
+    if (!this.isCutscenePlaying && match && match.talking.length) {
+      this.startCutscene(match.talking[0].events)
+    }
+  }
+
+  checkForFootstepCutscene() {
+    const hero = this.gameObjects["hero"];
+    const match = this.cutsceneSpaces[ `${hero.x},${hero.y}` ];
+    if (!this.isCutscenePlaying && match) {
+      this.startCutscene( match[0].events )
+    }
+  }
+
 }
+
+
 
 window.OverworldMaps = {
   DemoRoom: {
@@ -116,21 +153,14 @@ window.OverworldMaps = {
         behaviorLoop: [
           { type: "stand",  direction: "left", time: 800 },
           { type: "stand",  direction: "right", time: 1200 },
-        ]
-      }),
-      Wizard: new Person({
-        isMounted: true,
-        x: utils.withGrid(3),
-        y: utils.withGrid(6),
-        sizex: 80,
-        sizey: 149,
-        id: "Wizard",
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
-        behaviorLoop: [
-          { type: "stand",  direction: "left", time: 800 },
-          { type: "walk",  direction: "left", spritedirection: "left" },
-          { type: "stand",  direction: "right", time: 1200 },
-          { type: "walk",  direction: "right", spritedirection: "right" },
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
+              { type: "textMessage", text: "Go away!"},
+            ]
+          }
         ]
       }),
     },
@@ -141,33 +171,61 @@ window.OverworldMaps = {
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
       })
+    },
+    cutsceneSpaces: {
+      [utils.asGridCoord(7,4)]: [
+        {
+          events: [
+            { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
+            { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
+            { who: "npcA", type: "stand",  direction: "right", time: 500 },
+            { type: "textMessage", text:"You can't be in there!"},
+            { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
+            { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
+          ]
+        }
+      ],
+      [utils.asGridCoord(5,10)]: [
+        {
+          events: [
+            { type: "changeMap", map: "Kitchen" }
+          ]
+        }
+      ]
     }
   },
   Kitchen: {
-    lowerSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/KitchenLower.png",
-    upperSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/KitchenUpper.png",
+    lowerSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/blurBGimg.png",
+    upperSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/transparent.png",
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: 4*16,
-        y: 5*16,
+        x: utils.withGrid(5),
+        y: utils.withGrid(5),
         sizex: 50,
         sizey: 37,
+        id: "hero",
       }),
-      npcA: new GameObject({
-        x: 7*16,
-        y: 7*16,
-        sizex: 50,
-        sizey: 37,
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
+      Wizard: new Person({
+        isMounted: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(3),
+        sizex: 80,
+        sizey: 149,
+        id: "Wizard",
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
+        behaviorLoop: [
+          { type: "stand",  direction: "left", time: 800 },
+          { type: "stand",  direction: "right", time: 1200 },
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "You made it!", faceHero:"npcB" },
+            ]
+          }
+        ]
       }),
-      npcB: new GameObject({
-        x: 6*16,
-        y: 6*16,
-        sizex: 50,
-        sizey: 37,
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png"
-      })
     }
   },
 }
