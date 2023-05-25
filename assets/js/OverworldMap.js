@@ -60,6 +60,7 @@ class OverworldMap {
         isReach = true;
         if(!this.isCutscenePlaying && wall.event){
           this.startCutscene( this.cutsceneSpaces[wall.id][0].events );
+          isReach = false;
         }
       }
     })
@@ -170,15 +171,15 @@ window.OverworldMaps = {
       event1: new GameObject({
         id: "event1",
         event: true,
-        x: utils.withGrid(5),
-        y: utils.withGrid(9),
+        x: utils.withGrid(4),
+        y: utils.withGrid(8),
         sizex: utils.withGrid(1),
         sizey: utils.withGrid(1),
       }),
       door1: new GameObject({
         id: "door1",
         event: true,
-        x: utils.withGrid(5),
+        x: utils.withGrid(4),
         y: utils.withGrid(9),
         sizex: utils.withGrid(1),
         sizey: utils.withGrid(1),
