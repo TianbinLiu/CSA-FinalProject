@@ -46,7 +46,7 @@ class OverworldMap {
           }
         }
         else if(npc.id === "Wizard"){
-          if(((x >= ((npc.x - npc.sizex/2) - (npc.sizex/8)) && (x <= ((npc.x - npc.sizex/2) + (npc.sizex/8)))) && ((y >= ((npc.y + npc.sizey/2) - (npc.sizey/20))) &&  (y <= ((npc.y + npc.sizey/2) + (npc.sizey/20)))))){
+          if(((x >= ((npc.x - npc.sizex/4) - (npc.sizex/8)) && (x <= ((npc.x - npc.sizex/4) + (npc.sizex/8)))) && ((y >= ((npc.y + npc.sizey/4) - (npc.sizey/20))) &&  (y <= ((npc.y + npc.sizey/4) + (npc.sizey/20)))))){
             isReach = true;
           }
         }
@@ -119,7 +119,7 @@ window.OverworldMaps = {
       Wizard: new Person({
         isMounted: true,
         x: utils.withGrid(3),
-        y: utils.withGrid(7),
+        y: utils.withGrid(6),
         sizex: 80,
         sizey: 149,
         id: "Wizard",
