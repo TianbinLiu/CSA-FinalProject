@@ -46,7 +46,7 @@ class OverworldMap {
           }
         }
         else if(npc.id === "Wizard"){
-          if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/20))) &&  (y <= (npc.y + (npc.sizey/20)))))){
+          if(((x >= ((npc.x - npc.sizex/2) - (npc.sizex/8)) && (x <= ((npc.x - npc.sizex/2) + (npc.sizex/8)))) && ((y >= ((npc.y + npc.sizey/2) - (npc.sizey/20))) &&  (y <= ((npc.y + npc.sizey/2) + (npc.sizey/20)))))){
             isReach = true;
           }
         }
