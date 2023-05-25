@@ -58,6 +58,9 @@ class OverworldMap {
       console.log("wall position(x): " + wall.x + ", " + "(y): " + wall.y + ", length: " + wall.sizex + ", width: " + wall.sizey)
       if(((x >= (wall.x+3)) && (x <= (wall.x + wall.sizex + 13))) && ((y >= wall.y) &&  (y <= (wall.y + wall.sizey)))){
         isReach = true;
+        if(!this.isCutscenePlaying && wall.event){
+          this.startCutscene( this.cutsceneSpaces[wall.id][0].events );
+        }
       }
     })
     return isReach;
@@ -117,14 +120,6 @@ class OverworldMap {
     }
   }
 
-  checkForFootstepCutscene() {
-    const hero = this.gameObjects["hero"];
-    const match = this.cutsceneSpaces[ `${hero.x},${hero.y}` ];
-    if (!this.isCutscenePlaying && match) {
-      this.startCutscene( match[0].events )
-    }
-  }
-
 }
 
 
@@ -157,7 +152,7 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              { type: "textMessage", text: "I'm busy...", faceHero: "npcA" },
+              { type: "textMessage", text: "I'm busy...", backHero: "npcA" },
               { type: "textMessage", text: "Go away!"},
             ]
           }
@@ -166,14 +161,32 @@ window.OverworldMaps = {
     },
     walls: {
       wall1: new GameObject({
+        id: "wall1",
         x: utils.withGrid(6),
         y: utils.withGrid(5),
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
-      })
+      }),
+      event1: new GameObject({
+        id: "event1",
+        event: true,
+        x: utils.withGrid(5),
+        y: utils.withGrid(9),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
+      }),
+      door1: new GameObject({
+        id: "door1",
+        event: true,
+        x: utils.withGrid(5),
+        y: utils.withGrid(9),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
+      }),
     },
     cutsceneSpaces: {
-      [utils.asGridCoord(7,4)]: [
+
+      ["event1"]: [
         {
           events: [
             { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
@@ -185,7 +198,7 @@ window.OverworldMaps = {
           ]
         }
       ],
-      [utils.asGridCoord(5,10)]: [
+      ["door1"]: [
         {
           events: [
             { type: "changeMap", map: "Kitchen" }
@@ -221,7 +234,7 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              { type: "textMessage", text: "You made it!", faceHero:"Wizard" },
+              { type: "textMessage", text: "You made it!", backHero:"Wizard" },
             ]
           }
         ]

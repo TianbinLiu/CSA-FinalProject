@@ -19,6 +19,7 @@ class GameObject {
     this.behaviorLoopIndex = 0;
 
     this.talking = config.talking || [];
+    this.event = config.event || false;
   }
 
 

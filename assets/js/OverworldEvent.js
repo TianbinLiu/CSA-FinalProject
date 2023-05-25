@@ -49,8 +49,8 @@ class OverworldEvent {
 
   textMessage(resolve) {
 
-    if (this.event.faceHero) {
-      const obj = this.map.gameObjects[this.event.faceHero];
+    if (this.event.backHero) {
+      const obj = this.map.gameObjects[this.event.backHero];
       obj.direction = utils.oppositeDirection(this.map.gameObjects["hero"].direction);
     }
 
@@ -66,7 +66,7 @@ class OverworldEvent {
     resolve();
   }
 
-  
+
   init() {
     return new Promise(resolve => {
       this[this.event.type](resolve)      

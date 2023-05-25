@@ -48,14 +48,6 @@ class Overworld {
     })
   }
  
-  bindHeroPositionCheck() {
-    document.addEventListener("PersonWalkingComplete", e => {
-      if (e.detail.whoId === "hero") {
-        //Hero's position has changed
-        this.map.checkForFootstepCutscene()
-      }
-    })
-  }
  
   startMap(mapConfig) {
    this.map = new OverworldMap(mapConfig);
@@ -68,7 +60,6 @@ class Overworld {
   
   
     this.bindActionInput();
-    this.bindHeroPositionCheck();
   
     this.startGameLoop();
   
