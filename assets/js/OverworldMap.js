@@ -225,14 +225,13 @@ window.OverworldMaps = {
       }),
       Wizard: new Person({
         isMounted: true,
-        x: utils.withGrid(13),
-        y: utils.withGrid(20),
+        x: utils.withGrid(12),
+        y: utils.withGrid(19),
         sizex: 80,
         sizey: 149,
         id: "Wizard",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
         behaviorLoop: [
-          { type: "stand",  direction: "left", time: 800 },
           { type: "stand",  direction: "right", time: 1200 },
         ],
         talking: [
