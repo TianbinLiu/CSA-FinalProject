@@ -205,13 +205,13 @@ window.OverworldMaps = {
       ["door1"]: [
         {
           events: [
-            { type: "changeMap", map: "Kitchen" }
+            { type: "changeMap", map: "classroom" }
           ]
         }
       ]
     }
   },
-  Kitchen: {
+  classroom: {
     lowerSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/blurBGimg.png",
     upperSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/transparent.png",
     gameObjects: {
