@@ -363,23 +363,6 @@ window.OverworldMaps = {
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
       }),
-      door1: new GameObject({
-        id: "door1",
-        event: true,
-        x: utils.withGrid(2),
-        y: utils.withGrid(3),
-        sizex: utils.withGrid(1),
-        sizey: utils.withGrid(0),
-      }),
     },
-    cutsceneSpaces: {
-      ["door1"]: [
-        {
-          events: [
-            { type: "changeMap", map: "DemoRoom" }
-          ]
-        }
-      ]
-    }
   },
 }
