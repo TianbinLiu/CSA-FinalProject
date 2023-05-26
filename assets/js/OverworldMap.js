@@ -359,9 +359,9 @@ window.OverworldMaps = {
         id: "wall8",               // chair middle 1
         wall: true,
         x: utils.withGrid(8),
-        y: utils.withGrid(13),
+        y: utils.withGrid(13.5),
         sizex: utils.withGrid(2),
-        sizey: utils.withGrid(1),
+        sizey: utils.withGrid(0.5),
       }),
     },
   },
