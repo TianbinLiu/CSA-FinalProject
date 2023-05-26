@@ -395,7 +395,7 @@ window.OverworldMaps = {
         x: utils.withGrid(0),
         y: utils.withGrid(12),
         sizex: utils.withGrid(3),
-        sizey: utils.withGrid(4),
+        sizey: utils.withGrid(4.5),
       }),
 
       table4: new GameObject({
@@ -404,7 +404,7 @@ window.OverworldMaps = {
         x: utils.withGrid(0),
         y: utils.withGrid(18),
         sizex: utils.withGrid(3),
-        sizey: utils.withGrid(4),
+        sizey: utils.withGrid(4.5),
       }),
 
       table5: new GameObject({
@@ -434,8 +434,8 @@ window.OverworldMaps = {
         sizey: utils.withGrid(4.5),
       }),
 
-      table7: new GameObject({
-        id: "table7",               //table right 2
+      table8: new GameObject({
+        id: "table8",               //table right 3
         wall: true,
         x: utils.withGrid(16),
         y: utils.withGrid(18.5),
