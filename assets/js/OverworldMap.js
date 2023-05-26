@@ -355,14 +355,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(0),
         sizey: utils.withGrid(25),
       }),
-      chair1: new GameObject({
-        id: "chair1",             //chair left 1
-        wall: true,
-        x: utils.withGrid(3),
-        y: utils.withGrid(7),
-        sizex: utils.withGrid(2),
-        sizey: utils.withGrid(2),
-      }),
+
       table2topleft: new GameObject({
         id: "table2topleft",               //table middle 1
         wall: true,
@@ -395,6 +388,70 @@ window.OverworldMaps = {
         sizex: utils.withGrid(1.5),
         sizey: utils.withGrid(1.5),
       }),
+
+      table3: new GameObject({
+        id: "table3",               //table left 2
+        wall: true,
+        x: utils.withGrid(0),
+        y: utils.withGrid(12),
+        sizex: utils.withGrid(3),
+        sizey: utils.withGrid(4),
+      }),
+
+      table4: new GameObject({
+        id: "table4",               //table left 3
+        wall: true,
+        x: utils.withGrid(0),
+        y: utils.withGrid(18),
+        sizex: utils.withGrid(3),
+        sizey: utils.withGrid(4),
+      }),
+
+      table5: new GameObject({
+        id: "table5",               //table middle 2
+        wall: true,
+        x: utils.withGrid(7),
+        y: utils.withGrid(21.5),
+        sizex: utils.withGrid(4),
+        sizey: utils.withGrid(3.5),
+      }),
+
+      table6: new GameObject({
+        id: "table6",               //table right 1
+        wall: true,
+        x: utils.withGrid(16),
+        y: utils.withGrid(5.5),
+        sizex: utils.withGrid(3),
+        sizey: utils.withGrid(4.5),
+      }),
+
+      table7: new GameObject({
+        id: "table7",               //table right 2
+        wall: true,
+        x: utils.withGrid(16),
+        y: utils.withGrid(11.5),
+        sizex: utils.withGrid(3),
+        sizey: utils.withGrid(4.5),
+      }),
+
+      table7: new GameObject({
+        id: "table7",               //table right 2
+        wall: true,
+        x: utils.withGrid(16),
+        y: utils.withGrid(18.5),
+        sizex: utils.withGrid(3),
+        sizey: utils.withGrid(4.5),
+      }),
+
+      chair1: new GameObject({
+        id: "chair1",             //chair left 1
+        wall: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(7),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+
       chair2: new GameObject({
         id: "chair2",               // chair middle 1
         wall: true,
@@ -402,6 +459,68 @@ window.OverworldMaps = {
         y: utils.withGrid(12),
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
+      }),
+      
+      chair3: new GameObject({
+        id: "chair3",               // chair middle 2
+        wall: true,
+        x: utils.withGrid(12),
+        y: utils.withGrid(6),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+      chair4: new GameObject({
+        id: "chair4",               // chair middle 3
+        wall: true,
+        x: utils.withGrid(12),
+        y: utils.withGrid(9),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+
+      chair5: new GameObject({
+        id: "chair5",               // chair left 2
+        wall: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(13),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+      
+      chair6: new GameObject({
+        id: "chair6",               // chair left 3
+        wall: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(18),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+
+      chair7: new GameObject({
+        id: "chair7",               // chair left 3
+        wall: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(20),
+        sizex: utils.withGrid(2),
+        sizey: utils.withGrid(2),
+      }),
+
+      chair8: new GameObject({
+        id: "chair8",               // chair left 3
+        wall: true,
+        x: utils.withGrid(11.75),
+        y: utils.withGrid(22.75),
+        sizex: utils.withGrid(1.25),
+        sizey: utils.withGrid(1.25),
+      }),
+
+      bookshelf: new GameObject({
+        id: "bookshelf",               // chair left 3
+        wall: true,
+        x: utils.withGrid(15.75),
+        y: utils.withGrid(3),
+        sizex: utils.withGrid(2.25),
+        sizey: utils.withGrid(0.5),
       }),
     },
   },
