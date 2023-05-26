@@ -268,7 +268,7 @@ window.OverworldMaps = {
   },
   classroom: {
     lowerSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/classroom.png",
-    upperSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/transparent.png",
+    upperSrc: "https://tianbinliu.github.io/CSA-FinalProject/images/maps/classroomUpper.png",
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
@@ -303,7 +303,7 @@ window.OverworldMaps = {
         id: "wall1",
         wall: true,
         x: utils.withGrid(0), //table left 1
-        y: utils.withGrid(5),
+        y: utils.withGrid(6),
         sizex: utils.withGrid(3),
         sizey: utils.withGrid(5),
       }),
@@ -343,25 +343,25 @@ window.OverworldMaps = {
         id: "wall6",             //chair left 1
         wall: true,
         x: utils.withGrid(3),
-        y: utils.withGrid(7),
+        y: utils.withGrid(8),
         sizex: utils.withGrid(2),
-        sizey: utils.withGrid(2),
+        sizey: utils.withGrid(1),
       }),
       wall7: new GameObject({
         id: "wall7",               //table middle 1
         wall: true,
         x: utils.withGrid(6.5),
-        y: utils.withGrid(5.5),
+        y: utils.withGrid(6),
         sizex: utils.withGrid(6),
-        sizey: utils.withGrid(6.5),
+        sizey: utils.withGrid(6),
       }),
       wall8: new GameObject({
         id: "wall8",               // chair middle 1
         wall: true,
         x: utils.withGrid(8),
-        y: utils.withGrid(12),
+        y: utils.withGrid(13),
         sizex: utils.withGrid(2),
-        sizey: utils.withGrid(2),
+        sizey: utils.withGrid(1),
       }),
     },
   },
