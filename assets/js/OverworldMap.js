@@ -525,7 +525,7 @@ window.OverworldMaps = {
         x: utils.withGrid(15.75),
         y: utils.withGrid(3),
         sizex: utils.withGrid(2.25),
-        sizey: utils.withGrid(0.5),
+        sizey: utils.withGrid(1),
       }),
     },
   },
