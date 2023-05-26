@@ -251,7 +251,12 @@ window.OverworldMaps = {
           events: [
             { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
             { who: "npcA", type: "stand",  direction: "right", time: 500 },
-            { type: "textMessage", text:"You can't be in there!"},
+            { type: "textMessage", text:"You can't stay there! "},
+            { type: "textMessage", text:"Go straight to the CS classroom. You don't want to be late right?"},
+            { type: "textMessage", text:"..."},
+            { type: "textMessage", text:"......."},
+            { type: "textMessage", text:"..........."},
+            { type: "textMessage", text:"Move!!!!!!!!!"},
             { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
             { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
           ]
