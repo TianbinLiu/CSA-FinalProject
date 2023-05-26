@@ -127,14 +127,15 @@ body {
     align-items: center;
     justify-content: center;
     margin: 1rem;
-    width: 15rem;
-    height: 15rem;
+    width: 17.6rem;
+    height: 22.7rem;
     border: 0.2rem solid blanchedalmond;
     border-radius: 4px;
-    background: blanchedalmond;
     font-size: 3rem;
     color: black;
     cursor: grab;
+    background-image: url("images/card.png");
+    background-size: 140px;
   }
   
   .choice-card:hover {
