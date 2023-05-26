@@ -299,7 +299,7 @@ window.OverworldMaps = {
       }),
     },
     walls: {
-      table1: new GameObject({
+      table1left: new GameObject({
         id: "table1left",
         wall: true,
         x: utils.withGrid(0), //table left 1
@@ -307,7 +307,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(1),
         sizey: utils.withGrid(5),
       }),
-      table1: new GameObject({
+      table1righttop: new GameObject({
         id: "table1righttop",
         wall: true,
         x: utils.withGrid(2), //table left 1
@@ -315,7 +315,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(1),
         sizey: utils.withGrid(1),
       }),
-      table1: new GameObject({
+      table1rightbutton: new GameObject({
         id: "table1rightbutton",
         wall: true,
         x: utils.withGrid(2), //table left 1
@@ -363,7 +363,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
       }),
-      table2: new GameObject({
+      table2topleft: new GameObject({
         id: "table2topleft",               //table middle 1
         wall: true,
         x: utils.withGrid(6.5),
@@ -371,7 +371,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(1),
         sizey: utils.withGrid(1),
       }),
-      table2: new GameObject({
+      table2topright: new GameObject({
         id: "table2topright",               //table middle 1
         wall: true,
         x: utils.withGrid(11.5),
@@ -379,7 +379,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(1),
         sizey: utils.withGrid(1),
       }),
-      table2: new GameObject({
+      table2buttonleft: new GameObject({
         id: "table2buttonleft",               //table middle 1
         wall: true,
         x: utils.withGrid(6.5),
@@ -387,7 +387,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(1.5),
         sizey: utils.withGrid(1.5),
       }),
-      table2: new GameObject({
+      table2buttonright: new GameObject({
         id: "table2buttonright",               //table middle 1
         wall: true,
         x: utils.withGrid(11.5),
