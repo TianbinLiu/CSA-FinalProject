@@ -343,9 +343,9 @@ window.OverworldMaps = {
         id: "wall6",             //chair left 1
         wall: true,
         x: utils.withGrid(3),
-        y: utils.withGrid(8),
+        y: utils.withGrid(7),
         sizex: utils.withGrid(2),
-        sizey: utils.withGrid(1),
+        sizey: utils.withGrid(2),
       }),
       wall7: new GameObject({
         id: "wall7",               //table middle 1
@@ -353,15 +353,15 @@ window.OverworldMaps = {
         x: utils.withGrid(6.5),
         y: utils.withGrid(6),
         sizex: utils.withGrid(6),
-        sizey: utils.withGrid(6),
+        sizey: utils.withGrid(6.5),
       }),
       wall8: new GameObject({
         id: "wall8",               // chair middle 1
         wall: true,
         x: utils.withGrid(8),
-        y: utils.withGrid(13.5),
+        y: utils.withGrid(12),
         sizex: utils.withGrid(2),
-        sizey: utils.withGrid(0.5),
+        sizey: utils.withGrid(2),
       }),
     },
   },
