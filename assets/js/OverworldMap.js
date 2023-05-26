@@ -299,13 +299,29 @@ window.OverworldMaps = {
       }),
     },
     walls: {
-      wall1: new GameObject({
-        id: "wall1",
+      table1: new GameObject({
+        id: "table1left",
         wall: true,
         x: utils.withGrid(0), //table left 1
-        y: utils.withGrid(6),
-        sizex: utils.withGrid(3),
+        y: utils.withGrid(5),
+        sizex: utils.withGrid(1),
         sizey: utils.withGrid(5),
+      }),
+      table1: new GameObject({
+        id: "table1righttop",
+        wall: true,
+        x: utils.withGrid(2), //table left 1
+        y: utils.withGrid(5),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
+      }),
+      table1: new GameObject({
+        id: "table1rightbutton",
+        wall: true,
+        x: utils.withGrid(2), //table left 1
+        y: utils.withGrid(9),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
       }),
       wall2: new GameObject({
         id: "wall2",
@@ -339,24 +355,48 @@ window.OverworldMaps = {
         sizex: utils.withGrid(0),
         sizey: utils.withGrid(25),
       }),
-      wall6: new GameObject({
-        id: "wall6",             //chair left 1
+      chair1: new GameObject({
+        id: "chair1",             //chair left 1
         wall: true,
         x: utils.withGrid(3),
         y: utils.withGrid(7),
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
       }),
-      wall7: new GameObject({
-        id: "wall7",               //table middle 1
+      table2: new GameObject({
+        id: "table2topleft",               //table middle 1
         wall: true,
         x: utils.withGrid(6.5),
-        y: utils.withGrid(6),
-        sizex: utils.withGrid(6),
-        sizey: utils.withGrid(6.5),
+        y: utils.withGrid(5.5),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
       }),
-      wall8: new GameObject({
-        id: "wall8",               // chair middle 1
+      table2: new GameObject({
+        id: "table2topright",               //table middle 1
+        wall: true,
+        x: utils.withGrid(11.5),
+        y: utils.withGrid(5.5),
+        sizex: utils.withGrid(1),
+        sizey: utils.withGrid(1),
+      }),
+      table2: new GameObject({
+        id: "table2buttonleft",               //table middle 1
+        wall: true,
+        x: utils.withGrid(6.5),
+        y: utils.withGrid(10.5),
+        sizex: utils.withGrid(1.5),
+        sizey: utils.withGrid(1.5),
+      }),
+      table2: new GameObject({
+        id: "table2buttonright",               //table middle 1
+        wall: true,
+        x: utils.withGrid(11.5),
+        y: utils.withGrid(10.5),
+        sizex: utils.withGrid(1.5),
+        sizey: utils.withGrid(1.5),
+      }),
+      chair2: new GameObject({
+        id: "chair2",               // chair middle 1
         wall: true,
         x: utils.withGrid(8),
         y: utils.withGrid(12),
