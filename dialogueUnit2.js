@@ -71,6 +71,10 @@ const textNodes = [
       {
         text: 'Sorry about the nap, I assure you it\'ll be an equal excha--',
         nextText: 2
+      },
+      {
+        text: 'Oh I can explain, since you were asleep. So you see--',
+        nextText: 2
       }
     ]
   },
