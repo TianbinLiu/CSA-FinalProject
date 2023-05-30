@@ -101,20 +101,17 @@ class OverworldMap {
   checkForActionCutscene() {
     const hero = this.gameObjects["hero"];
     const nextCoords = utils.heronextPosition(hero.x, hero.y, hero.direction);
-    let objectReach;
     const match = Object.values(this.gameObjects).find(object => {
       let ifisReach = false;
       if(object.isMounted){
         if(object.id === "npcA" || object.id === "Student1"){
           if(((nextCoords.x >= (object.x - (object.sizex/4)) && (nextCoords.x <= (object.x + (object.sizex/4)))) && ((nextCoords.y >= (object.y - (object.sizey/10))) &&  (nextCoords.y <= (object.y + (object.sizey/10)))))){
             ifisReach = true;
-            objectReach = object.id;
           }
         }
         else if(object.id === "Wizard"){
           if(((nextCoords.x >= ((object.x - object.sizex/8) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/8) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/40))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/40)))))){
             ifisReach = true;
-            objectReach = object.id;
           }
         }
 
@@ -123,7 +120,7 @@ class OverworldMap {
     });
     if (!this.isCutscenePlaying && match && match.talking.length) {
       this.startCutscene(match.talking[0].events)
-      if(objectReach === "Student1"){
+      if(match.id === "Student1"){
         showSecondPage1 = true;
       }
     }
