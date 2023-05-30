@@ -78,7 +78,7 @@ body {
 
 <html>
 <head>
-<script src="{{ '/node_modules/jquery/dist/jquery.js' | relative_url }}" type="text/javascript"></script> 
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 
 </head>
 <body>
