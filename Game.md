@@ -77,7 +77,13 @@ body {
 </style>
 
 <html>
+<head>
+<script src="node_modules/jquery/dist/jquery.min.js"></script> 
+<script src="{{ '/assets/js/changepage.js' | relative_url }}" type="text/javascript"></script> 
+
+</head>
 <body>
+<div id="includedContent"></div>
 <div class="game-container">
     <canvas class="game-canvas" width="352" height="198"></canvas>
 </div>
