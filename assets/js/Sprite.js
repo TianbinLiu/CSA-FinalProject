@@ -127,7 +127,7 @@ class Sprite {
         frameX * this.image.sizex, frameY * this.image.sizey,
         this.image.sizex,this.image.sizey,
         x,y,
-        37,37,
+        24,24,
       );
     }
 

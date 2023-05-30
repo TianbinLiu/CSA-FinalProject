@@ -1,6 +1,7 @@
-let showSecondPage1 = true;
+let showSecondPage1 = false;
 let showSecondPage2 = false;
 let showSecondPage3 = false;
+let finalBattle = false;
 
 $(function() {
     // Load or hide the second HTML page based on the value of showSecondPage
@@ -24,6 +25,15 @@ $(function() {
     // Load or hide the second HTML page based on the value of showSecondPage
     if (showSecondPage3) {
         $("#includedContent").load("dialogueUnit3.html");
+    } else {
+        $("#includedContent").hide();
+    }
+});
+
+$(function() {
+    // Load or hide the second HTML page based on the value of showSecondPage
+    if (finalBattle) {
+        $("#includedContent").load("quiz.html");
     } else {
         $("#includedContent").hide();
     }
