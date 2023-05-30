@@ -124,7 +124,7 @@ class OverworldMap {
     if (!this.isCutscenePlaying && match && match.talking.length) {
       this.startCutscene(match.talking[0].events)
       if(objectReach === "Student1"){
-        showSecondPage1 = false;
+        showSecondPage1 = true;
       }
     }
   }
