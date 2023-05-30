@@ -79,7 +79,6 @@ body {
 <html>
 <head>
 <script src="{{ '/node_modules/jquery/dist/jquery.min.js' | relative_url }}" type="text/javascript"></script> 
-<script src="{{ '/assets/js/changepage.js' | relative_url }}" type="text/javascript"></script> 
 
 </head>
 <body>
@@ -89,6 +88,7 @@ body {
 </div>
 </body>
 
+<script src="{{ '/assets/js/changepage.js' | relative_url }}" type="text/javascript"></script> 
 <script src="{{ '/assets/js/utils.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/inputHandler.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/Overworld.js' | relative_url }}" type="text/javascript"></script>
