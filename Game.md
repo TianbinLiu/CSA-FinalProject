@@ -38,7 +38,6 @@ body {
 .game-container canvas {
   image-rendering: pixelated;
 }
-
 .TextMessage {
   position: absolute;
   left: 0;
@@ -54,6 +53,13 @@ body {
   margin: 0;
   font-size: 12px;
 }
+.TextMessage span {
+  opacity: 0;
+}
+.TextMessage span.revealed {
+  opacity: 1;
+}
+
 .TextMessage_button {
   margin: 0;
   font-size: 8px;  
