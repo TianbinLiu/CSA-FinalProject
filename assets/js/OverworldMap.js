@@ -42,8 +42,13 @@ class OverworldMap {
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
         console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
-        if(npc.id === "npcA" || npc.id === "Student1"){
+        if(npc.id === "npcA"){
           if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
+            isReach = true;
+          }
+        }
+        if(npc.id === "Student1"){
+          if(((x >= (npc.x - 16 - (npc.sizex/4)) && (x <= (npc.x - 16  + (npc.sizex/4)))) && ((y >= (npc.y - 16  - (npc.sizey/10))) &&  (y <= (npc.y - 16  + (npc.sizey/10)))))){
             isReach = true;
           }
         }
@@ -103,8 +108,13 @@ class OverworldMap {
     const match = Object.values(this.gameObjects).find(object => {
       let ifisReach = false;
       if(object.isMounted){
-        if(object.id === "npcA" || object.id === "Student1"){
+        if(object.id === "npcA"){
           if(((nextCoords.x >= (object.x - (object.sizex/4)) && (nextCoords.x <= (object.x + (object.sizex/4)))) && ((nextCoords.y >= (object.y - (object.sizey/10))) &&  (nextCoords.y <= (object.y + (object.sizey/10)))))){
+            ifisReach = true;
+          }
+        }
+        else if(object.id === "Student1"){
+          if(((nextCoords.x >= (object.x - 16 - (object.sizex/4)) && (nextCoords.x <= (object.x - 16 + (object.sizex/4)))) && ((nextCoords.y >= (object.y - 16 - (object.sizey/10))) &&  (nextCoords.y <= (object.y - 16 + (object.sizey/10)))))){
             ifisReach = true;
           }
         }
@@ -308,7 +318,7 @@ window.OverworldMaps = {
       Student1: new Person({
         isMounted: true,
         x: utils.withGrid(3),
-        y: utils.withGrid(11),
+        y: utils.withGrid(12),
         sizex: 24,
         sizey: 24,
         id: "Student1",
