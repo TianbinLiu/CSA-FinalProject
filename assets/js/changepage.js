@@ -39,10 +39,3 @@ $(function() {
     }
 });
 
-let myImage1 = document.getElementById("myImage1");
-
-// Add a click event listener to the image
-myImage1.addEventListener("click", function() {
-  // Set the boolean variable to false
-  showSecondPage1 = false;
-});
