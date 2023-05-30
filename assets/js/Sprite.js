@@ -35,6 +35,10 @@ class Sprite {
       "Wizard-idle-left": [ [27,0],[26,0],[25,0],[24,0],[23,0],[22,0], ],
       "Wizard-walk-left": [ [21,0],[20,0],[19,0],[18,0],[17,0],[16,0],[15,0],[14,0], ],
       "Wizard-walk-right" : [ [6,0],[7,0],[8,0],[9,0],[10,0],[11,0],[12,0],[13,0], ],
+      "Student1-idle-right": [ [2,0],[3,0]],
+      "Student1-idle-left": [ [0,0],[1,0] ],
+      "Student1-walk-left": [ [0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1], ],
+      "Student1-walk-right" : [ [0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2], ],
     }
     this.currentAnimation = config.currentAnimation || (this.image.id + "-idle-right");
     this.currentAnimationFrame = 0;
@@ -116,6 +120,14 @@ class Sprite {
         this.image.sizex,this.image.sizey,
         x,y,
         40,74,
+      );
+    }
+    else if(this.image.id === "Student1"){
+      this.isLoaded && ctx.drawImage(this.image,
+        frameX * this.image.sizex, frameY * this.image.sizey,
+        this.image.sizex,this.image.sizey,
+        x,y,
+        37,37,
       );
     }
 

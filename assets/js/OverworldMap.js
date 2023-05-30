@@ -42,7 +42,7 @@ class OverworldMap {
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
         console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
-        if(npc.id === "npcA"){
+        if(npc.id === "npcA" || npc.id === "Student1"){
           if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
             isReach = true;
           }
@@ -101,17 +101,20 @@ class OverworldMap {
   checkForActionCutscene() {
     const hero = this.gameObjects["hero"];
     const nextCoords = utils.heronextPosition(hero.x, hero.y, hero.direction);
+    let objectReach;
     const match = Object.values(this.gameObjects).find(object => {
       let ifisReach = false;
       if(object.isMounted){
-        if(object.id === "npcA"){
+        if(object.id === "npcA" || object.id === "Student1"){
           if(((nextCoords.x >= (object.x - (object.sizex/4)) && (nextCoords.x <= (object.x + (object.sizex/4)))) && ((nextCoords.y >= (object.y - (object.sizey/10))) &&  (nextCoords.y <= (object.y + (object.sizey/10)))))){
             ifisReach = true;
+            objectReach = object.id;
           }
         }
         else if(object.id === "Wizard"){
           if(((nextCoords.x >= ((object.x - object.sizex/8) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/8) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/40))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/40)))))){
             ifisReach = true;
+            objectReach = object.id;
           }
         }
 
@@ -120,6 +123,9 @@ class OverworldMap {
     });
     if (!this.isCutscenePlaying && match && match.talking.length) {
       this.startCutscene(match.talking[0].events)
+      if(objectReach === "Student1"){
+        showSecondPage1 = false;
+      }
     }
   }
 
@@ -291,6 +297,25 @@ window.OverworldMaps = {
         sizey: 149,
         id: "Wizard",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
+        behaviorLoop: [
+          { type: "stand",  direction: "right", time: 1200 },
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: "You made it!"},
+            ]
+          }
+        ]
+      }),
+      Student1: new Person({
+        isMounted: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(12),
+        sizex: 24,
+        sizey: 24,
+        id: "Student1",
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/student1.png",
         behaviorLoop: [
           { type: "stand",  direction: "right", time: 1200 },
         ],
