@@ -87,5 +87,7 @@ body {
 <script src="{{ '/assets/js/OverworldEvent.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/TextMessage.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/KeyPressListener.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ '/assets/js/ReavealingText.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ '/assets/js/SceneTransition.js' | relative_url }}" type="text/javascript"></script>
 <script src="{{ '/assets/js/init.js' | relative_url }}" type="text/javascript"></script>
 </html>
