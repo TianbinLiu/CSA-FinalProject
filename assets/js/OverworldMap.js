@@ -130,8 +130,7 @@ class OverworldMap {
     if (!this.isCutscenePlaying && match && match.talking.length) {
       this.startCutscene(match.talking[0].events)
       if(match.id === "Student1"){
-        showSecondPage1 = true;
-        updateContent();
+        $("#includedContent").load("dialogueUnit1.html");
       }
     }
   }
@@ -329,7 +328,7 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              { type: "textMessage", text: "You made it!"},
+              { type: "textMessage", text: " "},
             ]
           }
         ]
