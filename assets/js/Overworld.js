@@ -57,12 +57,12 @@ class Overworld {
 
   init() {
     this.startMap(window.OverworldMaps.DemoRoom);
-  
+    
   
     this.bindActionInput();
   
     this.startGameLoop();
-  
+
   
     // this.map.startCutscene([
     //   { type: "textMessage", text: "WHY HELLO THERE!"}

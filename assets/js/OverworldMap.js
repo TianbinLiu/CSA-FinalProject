@@ -48,7 +48,7 @@ class OverworldMap {
           }
         }
         if(npc.id === "Student1"){
-          if(((x >= (npc.x - 16 - (npc.sizex/4)) && (x <= (npc.x - 16  + (npc.sizex/4)))) && ((y >= (npc.y - 8  - (npc.sizey/10))) &&  (y <= (npc.y - 8  + (npc.sizey/10)))))){
+          if(((x >= (npc.x - 14 - (npc.sizex/2)) && (x <= (npc.x - 14  + (npc.sizex/2)))) && ((y >= (npc.y - 12  - (npc.sizey/5))) &&  (y <= (npc.y - 12  + (npc.sizey/5)))))){
             isReach = true;
           }
         }
@@ -114,7 +114,7 @@ class OverworldMap {
           }
         }
         else if(object.id === "Student1"){
-          if(((nextCoords.x >= (object.x - 16 - (object.sizex/4)) && (nextCoords.x <= (object.x - 16 + (object.sizex/4)))) && ((nextCoords.y >= (object.y - 8 - (object.sizey/10))) &&  (nextCoords.y <= (object.y - 8 + (object.sizey/10)))))){
+          if(((nextCoords.x >= (object.x - 14 - (object.sizex/2)) && (nextCoords.x <= (object.x - 14 + (object.sizex/2)))) && ((nextCoords.y >= (object.y - 12 - (object.sizey/5))) &&  (nextCoords.y <= (object.y - 12 + (object.sizey/5)))))){
             ifisReach = true;
           }
         }
@@ -131,7 +131,7 @@ class OverworldMap {
       this.startCutscene(match.talking[0].events)
       if(match.id === "Student1"){
         showSecondPage1 = true;
-        console.log(showSecondPage1);
+        updateContent();
       }
     }
   }
