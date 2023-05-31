@@ -190,13 +190,15 @@ window.OverworldMaps = {
         isMounted: true,
         x: utils.withGrid(6),
         y: utils.withGrid(9),
-        sizex: 50,
-        sizey: 37,
+        sizex: 48,
+        sizey: 48,
         id: "npcA",
-        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/adventurer-v1.5-Sheetflip.png",
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/Charakter.png",
         behaviorLoop: [
           { type: "stand",  direction: "left", time: 800 },
+          { type: "stand",  direction: "up", time: 800 },
           { type: "stand",  direction: "right", time: 1200 },
+          { type: "stand",  direction: "down", time: 800 },
         ],
         talking: [
           {
@@ -296,7 +298,7 @@ window.OverworldMaps = {
         {
           events: [
             { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
-            { who: "npcA", type: "stand",  direction: "right", time: 500 },
+            { who: "npcA", type: "stand",  direction: "up", time: 500 },
             { type: "textMessage", text:"You can't stay there! "},
             { type: "textMessage", text:"Go straight to the CS classroom. You don't want to be late right?"},
             { type: "textMessage", text:"..."},
@@ -305,6 +307,7 @@ window.OverworldMaps = {
             { type: "textMessage", text:"Move!!!!!!!!!"},
             { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
             { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
+            { who: "npcA", type: "stand",  direction: "up", time: 500 },
           ]
         }
       ],
