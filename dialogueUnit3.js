@@ -1,34 +1,34 @@
-const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
+const textElement3 = document.getElementById('text3')
+const optionButtonsElement3 = document.getElementById('option-buttons3')
 
-let state = {}
+let state3 = {}
 
 function startGame() {
-  state = {}
+  state3 = {}
   showTextNode(1)
 }
 
 function showTextNode(textNodeIndex) {
-  state.currentNode = textNodeIndex; // Store the current node id in the state object
-  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-  textElement.innerText = textNode.text
-  while (optionButtonsElement.firstChild) {
-    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+  state3.currentNode = textNodeIndex; // Store the current node id in the state object
+  const textNode3 = textNodes3.find(textNode3 => textNode3.id === textNodeIndex)
+  textElement3.innerText = textNode3.text
+  while (optionButtonsElement3.firstChild) {
+    optionButtonsElement3.removeChild(optionButtonsElement3.firstChild)
   }
 
-  textNode.options.forEach(option => {
+  textNode3.options.forEach(option => {
     if (showOption(option)) {
       const button = document.createElement('button')
       button.innerText = option.text
       button.classList.add('btn')
       button.addEventListener('click', () => selectOption(option))
-      optionButtonsElement.appendChild(button)
+      optionButtonsElement3.appendChild(button)
     }
   })
 }
 
 function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
+  return option.requiredState == null || option.requiredState(state3)
 }
 
 // Modify the `selectOption` function
@@ -44,18 +44,18 @@ function selectOption(option) {
     return;
   }
   
-  state = Object.assign(state, option.setState);
+  state3 = Object.assign(state3, option.setState);
   showTextNode(nextTextNodeId);
 }
 
 function previous() {
-  const previousTextNodeId = findPreviousTextNodeId(state.currentNode); // Pass the current node id
+  const previousTextNodeId = findPreviousTextNodeId(state3.currentNode); // Pass the current node id
   showTextNode(previousTextNodeId);
 }
 
 // Modify the `findPreviousTextNodeId` function
 function findPreviousTextNodeId(textNodeIndex) {
-  const previousTextNode = textNodes.find(node =>
+  const previousTextNode = textNodes3.find(node =>
     node.options && node.options.some(option => option.nextText === textNodeIndex)
   );
 
@@ -63,7 +63,7 @@ function findPreviousTextNodeId(textNodeIndex) {
 }
 
 
-const textNodes = [
+const textNodes3 = [
   {
     id: 1,
     text: 'Yes, I do know quite a bit about Java Unit 3: Boolean Expressions and If Statements, it\'s my favorite unit after all! \n\n(Kareena will ask you two conceptual questions and explain several concepts. Pay close attention as they will be useful to you later on. Estimated time: 10 minutes.)',

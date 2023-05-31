@@ -8,12 +8,18 @@ let persondirection = "right";
 let realdirection = "right";
 let realdirectionx = "right";
 let realdirectiony = "up";
+
 let canMovex = false;
 let canMovey = false;
+let showSecondPage1 = false;
+let showSecondPage2 = false;
+let showSecondPage3 = false;
+
 let checkifwalkingright;
 let checkifwalkingup;
 let checkifwalkingdown;
 let checkifwalkingleft;
+
 
 addEventListener("keydown", function(event){
     console.log(event.code)

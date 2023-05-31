@@ -57,6 +57,11 @@ class OverworldMap {
             isReach = true;
           }
         }
+        else if(npc.id === "Student3"){
+          if(((x >= (npc.x + 32 - (npc.sizex/4)) && (x <= (npc.x + 32 + (npc.sizex/4)))) && ((y >= (npc.y  + 48 - (npc.sizey/10))) &&  (y <= (npc.y + 48 + (npc.sizey/10)))))){
+            isReach = true;
+          }
+        }
         else if(npc.id === "Wizard"){
           if(((x >= ((npc.x - npc.sizex/8) - (npc.sizex/8)) && (x <= ((npc.x - npc.sizex/8) + (npc.sizex/8)))) && ((y >= ((npc.y + npc.sizey/4) - (npc.sizey/40))) &&  (y <= ((npc.y + npc.sizey/4) + (npc.sizey/40)))))){
             isReach = true;
@@ -128,6 +133,11 @@ class OverworldMap {
             ifisReach = true;
           }
         }
+        else if(object.id === "Student3"){
+          if(((nextCoords.x >= (object.x + 32 - (object.sizex/4)) && (nextCoords.x <= (object.x + 32 + (object.sizex/4)))) && ((nextCoords.y >= (object.y  + 48 - (object.sizey/10))) &&  (nextCoords.y <= (object.y + 48 + (object.sizey/10)))))){
+            ifisReach = true;
+          }
+        }
         else if(object.id === "Wizard"){
           if(((nextCoords.x >= ((object.x - object.sizex/8) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/8) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/40))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/40)))))){
             ifisReach = true;
@@ -144,16 +154,16 @@ class OverworldMap {
         showSecondPage1 = true;
       }
       if(match.id === "Student2"){
-        $("#includedContent").load("dialogueUnit2.html");
+        $("#includedContent2").load("dialogueUnit2.html");
         showSecondPage2 = true;
       }
       if(match.id === "Student3"){
-        $("#includedContent").load("dialogueUnit3.html");
+        $("#includedContent3").load("dialogueUnit3.html");
         showSecondPage3 = true;
       }
       if(match.id === "Wizard"){
         if(showSecondPage1 && showSecondPage2 && showSecondPage3){
-          $("#includedContent").load("quiz.html");
+          window.location.href = "https://tianbinliu.github.io/CSA-FinalProject/quiz.html";
         }
       }
     }
@@ -333,7 +343,9 @@ window.OverworldMaps = {
         talking: [
           {
             events: [
-              { type: "textMessage", text: "You made it!"},
+              { type: "textMessage", text: "I'm Wizard Mr. M. I'm here to check if you are able to face the AP Exam."},
+              { type: "textMessage", text: "Well, I have a quiz for you, but before that, you need the approval of my top 10(Now it's only three) students in this class."},      
+              { type: "textMessage", text: "I will wait for you to come back."},      
             ]
           }
         ]
@@ -378,8 +390,8 @@ window.OverworldMaps = {
       }),
       Student3: new Person({
         isMounted: true,
-        x: utils.withGrid(3),
-        y: utils.withGrid(25),
+        x: utils.withGrid(2),
+        y: utils.withGrid(21),
         sizex: 100,
         sizey: 100,
         id: "Student3",

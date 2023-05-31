@@ -109,7 +109,7 @@ class Sprite {
         0,0, 
         32,32,
         x, y, 
-        37,23.6,
+        69,44,
       );
     }
     else if(this.image.id === "Student3"){
@@ -117,7 +117,7 @@ class Sprite {
         0,0, 
         32,32,
         x, y, 
-        37,37,
+        100,100,
       );
     }
 
@@ -153,7 +153,7 @@ class Sprite {
         frameX * this.image.sizex, frameY * this.image.sizey,
         this.image.sizex,this.image.sizey,
         x,y,
-        37,23.6,
+        69,44,
       );
     }
     else if(this.image.id === "Student3"){
@@ -161,7 +161,7 @@ class Sprite {
         frameX * this.image.sizex, frameY * this.image.sizey,
         this.image.sizex,this.image.sizey,
         x,y,
-        37,37,
+        100,100,
       );
     }
 

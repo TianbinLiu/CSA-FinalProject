@@ -1,34 +1,34 @@
-const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
+const textElement2 = document.getElementById('text2')
+const optionButtonsElement2 = document.getElementById('option-buttons2')
 
-let state = {}
+let state2 = {}
 
 function startGame() {
-  state = {}
+  state2 = {}
   showTextNode(1)
 }
 
 function showTextNode(textNodeIndex) {
-  state.currentNode = textNodeIndex; // Store the current node id in the state object
-  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-  textElement.innerText = textNode.text
-  while (optionButtonsElement.firstChild) {
-    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+  state2.currentNode = textNodeIndex; // Store the current node id in the state object
+  const textNode2 = textNodes2.find(textNode2 => textNode2.id === textNodeIndex)
+  textElement2.innerText = textNode2.text
+  while (optionButtonsElement2.firstChild) {
+    optionButtonsElement2.removeChild(optionButtonsElement2.firstChild)
   }
 
-  textNode.options.forEach(option => {
+  textNode2.options.forEach(option => {
     if (showOption(option)) {
       const button = document.createElement('button')
       button.innerText = option.text
       button.classList.add('btn')
       button.addEventListener('click', () => selectOption(option))
-      optionButtonsElement.appendChild(button)
+      optionButtonsElement2.appendChild(button)
     }
   })
 }
 
 function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
+  return option.requiredState == null || option.requiredState(state2)
 }
 
 // Modify the `selectOption` function
@@ -44,18 +44,18 @@ function selectOption(option) {
     return;
   }
   
-  state = Object.assign(state, option.setState);
+  state2 = Object.assign(state2, option.setState);
   showTextNode(nextTextNodeId);
 }
 
 function previous() {
-  const previousTextNodeId = findPreviousTextNodeId(state.currentNode); // Pass the current node id
+  const previousTextNodeId = findPreviousTextNodeId(state2.currentNode); // Pass the current node id
   showTextNode(previousTextNodeId);
 }
 
 // Modify the `findPreviousTextNodeId` function
 function findPreviousTextNodeId(textNodeIndex) {
-  const previousTextNode = textNodes.find(node =>
+  const previousTextNode = textNodes2.find(node =>
     node.options && node.options.some(option => option.nextText === textNodeIndex)
   );
 
@@ -63,7 +63,7 @@ function findPreviousTextNodeId(textNodeIndex) {
 }
 
 
-const textNodes = [
+const textNodes2 = [
   {
     id: 1,
     text: 'Huh-- What? Why would you wake me up! I was clearly sleeping!! . . Wait, Java Unit 2 you said? Using Objects? \n\n(Timmy will ask you two conceptual questions and explain several concepts. Pay close attention as they will be useful to you later on. Estimated time: 10 minutes.)',
