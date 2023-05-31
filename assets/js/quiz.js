@@ -103,7 +103,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score); //save to local storage
 
-        return (window.location.href = 'https://tianbinliu.github.io/CSA-FinalProject/index.html');  
+        return (window.location.href = 'https://tianbinliu.github.io/CSA-FinalProject/');  
     }
 
     questionCounter++;
