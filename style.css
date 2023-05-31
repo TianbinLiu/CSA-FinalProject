@@ -10,6 +10,11 @@ body {
     font-family: monospace;
 }
 
+.blocked {
+    opacity: 0.5; /* Example: reduce opacity to make it appear blocked */
+    pointer-events: none; /* Example: disable pointer events to prevent interaction */
+}
+
 .container {
     width: 800px;
     max-width: 80%;
