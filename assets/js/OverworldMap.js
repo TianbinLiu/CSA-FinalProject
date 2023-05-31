@@ -48,7 +48,7 @@ class OverworldMap {
           }
         }
         if(npc.id === "Student1"){
-          if(((x >= (npc.x - 16 - (npc.sizex/4)) && (x <= (npc.x - 16  + (npc.sizex/4)))) && ((y >= (npc.y - 16  - (npc.sizey/10))) &&  (y <= (npc.y - 16  + (npc.sizey/10)))))){
+          if(((x >= (npc.x - 16 - (npc.sizex/4)) && (x <= (npc.x - 16  + (npc.sizex/4)))) && ((y >= (npc.y - 8  - (npc.sizey/10))) &&  (y <= (npc.y - 8  + (npc.sizey/10)))))){
             isReach = true;
           }
         }
@@ -114,7 +114,7 @@ class OverworldMap {
           }
         }
         else if(object.id === "Student1"){
-          if(((nextCoords.x >= (object.x - 16 - (object.sizex/4)) && (nextCoords.x <= (object.x - 16 + (object.sizex/4)))) && ((nextCoords.y >= (object.y - 16 - (object.sizey/10))) &&  (nextCoords.y <= (object.y - 16 + (object.sizey/10)))))){
+          if(((nextCoords.x >= (object.x - 16 - (object.sizex/4)) && (nextCoords.x <= (object.x - 16 + (object.sizex/4)))) && ((nextCoords.y >= (object.y - 8 - (object.sizey/10))) &&  (nextCoords.y <= (object.y - 8 + (object.sizey/10)))))){
             ifisReach = true;
           }
         }
