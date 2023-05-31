@@ -8,7 +8,7 @@
 <body>
     <div class="bg-image"></div>
     <div class="bg-box">
-        <a id="myImage3"><img src="images/closeIcon.png" alt="close" style="width: 45px; margin-left: -95%;"></a>
+        <a id="myImage3"><img src="images/closeIcon.png" alt="close" style="width: 45px; margin-left: -95%; display: block;"></a>
     </div>
     <div class="bg-text">
         <div class="container1">
@@ -32,6 +32,7 @@
     myImage3.addEventListener("click", function() {
       // Set the boolean variable to false
       $("#includedContent3").hide();
+      $('#myImage3').css('display', 'none');
     });
     </script>
 </html>
