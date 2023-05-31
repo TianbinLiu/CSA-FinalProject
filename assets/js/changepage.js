@@ -5,13 +5,19 @@ let finalBattle = false;
 
 
 $(function() {
-    // Load or hide the second HTML page based on the value of showSecondPage
-    if (showSecondPage1) {
+    // Function to update the content based on the value of myBoolean
+    function updateContent() {
+      if (showSecondPage1) {
         $("#includedContent").load("dialogueUnit1.html");
-    } else {
+      } else {
         $("#includedContent").hide();
+      }
     }
+  
+    // Call the function initially
+    updateContent();
 });
+
 
 $(function() {
     // Load or hide the second HTML page based on the value of showSecondPage
