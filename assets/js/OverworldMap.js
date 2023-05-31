@@ -379,7 +379,7 @@ window.OverworldMaps = {
       Student3: new Person({
         isMounted: true,
         x: utils.withGrid(3),
-        y: utils.withGrid(18),
+        y: utils.withGrid(25),
         sizex: 100,
         sizey: 100,
         id: "Student3",
