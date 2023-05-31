@@ -344,7 +344,8 @@ window.OverworldMaps = {
           {
             events: [
               { type: "textMessage", text: "I'm Wizard Mr. M. I'm here to check if you are able to face the AP Exam."},
-              { type: "textMessage", text: "Well, I have a quiz for you, but before that, you need the approval of my top 10(Now it's only three) students in this class."},      
+              { type: "textMessage", text: "Well, I have a quiz for you, but before that, "},     
+              { type: "textMessage", text: "you need the approval of my top 10(Now it's only three) students in this class. "},       
               { type: "textMessage", text: "I will wait for you to come back."},      
             ]
           }
