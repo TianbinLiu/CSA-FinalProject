@@ -47,8 +47,13 @@ class OverworldMap {
             isReach = true;
           }
         }
-        if(npc.id === "Student1"){
+        else if(npc.id === "Student1"){
           if(((x >= (npc.x - 14 - (npc.sizex/2)) && (x <= (npc.x - 14  + (npc.sizex/2)))) && ((y >= (npc.y - 12  - (npc.sizey/5))) &&  (y <= (npc.y - 12  + (npc.sizey/5)))))){
+            isReach = true;
+          }
+        }
+        else if(npc.id === "Student2"){
+          if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
             isReach = true;
           }
         }
@@ -118,6 +123,11 @@ class OverworldMap {
             ifisReach = true;
           }
         }
+        else if(object.id === "Student2"){
+          if(((nextCoords.x >= (object.x - (object.sizex/4)) && (nextCoords.x <= (object.x + (object.sizex/4)))) && ((nextCoords.y >= (object.y - (object.sizey/10))) &&  (nextCoords.y <= (object.y + (object.sizey/10)))))){
+            ifisReach = true;
+          }
+        }
         else if(object.id === "Wizard"){
           if(((nextCoords.x >= ((object.x - object.sizex/8) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/8) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/40))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/40)))))){
             ifisReach = true;
@@ -131,6 +141,20 @@ class OverworldMap {
       this.startCutscene(match.talking[0].events)
       if(match.id === "Student1"){
         $("#includedContent").load("dialogueUnit1.html");
+        showSecondPage1 = true;
+      }
+      if(match.id === "Student2"){
+        $("#includedContent").load("dialogueUnit2.html");
+        showSecondPage2 = true;
+      }
+      if(match.id === "Student3"){
+        $("#includedContent").load("dialogueUnit3.html");
+        showSecondPage3 = true;
+      }
+      if(match.id === "Wizard"){
+        if(showSecondPage1 && showSecondPage2 && showSecondPage3){
+          $("#includedContent").load("quiz.html");
+        }
       }
     }
   }
@@ -322,6 +346,44 @@ window.OverworldMaps = {
         sizey: 24,
         id: "Student1",
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/student1.png",
+        behaviorLoop: [
+          { type: "stand",  direction: "right", time: 1200 },
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: " "},
+            ]
+          }
+        ]
+      }),
+      Student2: new Person({
+        isMounted: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(18),
+        sizex: 69,
+        sizey: 44,
+        id: "Student2",
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/warrior/Warrior_Sheet-Effect.png",
+        behaviorLoop: [
+          { type: "stand",  direction: "right", time: 1200 },
+        ],
+        talking: [
+          {
+            events: [
+              { type: "textMessage", text: " "},
+            ]
+          }
+        ]
+      }),
+      Student3: new Person({
+        isMounted: true,
+        x: utils.withGrid(3),
+        y: utils.withGrid(18),
+        sizex: 100,
+        sizey: 100,
+        id: "Student3",
+        src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/Undeadexecutionerpuppet/idle.png",
         behaviorLoop: [
           { type: "stand",  direction: "right", time: 1200 },
         ],

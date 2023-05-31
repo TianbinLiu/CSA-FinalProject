@@ -39,6 +39,8 @@ class Sprite {
       "Student1-idle-left": [ [0,0],[1,0] ],
       "Student1-walk-left": [ [0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1], ],
       "Student1-walk-right" : [ [0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[6,2],[7,2], ],
+      "Student2-idle-right": [ [0,0],[1,0], [2,0],[3,0], [4,0],[5,0]],
+      "Student3-idle-right": [ [0,0],[1,0], [2,0],[3,0],],
     }
     this.currentAnimation = config.currentAnimation || (this.image.id + "-idle-right");
     this.currentAnimationFrame = 0;
@@ -102,6 +104,22 @@ class Sprite {
         40,74
       );
     }
+    else if(this.image.id === "Student2"){
+      this.isShadowLoaded && ctx.drawImage(this.shadow, 
+        0,0, 
+        32,32,
+        x, y, 
+        37,23.6,
+      );
+    }
+    else if(this.image.id === "Student3"){
+      this.isShadowLoaded && ctx.drawImage(this.shadow, 
+        0,0, 
+        32,32,
+        x, y, 
+        37,37,
+      );
+    }
 
     
     const [frameX, frameY] = this.frame;
@@ -128,6 +146,22 @@ class Sprite {
         this.image.sizex,this.image.sizey,
         x,y,
         24,24,
+      );
+    }
+    else if(this.image.id === "Student2"){
+      this.isLoaded && ctx.drawImage(this.image,
+        frameX * this.image.sizex, frameY * this.image.sizey,
+        this.image.sizex,this.image.sizey,
+        x,y,
+        37,23.6,
+      );
+    }
+    else if(this.image.id === "Student3"){
+      this.isLoaded && ctx.drawImage(this.image,
+        frameX * this.image.sizex, frameY * this.image.sizey,
+        this.image.sizex,this.image.sizey,
+        x,y,
+        37,37,
       );
     }
 
