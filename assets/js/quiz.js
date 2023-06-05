@@ -10,6 +10,7 @@ let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let selectedChoice = null;
 
 let questions = [
     {
@@ -102,7 +103,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score); //save to local storage
 
-        return (window.location.href = '/index.html'); //keep track of the score
+        return (window.location.href = 'https://tianbinliu.github.io/CSA-FinalProject/');  
     }
 
     questionCounter++;
@@ -126,35 +127,45 @@ getNewQuestion = () => {
     availableQuestions.splice(questionsIndex, 1); //splice(start, deleteCount) - remove elements from an array
 
     acceptingAnswers = true;
+
+    cardContainer.addEventListener('dragstart', (e) => {
+        selectedChoice = e.target.dataset.number;
+    });
 };
+
+
 
 const dropArea = document.getElementById('drop-area');
 
 // Drag and drop event listeners
 dropArea.addEventListener('dragover', (e) => {
-  e.preventDefault();
+    e.preventDefault();
+  });
+  
+  dropArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    if (!acceptingAnswers) return;
+
+    // Get the selected choice from the stored variable
+    const selectedAnswer = selectedChoice;
+
+    let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+    console.log('classToApply:', classToApply);
+
+    if (classToApply === 'correct') {
+        incrementScore(SCORE_POINTS);
+    }
+
+    dropArea.classList.add(classToApply);
+
+    setTimeout(() => {
+        dropArea.classList.remove(classToApply);
+        getNewQuestion();
+    }, 1000);
 });
-
-dropArea.addEventListener('drop', (e) => {
-  e.preventDefault();
-  if (!acceptingAnswers) return;
-
-  const selectedChoice = e.dataTransfer.getData('text/plain');
-  const selectedAnswer = selectedChoice;
-
-  let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-
-  if (classToApply === 'correct') {
-    incrementScore(SCORE_POINTS);
-  }
-
-  dropArea.classList.add(classToApply);
-
-  setTimeout(() => {
-    dropArea.classList.remove(classToApply);
-    getNewQuestion();
-  }, 1000);
-});
+  
+  
 
 // Function to increment the score
 incrementScore = (num) => {
