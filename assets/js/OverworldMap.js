@@ -37,11 +37,9 @@ class OverworldMap {
 
   heroisSpaceTaken(currentX, currentY, direction) {
     const {x,y} = utils.heronextPosition(currentX, currentY, direction);
-    console.log("character(control) move next position(x): " + x + ", " + "(y): " + y)
     let isReach = false;
     Object.values(this.gameObjects).forEach(npc => {
       if(npc.isMounted){
-        console.log("npc position(x): " + npc.x + ", " + "(y): " + npc.y + ", length: " + npc.sizex + ", width: " + npc.sizey)
         if(npc.id === "npcA"){
           if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
             isReach = true;

@@ -30,7 +30,6 @@ class Person extends GameObject {
             canMovex = false;
           }
           else{
-            console.log("canMove(x): " + canMovex)
             this.x += vx;
           }
         }
@@ -42,12 +41,9 @@ class Person extends GameObject {
             canMovey = false;
           }
           else{
-            console.log("canMove(y) : " + canMovey)
             this.y += vy;
           }
         }
-        
-        console.log("x position: " + this.x + ", y position: " + this.y)
 
       }
       if(!this.isPlayerControlled && this.movingProgressRemaining > 0){
