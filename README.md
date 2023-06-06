@@ -27,10 +27,11 @@ Animation
     }
 
 Dialogue
-- make a copy of the dialogueUnit1.html
-- change the character's name and image
-- make a copy of dialogueUnit1.js
-- change text within javascript nodes in the second half of the page to what you want your character to say
+- adding a new dialogue
+  - make a copy of the dialogueUnit1.html
+  - change the character's name and image
+  - make a copy of dialogueUnit1.js
+  - change text within javascript nodes in the second half of the page to what you want your character to say
 
 Card game
 - adding more questions
