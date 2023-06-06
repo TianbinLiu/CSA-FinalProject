@@ -11,6 +11,7 @@ done!
 
 
 Build Instructions:
+
 Animation
 - adding a new character
   - in OverworldMap.js, create a new class object and set up attributes (x y position, boolean values) and link to the page of the sprite sheet of the character
