@@ -148,6 +148,7 @@ class OverworldMap {
     if (!this.isCutscenePlaying && match && match.talking.length) {
       if(match.ifdialogue){
         this.startCutscene(match.talking[0].events)
+        match.ifdialogue = false;
       }
       else if(!match.ifdialogue){
         if (match.id === "Student1") {
@@ -342,7 +343,7 @@ window.OverworldMaps = {
         sizex: 80,
         sizey: 149,
         id: "Wizard",
-        ifdialogue: false,
+        ifdialogue: true,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
         behaviorLoop: [
           { type: "stand", direction: "right", time: 1200 },
