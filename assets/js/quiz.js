@@ -19,7 +19,7 @@ let questions = [
         choice2: 'II and III only',
         choice3: 'I and II only',
         choice4: 'I, II, and III',
-        answer: 1,  
+        answer: 1,
     },
     {
         question: 'Assume that a, b, and c are boolean variables that have been properly declared and initialized. Which of the following boolean expressions is equivalent to !(a && b) || c ?',
@@ -27,7 +27,7 @@ let questions = [
         choice2: '!a && !b || c',
         choice3: '!a && !b && c',
         choice4: '!a || !b || c',
-        answer: 4, 
+        answer: 4,
     },
     {
         question: 'Consider the following code segment. Assume that a is greater than zero.  \n int a = /* value not shown */;  \n int b = a + (int) (Math.random() * a); \n Which of the following best describes the value assigned to b when the code segment is executed?',
@@ -35,7 +35,7 @@ let questions = [
         choice2: '2 * a',
         choice3: 'A random integer between a and 2 * a, inclusive',
         choice4: 'A random integer between a and 2 * a - 1, inclusive',
-        answer: 4,  
+        answer: 4,
     },
     {
         question: 'Consider the following statement. Assume that a and b are properly declared and initialized boolean variables.  \n boolean c = (a && b) || (!a && b);  \n Under which of the following conditions will c be assigned the value false ?',
@@ -43,7 +43,7 @@ let questions = [
         choice2: 'Never',
         choice3: 'When a and b have the same value',
         choice4: 'When b has the value false',
-        answer: 4,  
+        answer: 4,
     },
     {
         question: 'Which of the following is NOT a Java primitive type',
@@ -51,7 +51,7 @@ let questions = [
         choice2: 'float',
         choice3: 'int',
         choice4: 'String',
-        answer: 4,  
+        answer: 4,
     },
     {
         question: 'Consider the following code segment. \n String str = "0";  \n str += str + 0 + 8;  \n System.out.println(str);  \n What is printed as a result of executing the code segment?',
@@ -59,7 +59,7 @@ let questions = [
         choice2: '008',
         choice3: '0008',
         choice4: 'Nothing is printed, because numerical values cannot be added to a String object.',
-        answer: 3,  
+        answer: 3,
     },
     {
         question: 'Assume that a, b, and c are boolean variables that have been properly declared and initialized. Which of the following boolean expressions is equivalent to !(a && b) || c ?',
@@ -67,7 +67,7 @@ let questions = [
         choice2: 'a || b || c',
         choice3: '!a && !b || c',
         choice4: '!a || !b || c',
-        answer: 4,  
+        answer: 4,
     },
     {
         question: 'Assume that the boolean variables a, b, c, and d have been declared and initialized. Consider the following expression.  \n !( !( a && b ) || ( c || !d ))   \n Which of the following is equivalent to the expression?',
@@ -75,7 +75,7 @@ let questions = [
         choice2: '( a || b ) && ( !c && d )',
         choice3: '( a && b ) || ( c || !d )',
         choice4: '( !a || !b ) && ( !c && d )',
-        answer: 1,  
+        answer: 1,
     },
     {
         question: 'Consider the following Boolean expressions.   \n I. A && B  \n  II. !A && !B  Which of the following best describes the relationship between values produced by expression I and expression II?',
@@ -83,7 +83,7 @@ let questions = [
         choice2: 'Expression I and expression II evaluate to the same value for all values of A and B.',
         choice3: 'Expression I and expression II evaluate to the same value only when A and B are the same.',
         choice4: 'Expression I and expression II evaluate to the same value only when A and B differ.',
-        answer: 4,  
+        answer: 4,
     }
 ];
 
@@ -103,7 +103,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score); //save to local storage
 
-        return (window.location.href = 'https://tianbinliu.github.io/CSA-FinalProject/');  
+        return (window.location.href = 'https://tianbinliu.github.io/CSA-FinalProject/');
     }
 
     questionCounter++;
@@ -140,9 +140,9 @@ const dropArea = document.getElementById('drop-area');
 // Drag and drop event listeners
 dropArea.addEventListener('dragover', (e) => {
     e.preventDefault();
-  });
-  
-  dropArea.addEventListener('drop', (e) => {
+});
+
+dropArea.addEventListener('drop', (e) => {
     e.preventDefault();
     if (!acceptingAnswers) return;
 
@@ -164,8 +164,8 @@ dropArea.addEventListener('dragover', (e) => {
         getNewQuestion();
     }, 1000);
 });
-  
-  
+
+
 
 // Function to increment the score
 incrementScore = (num) => {

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link href="../dialogue/style.css" rel="stylesheet">
-    <script defer src="../dialogue/dialogueUnit2.js"></script>
+    <link href="https://tianbinliu.github.io/CSA-FinalProject/dialogue/style.css" rel="stylesheet">
+    <script defer src="https://tianbinliu.github.io/CSA-FinalProject/dialogue/dialogueUnit2.js"></script>
     <title>Dialogue 1</title>
 </head>
+
 <body>
     <div class="bg-image"></div>
     <div class="bg-box">
-        <img id="myImage2" src="../images/closeIcon.png" alt="close" style="width: 45px; margin-left: -95%;">
+        <img id="myImage2" src="https://tianbinliu.github.io/CSA-FinalProject/images/closeIcon.png" alt="close"
+            style="width: 45px; margin-left: -95%;">
     </div>
     <div class="bg-text">
         <div class="container1">
@@ -23,16 +26,18 @@
             <div class="charName">. . . Timmy . . .</div>
             <div id="text2">TEXT</div>
         </div>
-        <img src="../images/character/Warrior_Idle_1.png" alt="marles" class="char-image" style="width: 600px; image-rendering: pixelated;">
+        <img src="https://tianbinliu.github.io/CSA-FinalProject/images/character/Warrior_Idle_1.png" alt="marles"
+            class="char-image" style="width: 600px; image-rendering: pixelated;">
     </div>
 </body>
 <script>
     let myImage2 = document.getElementById("myImage2");
     // Add a click event listener to the image
-    myImage2.addEventListener("click", function() {
-      // Set the boolean variable to false
-      $("#includedContent2").hide();
-      $('#includedContent2').addClass('blocked');
+    myImage2.addEventListener("click", function () {
+        // Set the boolean variable to false
+        $("#includedContent2").hide();
+        $('#includedContent2').addClass('blocked');
     });
-    </script>
+</script>
+
 </html>

@@ -12,7 +12,7 @@
 
 h1 {
     font-size: clamp(1.6rem, 5vw, 3rem);
-    color:#fff;
+    color: #fff;
     margin-bottom: 5rem;
     text-align: center;
     max-width: 80rem;
@@ -38,7 +38,7 @@ h1 {
     align-items: center;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center;
 }
 
@@ -50,19 +50,19 @@ body {
     color: #fff;
 }
 
-.choice-container{
+.choice-container {
     display: flex;
     margin-bottom: 0.8rem;
     width: 100%;
     border-radius: 4px;
-    background: rgb(18,93,255);
+    background: rgb(18, 93, 255);
     font-size: 3rem;
     min-width: 80rem;
 }
 
-.choice-container:hover{
+.choice-container:hover {
     cursor: pointer;
-    box-shadow: 0 0.4rem 1.4 0 rgba(6,103,247,0.5);
+    box-shadow: 0 0.4rem 1.4 0 rgba(6, 103, 247, 0.5);
     transform: scale(1.02);
     transform: transform 100ms;
 }
@@ -72,17 +72,17 @@ body {
     color: white;
 }
 
-.choice-text{
+.choice-text {
     padding: 2rem;
     width: 100%;
 }
 
 .correct {
-    background: linear-gradient(32deg, rgba(11, 223, 36) 0%, rgb(41,232,111) 100%);
+    background: linear-gradient(32deg, rgba(11, 223, 36) 0%, rgb(41, 232, 111) 100%);
 }
 
 .incorrect {
-    background: linear-gradient(32deg, rgba(230, 29, 29, 1) 0%, rgb(224,11,11, 1) 100%);
+    background: linear-gradient(32deg, rgba(230, 29, 29, 1) 0%, rgb(224, 11, 11, 1) 100%);
 }
 
 /* heads up display */
@@ -91,8 +91,8 @@ body {
     justify-content: space-between;
 }
 
-.hud-prefix{ 
-    text-align:center;
+.hud-prefix {
+    text-align: center;
     font-size: 2rem;
 }
 
@@ -120,9 +120,9 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-  }
-  
-  .choice-card {
+}
+
+.choice-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,24 +136,24 @@ body {
     cursor: grab;
     background-image: url("images/card.png");
     background-size: 160px;
-    padding-left: 1.2rem; 
+    padding-left: 1.2rem;
     font-size: clamp(1.6rem, 2vw, 2rem);
-  }
-  
-  
-  .choice-card:hover {
+}
+
+
+.choice-card:hover {
     transform: scale(1.05);
     box-shadow: 0 0.4rem 1.4rem 0 blanchedalmond;
-  }
-  
-  .drop-text {
+}
+
+.drop-text {
     color: white;
     padding: 2rem;
     width: 100%;
     text-align: center;
     border: 0.2rem dashed white;
     border-radius: 4px;
-  }
+}
 
 @media screen and (max-width: 760px) {
     .choice-container {

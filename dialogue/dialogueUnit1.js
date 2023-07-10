@@ -34,16 +34,16 @@ function showOption(option) {
 // Modify the `selectOption` function
 function selectOption(option) {
   const nextTextNodeId = option.nextText;
-  
+
   if (nextTextNodeId <= 0) {
     return startGame();
   }
-  
+
   if (option.previousText === true) {
     previous(); // Call the `prev` function directly
     return;
   }
-  
+
   state = Object.assign(state, option.setState);
   showTextNode(nextTextNodeId);
 }

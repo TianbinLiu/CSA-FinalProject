@@ -11,8 +11,10 @@ body {
 }
 
 .blocked {
-    opacity: 0.5; /* Example: reduce opacity to make it appear blocked */
-    pointer-events: none; /* Example: disable pointer events to prevent interaction */
+    opacity: 0.5;
+    /* Example: reduce opacity to make it appear blocked */
+    pointer-events: none;
+    /* Example: disable pointer events to prevent interaction */
 }
 
 .container {
@@ -86,7 +88,7 @@ html {
 
 .bg-image {
     /* The image used */
-    background-image: url("../images/maps/blurBGimg.png");
+    background-image: url("https://tianbinliu.github.io/CSA-FinalProject/images/maps/blurBGimg.png");
 
     /* Full height */
     height: 100%;

@@ -146,11 +146,11 @@ class OverworldMap {
       }
     });
     if (!this.isCutscenePlaying && match && match.talking.length) {
-      if(match.ifdialogue){
+      if (match.ifdialogue) {
         this.startCutscene(match.talking[0].events)
         match.ifdialogue = false;
       }
-      else if(!match.ifdialogue){
+      else if (!match.ifdialogue) {
         if (match.id === "Student1") {
           $("#includedContent").load("dialogue/dialogueUnit1.html");
           showSecondPage1 = true;
