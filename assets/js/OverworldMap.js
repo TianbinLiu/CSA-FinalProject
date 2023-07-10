@@ -10,70 +10,70 @@ class OverworldMap {
 
     this.upperImage = new Image();
     this.upperImage.src = config.upperSrc;
-    
+
     this.isCutscenePlaying = false;
   }
 
   drawLowerImage(ctx, cameraPerson) {
     ctx.drawImage(
-      this.lowerImage, 
-      utils.withGrid(10.5) - cameraPerson.x, 
+      this.lowerImage,
+      utils.withGrid(10.5) - cameraPerson.x,
       utils.withGrid(6) - cameraPerson.y
-      )
+    )
   }
 
   drawUpperImage(ctx, cameraPerson) {
     ctx.drawImage(
-      this.upperImage, 
-      utils.withGrid(10.5) - cameraPerson.x, 
+      this.upperImage,
+      utils.withGrid(10.5) - cameraPerson.x,
       utils.withGrid(6) - cameraPerson.y
     )
-  } 
-  
+  }
+
   isSpaceTaken(currentX, currentY, direction) {
-    const {x,y} = utils.nextPosition(currentX, currentY, direction);
+    const { x, y } = utils.nextPosition(currentX, currentY, direction);
     return this.walls[`${x},${y}`] || false;
   }
 
   heroisSpaceTaken(currentX, currentY, direction) {
-    const {x,y} = utils.heronextPosition(currentX, currentY, direction);
+    const { x, y } = utils.heronextPosition(currentX, currentY, direction);
     let isReach = false;
     Object.values(this.gameObjects).forEach(npc => {
-      if(npc.isMounted){
-        if(npc.id === "npcA"){
-          if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
+      if (npc.isMounted) {
+        if (npc.id === "npcA") {
+          if (((x >= (npc.x - (npc.sizex / 4)) && (x <= (npc.x + (npc.sizex / 4)))) && ((y >= (npc.y - (npc.sizey / 10))) && (y <= (npc.y + (npc.sizey / 10)))))) {
             isReach = true;
           }
         }
-        else if(npc.id === "Student1"){
-          if(((x >= (npc.x - 14 - (npc.sizex/2)) && (x <= (npc.x - 14  + (npc.sizex/2)))) && ((y >= (npc.y - 12  - (npc.sizey/5))) &&  (y <= (npc.y - 12  + (npc.sizey/5)))))){
+        else if (npc.id === "Student1") {
+          if (((x >= (npc.x - 14 - (npc.sizex / 2)) && (x <= (npc.x - 14 + (npc.sizex / 2)))) && ((y >= (npc.y - 12 - (npc.sizey / 5))) && (y <= (npc.y - 12 + (npc.sizey / 5)))))) {
             isReach = true;
           }
         }
-        else if(npc.id === "Student2"){
-          if(((x >= (npc.x - (npc.sizex/4)) && (x <= (npc.x + (npc.sizex/4)))) && ((y >= (npc.y - (npc.sizey/10))) &&  (y <= (npc.y + (npc.sizey/10)))))){
+        else if (npc.id === "Student2") {
+          if (((x >= (npc.x - (npc.sizex / 4)) && (x <= (npc.x + (npc.sizex / 4)))) && ((y >= (npc.y - (npc.sizey / 10))) && (y <= (npc.y + (npc.sizey / 10)))))) {
             isReach = true;
           }
         }
-        else if(npc.id === "Student3"){
-          if(((x >= (npc.x + 32 - (npc.sizex/4)) && (x <= (npc.x + 32 + (npc.sizex/4)))) && ((y >= (npc.y  + 48 - (npc.sizey/10))) &&  (y <= (npc.y + 48 + (npc.sizey/10)))))){
+        else if (npc.id === "Student3") {
+          if (((x >= (npc.x + 32 - (npc.sizex / 4)) && (x <= (npc.x + 32 + (npc.sizex / 4)))) && ((y >= (npc.y + 48 - (npc.sizey / 10))) && (y <= (npc.y + 48 + (npc.sizey / 10)))))) {
             isReach = true;
           }
         }
-        else if(npc.id === "Wizard"){
-          if(((x >= ((npc.x - npc.sizex/8) - (npc.sizex/8)) && (x <= ((npc.x - npc.sizex/8) + (npc.sizex/8)))) && ((y >= ((npc.y + npc.sizey/4) - (npc.sizey/40))) &&  (y <= ((npc.y + npc.sizey/4) + (npc.sizey/40)))))){
+        else if (npc.id === "Wizard") {
+          if (((x >= ((npc.x - npc.sizex / 8) - (npc.sizex / 8)) && (x <= ((npc.x - npc.sizex / 8) + (npc.sizex / 8)))) && ((y >= ((npc.y + npc.sizey / 4) - (npc.sizey / 40))) && (y <= ((npc.y + npc.sizey / 4) + (npc.sizey / 40)))))) {
             isReach = true;
           }
         }
       }
     })
     Object.values(this.walls).forEach(wall => {
-      if(((x >= (wall.x+3)) && (x <= (wall.x + wall.sizex + 13))) && ((y >= wall.y) &&  (y <= (wall.y + wall.sizey)))){
-        if(wall.wall){
+      if (((x >= (wall.x + 3)) && (x <= (wall.x + wall.sizex + 13))) && ((y >= wall.y) && (y <= (wall.y + wall.sizey)))) {
+        if (wall.wall) {
           isReach = true;
         }
-        if(!this.isCutscenePlaying && wall.event){
-          this.startCutscene( this.cutsceneSpaces[wall.id][0].events );
+        if (!this.isCutscenePlaying && wall.event) {
+          this.startCutscene(this.cutsceneSpaces[wall.id][0].events);
           wall.event = false;
         }
       }
@@ -88,7 +88,7 @@ class OverworldMap {
       object.id = key;
 
       //TODO: determine if this object should actually mount
-      if(key.isMounted){
+      if (key.isMounted) {
         object.mount(this);
       }
     })
@@ -97,7 +97,7 @@ class OverworldMap {
   async startCutscene(events) {
     this.isCutscenePlaying = true;
 
-    for (let i=0; i<events.length; i++) {
+    for (let i = 0; i < events.length; i++) {
       const eventHandler = new OverworldEvent({
         event: events[i],
         map: this,
@@ -115,53 +115,57 @@ class OverworldMap {
     const nextCoords = utils.heronextPosition(hero.x, hero.y, hero.direction);
     const match = Object.values(this.gameObjects).find(object => {
       let ifisReach = false;
-      if(object.isMounted){
-        if(object.id === "npcA"){
-          if(((nextCoords.x >= (object.x - (object.sizex/4)) && (nextCoords.x <= (object.x + (object.sizex/4)))) && ((nextCoords.y >= (object.y - (object.sizey/10))) &&  (nextCoords.y <= (object.y + (object.sizey/10)))))){
+      if (object.isMounted) {
+        if (object.id === "npcA") {
+          if (((nextCoords.x >= (object.x - (object.sizex / 4)) && (nextCoords.x <= (object.x + (object.sizex / 4)))) && ((nextCoords.y >= (object.y - (object.sizey / 10))) && (nextCoords.y <= (object.y + (object.sizey / 10)))))) {
             ifisReach = true;
           }
         }
-        else if(object.id === "Student1"){
-          if(((nextCoords.x >= (object.x - 14 - (object.sizex/2)) && (nextCoords.x <= (object.x - 14 + (object.sizex/2)))) && ((nextCoords.y >= (object.y - 12 - (object.sizey/5))) &&  (nextCoords.y <= (object.y - 12 + (object.sizey/5)))))){
+        else if (object.id === "Student1") {
+          if (((nextCoords.x >= (object.x - 14 - (object.sizex / 2)) && (nextCoords.x <= (object.x - 14 + (object.sizex / 2)))) && ((nextCoords.y >= (object.y - 12 - (object.sizey / 5))) && (nextCoords.y <= (object.y - 12 + (object.sizey / 5)))))) {
             ifisReach = true;
           }
         }
-        else if(object.id === "Student2"){
-          if(((nextCoords.x >= (object.x - (object.sizex/4)) && (nextCoords.x <= (object.x + (object.sizex/4)))) && ((nextCoords.y >= (object.y - (object.sizey/10))) &&  (nextCoords.y <= (object.y + (object.sizey/10)))))){
+        else if (object.id === "Student2") {
+          if (((nextCoords.x >= (object.x - (object.sizex / 4)) && (nextCoords.x <= (object.x + (object.sizex / 4)))) && ((nextCoords.y >= (object.y - (object.sizey / 10))) && (nextCoords.y <= (object.y + (object.sizey / 10)))))) {
             ifisReach = true;
           }
         }
-        else if(object.id === "Student3"){
-          if(((nextCoords.x >= (object.x + 32 - (object.sizex/4)) && (nextCoords.x <= (object.x + 32 + (object.sizex/4)))) && ((nextCoords.y >= (object.y  + 48 - (object.sizey/10))) &&  (nextCoords.y <= (object.y + 48 + (object.sizey/10)))))){
+        else if (object.id === "Student3") {
+          if (((nextCoords.x >= (object.x + 32 - (object.sizex / 4)) && (nextCoords.x <= (object.x + 32 + (object.sizex / 4)))) && ((nextCoords.y >= (object.y + 48 - (object.sizey / 10))) && (nextCoords.y <= (object.y + 48 + (object.sizey / 10)))))) {
             ifisReach = true;
           }
         }
-        else if(object.id === "Wizard"){
-          if(((nextCoords.x >= ((object.x - object.sizex/8) - (object.sizex/8)) && (nextCoords.x <= ((object.x - object.sizex/8) + (object.sizex/8)))) && ((nextCoords.y >= ((object.y + object.sizey/4) - (object.sizey/40))) &&  (nextCoords.y <= ((object.y + object.sizey/4) + (object.sizey/40)))))){
+        else if (object.id === "Wizard") {
+          if (((nextCoords.x >= ((object.x - object.sizex / 8) - (object.sizex / 8)) && (nextCoords.x <= ((object.x - object.sizex / 8) + (object.sizex / 8)))) && ((nextCoords.y >= ((object.y + object.sizey / 4) - (object.sizey / 40))) && (nextCoords.y <= ((object.y + object.sizey / 4) + (object.sizey / 40)))))) {
             ifisReach = true;
           }
         }
 
-      return ifisReach;
+        return ifisReach;
       }
     });
     if (!this.isCutscenePlaying && match && match.talking.length) {
-      this.startCutscene(match.talking[0].events)
-      if(match.id === "Student1"){
-        $("#includedContent").load("dialogueUnit1.html");
-        showSecondPage1 = true;
+      if(match.ifdialogue){
+        this.startCutscene(match.talking[0].events)
       }
-      if(match.id === "Student2"){
-        $("#includedContent2").load("dialogueUnit2.html");
-        showSecondPage2 = true;
-      }
-      if(match.id === "Student3"){
-        $("#includedContent3").load("dialogueUnit3.html");
-        showSecondPage3 = true;
-      }
-      if(match.id === "Wizard"){
-        if(showSecondPage1 && showSecondPage2 && showSecondPage3){
-          window.location.href = "https://tianbinliu.github.io/CSA-FinalProject/quiz.html";
+      else if(!match.ifdialogue){
+        if (match.id === "Student1") {
+          $("#includedContent").load("dialogue/dialogueUnit1.html");
+          showSecondPage1 = true;
+        }
+        if (match.id === "Student2") {
+          $("#includedContent2").load("dialogue/dialogueUnit2.html");
+          showSecondPage2 = true;
+        }
+        if (match.id === "Student3") {
+          $("#includedContent3").load("dialogue/dialogueUnit3.html");
+          showSecondPage3 = true;
+        }
+        if (match.id === "Wizard") {
+          if (showSecondPage1 && showSecondPage2 && showSecondPage3) {
+            window.location.href = "https://tianbinliu.github.io/CSA-FinalProject/quiz.html";
+          }
         }
       }
     }
@@ -191,18 +195,19 @@ window.OverworldMaps = {
         sizex: 48,
         sizey: 48,
         id: "npcA",
+        ifdialogue: true,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/Charakter.png",
         behaviorLoop: [
-          { type: "stand",  direction: "left", time: 800 },
-          { type: "stand",  direction: "up", time: 800 },
-          { type: "stand",  direction: "right", time: 1200 },
-          { type: "stand",  direction: "down", time: 800 },
+          { type: "stand", direction: "left", time: 800 },
+          { type: "stand", direction: "up", time: 800 },
+          { type: "stand", direction: "right", time: 1200 },
+          { type: "stand", direction: "down", time: 800 },
         ],
         talking: [
           {
             events: [
-              { type: "textMessage", text: "I'm busy..."},
-              { type: "textMessage", text: "Go away!"},
+              { type: "textMessage", text: "I'm busy..." },
+              { type: "textMessage", text: "Go away!" },
             ]
           }
         ]
@@ -295,17 +300,17 @@ window.OverworldMaps = {
       ["event1"]: [
         {
           events: [
-            { who: "npcA", type: "walk",  direction: "left", spritedirection: "left" },
-            { who: "npcA", type: "stand",  direction: "up", time: 500 },
-            { type: "textMessage", text:"You can't stay there! "},
-            { type: "textMessage", text:"Go straight to the CS classroom. You don't want to be late right?"},
-            { type: "textMessage", text:"..."},
-            { type: "textMessage", text:"......."},
-            { type: "textMessage", text:"..........."},
-            { type: "textMessage", text:"Move!!!!!!!!!"},
-            { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
-            { who: "npcA", type: "walk",  direction: "right", spritedirection: "right" },
-            { who: "npcA", type: "stand",  direction: "up", time: 500 },
+            { who: "npcA", type: "walk", direction: "left", spritedirection: "left" },
+            { who: "npcA", type: "stand", direction: "up", time: 500 },
+            { type: "textMessage", text: "You can't stay there! " },
+            { type: "textMessage", text: "Go straight to the CS classroom. You don't want to be late right?" },
+            { type: "textMessage", text: "..." },
+            { type: "textMessage", text: "......." },
+            { type: "textMessage", text: "..........." },
+            { type: "textMessage", text: "Move!!!!!!!!!" },
+            { who: "npcA", type: "walk", direction: "right", spritedirection: "right" },
+            { who: "npcA", type: "walk", direction: "right", spritedirection: "right" },
+            { who: "npcA", type: "stand", direction: "up", time: 500 },
           ]
         }
       ],
@@ -337,17 +342,18 @@ window.OverworldMaps = {
         sizex: 80,
         sizey: 149,
         id: "Wizard",
+        ifdialogue: false,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/wizard/WizardMrM.png",
         behaviorLoop: [
-          { type: "stand",  direction: "right", time: 1200 },
+          { type: "stand", direction: "right", time: 1200 },
         ],
         talking: [
           {
             events: [
-              { type: "textMessage", text: "I'm Wizard Mr. M. I'm here to check if you are able to face the AP Exam."},
-              { type: "textMessage", text: "Well, I have a quiz for you, but before that, "},     
-              { type: "textMessage", text: "you need the approval of my top 10(Now it's only three) students in this class. "},       
-              { type: "textMessage", text: "I will wait for you to come back."},      
+              { type: "textMessage", text: "I'm Wizard Mr. M. I'm here to check if you are able to face the AP Exam." },
+              { type: "textMessage", text: "Well, I have a quiz for you, but before that, " },
+              { type: "textMessage", text: "you need the approval of my top 10(Now it's only three) students in this class. " },
+              { type: "textMessage", text: "I will wait for you to come back." },
             ]
           }
         ]
@@ -359,14 +365,15 @@ window.OverworldMaps = {
         sizex: 24,
         sizey: 24,
         id: "Student1",
+        ifdialogue: false,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/student1.png",
         behaviorLoop: [
-          { type: "stand",  direction: "right", time: 1200 },
+          { type: "stand", direction: "right", time: 1200 },
         ],
         talking: [
           {
             events: [
-              { type: "textMessage", text: " "},
+              { type: "textMessage", text: " " },
             ]
           }
         ]
@@ -378,14 +385,15 @@ window.OverworldMaps = {
         sizex: 69,
         sizey: 44,
         id: "Student2",
+        ifdialogue: false,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/warrior/Warrior_Sheet-Effect.png",
         behaviorLoop: [
-          { type: "stand",  direction: "right", time: 1200 },
+          { type: "stand", direction: "right", time: 1200 },
         ],
         talking: [
           {
             events: [
-              { type: "textMessage", text: " "},
+              { type: "textMessage", text: " " },
             ]
           }
         ]
@@ -397,14 +405,15 @@ window.OverworldMaps = {
         sizex: 100,
         sizey: 100,
         id: "Student3",
+        ifdialogue: false,
         src: "https://tianbinliu.github.io/CSA-FinalProject/images/character/Undeadexecutionerpuppet/idle.png",
         behaviorLoop: [
-          { type: "stand",  direction: "right", time: 1200 },
+          { type: "stand", direction: "right", time: 1200 },
         ],
         talking: [
           {
             events: [
-              { type: "textMessage", text: " "},
+              { type: "textMessage", text: " " },
             ]
           }
         ]
@@ -572,7 +581,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
       }),
-      
+
       chair3: new GameObject({
         id: "chair3",               // chair middle 2
         wall: true,
@@ -598,7 +607,7 @@ window.OverworldMaps = {
         sizex: utils.withGrid(2),
         sizey: utils.withGrid(2),
       }),
-      
+
       chair6: new GameObject({
         id: "chair6",               // chair left 3
         wall: true,

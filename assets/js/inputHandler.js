@@ -20,6 +20,8 @@ let checkifwalkingup;
 let checkifwalkingdown;
 let checkifwalkingleft;
 
+let ifdialogue = false;
+
 
 addEventListener("keydown", function(event){
     console.log(event.code)
