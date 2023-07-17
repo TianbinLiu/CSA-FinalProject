@@ -11,11 +11,6 @@
 
 html {
   block-size: 100%;
-  background: conic-gradient(at -10% 50%, cornflowerblue, rgb(231, 186, 119));
-
-  @media (--dark) {
-    background: conic-gradient(at -10% 50%, #212529, 50%, #495057, #212529);
-  }
 }
 
 body {
