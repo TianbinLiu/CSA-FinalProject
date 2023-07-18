@@ -151,12 +151,13 @@ var Paul_Pio = function (prop) {
              };
              if(prop.model.length > 1) current.menu.appendChild(elements.skin);
 
-             // 关于我
+             // ChatGPT对话框
              elements.info.onclick = function () {
-                 window.open("https://tianbinliu.github.io/Fastpage/about.html");
+                // 关闭对话框
+                $('#AIhelper').addClass('blocked');
              };
              elements.info.onmouseover = function () {
-                 modules.render("Wants to know more information about me?");
+                 modules.render("Wants to know more information about CS?");
              };
              current.menu.appendChild(elements.info);
 
