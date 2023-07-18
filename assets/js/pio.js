@@ -6,6 +6,25 @@
 一个支持更换 Live2D 模型的 Typecho 插件。
 ---- */
 
+function addRow() {
+  const div = document.createElement('div');
+
+  div.className = 'row';
+
+  div.innerHTML = `
+	<div id="dialog"></div>
+  	<input type="text" id="user-input" placeholder="Type your message..." />
+  	<button id="submit-btn">Submit</button> 
+    <input type="button" value="-" onclick="removeRow(this)" />
+  `;
+
+  document.getElementById('AIhelper').appendChild(div);
+}
+
+function removeRow(input) {
+  document.getElementById('AIhelper').removeChild(input.parentNode);
+}
+
 var Paul_Pio = function (prop) {
     var that = this;
 
@@ -153,8 +172,8 @@ var Paul_Pio = function (prop) {
 
              // ChatGPT对话框
              elements.info.onclick = function () {
-                // 关闭对话框
-                $('#AIhelper').addClass('blocked');
+                // 打开对话框
+                addRow();
              };
              elements.info.onmouseover = function () {
                  modules.render("Wants to know more information about CS?");
