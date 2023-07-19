@@ -20,8 +20,8 @@ function addRow() {
 
   document.getElementById('AIhelper').appendChild(div);
 
-  const scriptElement = document.createElement('script');
-  scriptElement.text = `
+  const script = document.createElement('script');
+  script.text = `
     const dialogElement = document.getElementById("dialog");
     const userInputElement = document.getElementById("user-input");
     const submitButton = document.getElementById("submit-btn");
@@ -72,11 +72,12 @@ function addRow() {
     });
   `;
 
-  div.appendChild(scriptElement);
+  document.getElementById('AIscript').appendChild(script);
 }
 
 function removeRow(input) {
   document.getElementById('AIhelper').removeChild(input.parentNode);
+  document.getElementById('AIscript').removeChild(script);
 }
 
 var Paul_Pio = function (prop) {
