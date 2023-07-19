@@ -5,80 +5,7 @@
 
 一个支持更换 Live2D 模型的 Typecho 插件。
 ---- */
-
-function addRow() {
-  const div = document.createElement('div');
-
-  div.className = 'row';
-
-  div.innerHTML = `
-	<div id="dialog"></div>
-  	<input type="text" id="user-input" placeholder="Type your message..." />
-  	<button id="submit-btn">Submit</button> 
-    <input type="button" value="-" onclick="removeRow(this)" />
-  `;
-
-  document.getElementById('AIhelper').appendChild(div);
-
-  const script = document.createElement('script');
-  script.text = `
-    const dialogElement = document.getElementById("dialog");
-    const userInputElement = document.getElementById("user-input");
-    const submitButton = document.getElementById("submit-btn");
-
-    let userInputArray = [];
-
-    function appendUserInput(input) {
-      const userInputItem = document.createElement("div");
-      userInputItem.innerText = input;
-      dialogElement.appendChild(userInputItem);
-    }
-
-    function appendResponse(response) {
-      const responseItem = document.createElement("div");
-      responseItem.innerText = response;
-      dialogElement.appendChild(responseItem);
-    }
-
-    function handleUserInput() {
-      const userInput = userInputElement.value;
-      userInputArray.push(userInput);
-      appendUserInput(userInput);
-      userInputElement.value = "";
-
-      fetch("https://chatgpttesting.lol/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          input: userInput,
-        }),
-      })
-        .then(response => response.json())
-        .then(data => {
-          appendResponse(data.output);
-        })
-        .catch(error => {
-          console.error("Error:", error);
-        });
-    }
-
-    submitButton.addEventListener("click", handleUserInput);
-    userInputElement.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        handleUserInput();
-      }
-    });
-  `;
-
-  document.getElementById('AIscript').appendChild(script);
-}
-
-function removeRow(input) {
-  document.getElementById('AIhelper').removeChild(input.parentNode);
-  document.getElementById('AIscript').removeChild(script);
-}
+let isAIhelper = false;
 
 var Paul_Pio = function (prop) {
     var that = this;
@@ -228,7 +155,15 @@ var Paul_Pio = function (prop) {
              // ChatGPT对话框
              elements.info.onclick = function () {
                 // 打开对话框
-                addRow();
+		if(!isAIhelper){
+			$("#AIhelper").load("dialogue/gptdalogue.html");
+			isAIhelper = true;
+		}
+		else{
+			document.getElementById('AIhelper').removeChild(input.parentNode);
+			isAIhelper = false;
+		}
+
              };
              elements.info.onmouseover = function () {
                  modules.render("Wants to know more information about CS?");
