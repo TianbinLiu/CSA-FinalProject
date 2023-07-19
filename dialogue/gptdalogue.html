@@ -1,28 +1,21 @@
 <html>
 <head>
+  <title>Dialog Box Demo</title>
   <style>
-    #bgposition{
-
-    }
-
     #dialog {
       height: 200px;
       width: 400px;
-      background-color: white;
       border: 1px solid black;
       overflow: auto;
       padding: 10px;
-      position: absolute;
     }
   </style>
 </head>
 <body>
-  <div id="bgposition">
-    <div id="dialog"></div>
-    <input type="text" id="user-input" placeholder="Type your message..." />
-    <button id="submit-btn">Submit</button>
-    <input type="button" value="-" onclick="" />
-  </div>
+  <div id="dialog"></div>
+  <input type="text" id="user-input" placeholder="Type your message..." />
+  <button id="submit-btn">Submit</button>
+
 <script>
 const dialogElement = document.getElementById("dialog");
 const userInputElement = document.getElementById("user-input");
