@@ -7,6 +7,11 @@
 ---- */
 let isAIhelper = false;
 
+function removeRow(input) {
+    $("#AIhelper").empty();
+    isAIhelper = false;
+}
+
 var Paul_Pio = function (prop) {
     var that = this;
 
