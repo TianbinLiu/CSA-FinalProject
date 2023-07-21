@@ -309,11 +309,45 @@
   </script>
 
 </body>
+  <script type="text/javascript">
+    const userInputElement = document.getElementById("user-input");
+    const submitButton = document.getElementById("submit-btn");
 
+    let userInputArray = [];
+    var myPaulPioInstance = new Paul_Pio({ /* prop object here */ });
+    
+    function appendResponse(response) {
+      myPaulPioInstance.render(response);
+    }
 
+    function handleUserInput() {
+      const userInput = userInputElement.value;
+      userInputArray.push(userInput);
+      userInputElement.value = "";
 
+      fetch("https://chatgpttesting.lol/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          input: userInput,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          appendResponse(data.output);
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    }
+
+    submitButton.addEventListener("click", handleUserInput);
+    userInputElement.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        handleUserInput();
+      }
+    });
+</script>
 </html>
-
-<style>
-
-</style>
