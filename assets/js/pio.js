@@ -71,7 +71,7 @@ var Paul_Pio = function (prop) {
         }
     };
     this.destroy = modules.destroy;
-
+    this.render = modules.render;
     var elements = {
         home: modules.create("span", { class: "pio-home" }),
         skin: modules.create("span", { class: "pio-skin" }),
