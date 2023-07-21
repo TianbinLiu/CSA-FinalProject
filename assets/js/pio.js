@@ -56,6 +56,7 @@ var Paul_Pio = function (prop) {
                 dialog.classList.remove("active");
             }, 3000);
         },
+        window.render = render;
         // 移除方法
         destroy: function () {
             that.initHidden();
