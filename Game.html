@@ -313,9 +313,10 @@
     const submitButton = document.getElementById("submit-btn");
 
     let userInputArray = [];
+    var myPaulPioInstance = new Paul_Pio({ /* prop object here */ });
     
     function appendResponse(response) {
-      pio.render(response);
+      myPaulPioInstance.render(response);
     }
 
     function handleUserInput() {
