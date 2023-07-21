@@ -5,10 +5,11 @@
 
 一个支持更换 Live2D 模型的 Typecho 插件。
 ---- */
+let isAIhelperfirst = true;
 let isAIhelper = false;
 
 function removeRow(input) {
-    $("#AIhelper").empty();
+    $("#AIhelper").hide();
     isAIhelper = false;
 }
 
@@ -160,12 +161,17 @@ var Paul_Pio = function (prop) {
             // ChatGPT对话框
             elements.info.onclick = function () {
                 // 打开对话框
-                if (!isAIhelper) {
+                if (!isAIhelper && isAIhelperfirst) {
                     $("#AIhelper").load("dialogue/gptdalogue.html");
                     isAIhelper = true;
+                    isAIhelperfirst = false;
                 }
-                else {
-                    $("#AIhelper").empty();
+                if (!isAIhelper && !isAIhelperfirst) {
+                    $("#AIhelper").show();
+                    isAIhelper = true;
+                }
+                else if(isAIhelper && !isAIhelperfirst){
+                    $("#AIhelper").hide();
                     isAIhelper = false;
                 }
 
