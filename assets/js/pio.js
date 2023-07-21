@@ -88,6 +88,7 @@ var Paul_Pio = function (prop) {
 
     /* - 提示操作 */
     var action = {
+        
         // 欢迎
         welcome: function () {
             if (document.referrer !== "" && document.referrer.indexOf(current.root) === -1) {
@@ -302,4 +303,45 @@ var Paul_Pio = function (prop) {
     }
 
     localStorage.getItem("posterGirl") == 0 ? this.initHidden() : this.init();
+
+    const userInputElement = document.getElementById("user-input");
+    const submitButton = document.getElementById("submit-btn");
+
+    let userInputArray = [];
+
+    function appendResponse(response) {
+      modules.render(response);
+    }
+
+    function handleUserInput() {
+      const userInput = userInputElement.value;
+      userInputArray.push(userInput);
+      userInputElement.value = "";
+
+      fetch("https://chatgpttesting.lol/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          input: userInput,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          appendResponse(data.output);
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    }
+
+    submitButton.addEventListener("click", handleUserInput);
+    userInputElement.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        handleUserInput();
+      }
+    });
+
 };
+
