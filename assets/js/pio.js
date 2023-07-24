@@ -7,6 +7,9 @@
 ---- */
 let isAIhelperfirst = true;
 let isAIhelper = false;
+const userInputElement = document.getElementById("user-input");
+const submitButton = document.getElementById("submit-btn");
+let userInputArray = [];
 
 function removeRow(input) {
     $("#AIhelper").hide();
@@ -85,7 +88,41 @@ var Paul_Pio = function (prop) {
     var dialog = modules.create("div", { class: "pio-dialog" });
     current.body.appendChild(dialog);
     current.body.appendChild(elements.show);
+    
+    function appendResponse(response) {
+      modules.render(response);
+    }
 
+    function handleUserInput() {
+      const userInput = userInputElement.value;
+      userInputArray.push(userInput);
+      userInputElement.value = "";
+
+      fetch("https://chatgpttesting.lol/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          input: userInput,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          appendResponse(data.output);
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    }
+
+    submitButton.addEventListener("click", handleUserInput);
+    userInputElement.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        handleUserInput();
+      }
+    });
+    
     /* - 提示操作 */
     var action = {
         
