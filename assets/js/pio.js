@@ -88,7 +88,9 @@ var Paul_Pio = function (prop) {
     var dialog = modules.create("div", { class: "pio-dialog" });
     current.body.appendChild(dialog);
     current.body.appendChild(elements.show);
-    
+
+
+    //openai dialogy
     function appendResponse(response) {
       modules.render(response);
     }
