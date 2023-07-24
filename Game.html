@@ -79,6 +79,13 @@
       bottom: 0;
     }
 
+
+    .center-top {
+      position: absolute;
+      top: 50%; /* This will center the element vertically at 50% of the container */
+      left: 50%; /* This will center the element horizontally at 50% of the container */
+      transform: translate(-50%, -50%); /* This will adjust the element's position to be truly centered */
+    }
     /* ----
 # Pio Plugin
 # By: Dreamer-Paul
@@ -248,6 +255,11 @@
 
 <body>
   <!-- npc dialogy -->
+  <div class="center-top">
+    <input type="text" id="user-input" placeholder="Type your message..." />
+    <button id="submit-btn">Submit</button>
+  </div>
+  
   <div id="includedContent"></div>
   <div id="includedContent2"></div>
   <div id="includedContent3"></div>
@@ -265,10 +277,7 @@
     <canvas id="pio" width="400" height="500"></canvas>
   </div>
 
-  <div align="center">
-    <input type="text" id="user-input" placeholder="Type your message..." />
-    <button id="submit-btn">Submit</button>
-  </div>
+
   <!-- Scripts -->
 
   <script src="assets/js/l2d.js"></script>
