@@ -1,29 +1,64 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Game Menu</title>
-  <meta charset="utf-8">
+<style>
+  body {
+  margin: 0;
+  overflow: hidden;
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="hsl(221 90% 98%)" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="Canvas" media="(prefers-color-scheme: dark)">
-  <meta name="description" content="🙂">
-  <link rel="stylesheet" href="menu.css">
-  <script type="module" src="menu.js"></script>
+#video_wrapper {
+  position: relative;
+}
+
+#video_wrapper video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: -99;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.menu-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.menu-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.menu-button:active {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+</style>
 </head>
-
 <body>
   <div id="video_wrapper">
-    <video autoplay loop id="background">
+    <video autoplay loop muted id="background">
       <source src="https://drive.google.com/uc?export=view&id=17ygkkkTDZb219cgsmglfod33qP8PGW58" type="video/mp4">
     </video>
-    <ul class="threeD-button-set">
-      <li><button onclick="location.href='/CSA-FinalProject/Game'">New Game</button></li>
-    </ul>
+    <div class="menu-container">
+      <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button">New Game</button>
+    </div>
   </div>
-
 </body>
-
 </html>
