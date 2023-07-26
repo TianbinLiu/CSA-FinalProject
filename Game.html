@@ -79,13 +79,44 @@
       bottom: 0;
     }
 
+    .game-input-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #a8a8a8;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-    .center-top {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+#user-input {
+  width: 300px;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+#submit-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#submit-btn:hover {
+  background-color: #007bff;
+}
+
     /* ----
 # Pio Plugin
 # By: Dreamer-Paul
@@ -255,7 +286,7 @@
 
 <body>
   <!-- npc dialogy -->
-  <div class="center-top">
+  <div class="game-input-container">
     <input type="text" id="user-input" placeholder="Type your message..." />
     <button id="submit-btn">Submit</button>
   </div>
