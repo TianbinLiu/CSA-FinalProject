@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-body {
+  body {
   margin: 0;
   overflow: hidden;
 }
@@ -35,11 +35,11 @@ body {
   min-width: 25%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the button horizontally */
-  justify-content: center; /* Center the button vertically */
+  align-items: center; /* Center the buttons horizontally */
 }
 
 .menu-button {
+  margin: 10px 0; /* Add some spacing between buttons */
   padding: 12px 24px;
   font-size: 18px;
   border: none;
@@ -54,7 +54,6 @@ body {
   background-color: rgba(255, 255, 255, 1);
 }
 
-
 </style>
 </head>
 <body>
@@ -63,13 +62,14 @@ body {
       <source src="https://drive.google.com/uc?export=view&id=17ygkkkTDZb219cgsmglfod33qP8PGW58" type="video/mp4">
     </video>
     <div class="game-menu" id="gameMenu">
-      <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button" id="menuButton">New Game</button>
+      <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button">New Game</button>
+      <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button">Settings</button>
     </div>
   </div>
 
   <script type="text/javascript">
-    const menuButton = document.getElementById('menuButton');
-const gameMenu = document.getElementById('gameMenu');
+    const gameMenu = document.getElementById('gameMenu');
+const menuButtons = document.getElementsByClassName('menu-button');
 
 document.addEventListener('mousemove', function (event) {
   const mouseX = event.clientX;
@@ -78,10 +78,14 @@ document.addEventListener('mousemove', function (event) {
   const menuCenterX = menuRect.left + menuRect.width / 2;
   const menuCenterY = menuRect.top + menuRect.height / 2;
 
-  const distance = Math.sqrt((menuCenterX - mouseX) ** 2 + (menuCenterY - mouseY) ** 2);
-  const lightIntensity = Math.min(1 / (distance / 150), 1);
-
-  menuButton.style.backgroundColor = `rgba(255, 255, 255, ${lightIntensity})`;
+  for (const button of menuButtons) {
+    const buttonRect = button.getBoundingClientRect();
+    const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+    const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+    const distance = Math.sqrt((buttonCenterX - mouseX) ** 2 + (buttonCenterY - mouseY) ** 2);
+    const lightIntensity = Math.min(1 / (distance / 150), 1);
+    button.style.backgroundColor = `rgba(255, 255, 255, ${lightIntensity})`;
+  }
 });
 
   </script>
