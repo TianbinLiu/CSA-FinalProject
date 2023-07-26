@@ -3,6 +3,7 @@
 <head>
 <style>
 body {
+body {
   margin: 0;
   overflow: hidden;
 }
@@ -22,6 +23,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   z-index: -99;
+  transition: opacity 0.5s ease; /* Add a transition effect for video opacity change */
 }
 
 .game-menu {
@@ -33,6 +35,11 @@ body {
   padding: 20px;
   border-radius: 10px;
   min-width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the buttons horizontally */
+  opacity: 1; /* Initialize the menu opacity to 1 (fully visible) */
+  transition: opacity 0.5s ease; /* Add a transition effect for menu opacity change */
 }
 
 .button-group {
@@ -58,6 +65,7 @@ body {
 }
 
 
+
 </style>
 </head>
 <body>
@@ -72,16 +80,33 @@ body {
   </div>
 
   <script type="text/javascript">
-    const gameMenu = document.getElementById('gameMenu');
+const gameMenu = document.getElementById('gameMenu');
+const videoBackground = document.getElementById('background');
 const menuButtons = document.getElementsByClassName('menu-button');
 
 document.addEventListener('mousemove', function (event) {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
+
+  // Update the menu transparency based on the mouse distance from the center
   const menuRect = gameMenu.getBoundingClientRect();
   const menuCenterX = menuRect.left + menuRect.width / 2;
   const menuCenterY = menuRect.top + menuRect.height / 2;
+  const distanceFromCenter = Math.sqrt((menuCenterX - mouseX) ** 2 + (menuCenterY - mouseY) ** 2);
+  const menuOpacity = Math.max(1 - distanceFromCenter / 150, 0); // Adjust the division factor (150) to control the transparency
 
+  gameMenu.style.opacity = menuOpacity;
+
+  // Update the video background transparency based on the mouse distance from the center
+  const videoRect = videoBackground.getBoundingClientRect();
+  const videoCenterX = videoRect.left + videoRect.width / 2;
+  const videoCenterY = videoRect.top + videoRect.height / 2;
+  const distanceFromVideoCenter = Math.sqrt((videoCenterX - mouseX) ** 2 + (videoCenterY - mouseY) ** 2);
+  const videoOpacity = Math.max(1 - distanceFromVideoCenter / 200, 0); // Adjust the division factor (200) to control the transparency
+
+  videoBackground.style.opacity = videoOpacity;
+
+  // Update the buttons reflection effect based on their positions and distances from the mouse
   for (const button of menuButtons) {
     const buttonRect = button.getBoundingClientRect();
     const buttonCenterX = buttonRect.left + buttonRect.width / 2;
@@ -91,6 +116,7 @@ document.addEventListener('mousemove', function (event) {
     button.style.backgroundColor = `rgba(255, 255, 255, ${lightIntensity})`;
   }
 });
+
 
   </script>
 </body>
