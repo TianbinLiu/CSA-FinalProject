@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
+  <style>
+    body {
   margin: 0;
   overflow: hidden;
 }
 
 #video_wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 #video_wrapper video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
 
 .game-menu {
@@ -41,6 +42,7 @@ body {
 
 .button-group {
   display: flex;
+  flex-direction: row; /* Buttons will align horizontally */
   justify-content: center; /* Center the buttons horizontally */
 }
 
@@ -60,7 +62,7 @@ body {
   background-color: rgba(255, 255, 255, 1);
 }
 
-</style>
+  </style>
 </head>
 <body>
   <div id="video_wrapper">
@@ -68,14 +70,15 @@ body {
       <source src="https://drive.google.com/uc?export=view&id=17ygkkkTDZb219cgsmglfod33qP8PGW58" type="video/mp4">
     </video>
     <div class="game-menu" id="gameMenu">
-      <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button">New Game</button>
-      <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button">Settings</button>
+      <div class="button-group">
+        <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button">New Game</button>
+        <button onclick="location.href='/CSA-FinalProject/Settings'" class="menu-button">Settings</button>
+      </div>
     </div>
   </div>
 
   <script type="text/javascript">
-const gameMenu = document.getElementById('gameMenu');
-const videoBackground = document.getElementById('background');
+    const gameMenu = document.getElementById('gameMenu');
 const menuButtons = document.getElementsByClassName('menu-button');
 
 document.addEventListener('mousemove', function (event) {
@@ -91,15 +94,6 @@ document.addEventListener('mousemove', function (event) {
 
   gameMenu.style.opacity = menuOpacity;
 
-  // Update the video background transparency based on the mouse distance from the center
-  const videoRect = videoBackground.getBoundingClientRect();
-  const videoCenterX = videoRect.left + videoRect.width / 2;
-  const videoCenterY = videoRect.top + videoRect.height / 2;
-  const distanceFromVideoCenter = Math.sqrt((videoCenterX - mouseX) ** 2 + (videoCenterY - mouseY) ** 2);
-  const videoOpacity = Math.max(1 - distanceFromVideoCenter / 200, 0); // Adjust the division factor (200) to control the transparency
-
-  videoBackground.style.opacity = videoOpacity;
-
   // Update the buttons reflection effect based on their positions and distances from the mouse
   for (const button of menuButtons) {
     const buttonRect = button.getBoundingClientRect();
@@ -110,8 +104,6 @@ document.addEventListener('mousemove', function (event) {
     button.style.backgroundColor = `rgba(255, 255, 255, ${lightIntensity})`;
   }
 });
-
-
 
   </script>
 </body>
