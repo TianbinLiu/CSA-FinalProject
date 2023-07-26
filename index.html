@@ -24,6 +24,18 @@
   z-index: -1;
 }
 
+.black-mist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Add a transition effect for the black mist opacity change */
+}
+
 .game-menu {
   position: absolute;
   top: 50%;
@@ -69,6 +81,7 @@
     <video autoplay loop muted id="background">
       <source src="https://drive.google.com/uc?export=view&id=17ygkkkTDZb219cgsmglfod33qP8PGW58" type="video/mp4">
     </video>
+    <div class="black-mist"></div>
     <div class="game-menu" id="gameMenu">
       <div class="button-group">
         <button onclick="location.href='/CSA-FinalProject/Game'" class="menu-button">New Game</button>
@@ -78,8 +91,9 @@
   </div>
 
   <script type="text/javascript">
-const gameMenu = document.getElementById('gameMenu');
+    const gameMenu = document.getElementById('gameMenu');
 const menuButtons = document.getElementsByClassName('menu-button');
+const blackMist = document.querySelector('.black-mist');
 
 document.addEventListener('mousemove', function (event) {
   const mouseX = event.clientX;
@@ -93,8 +107,14 @@ document.addEventListener('mousemove', function (event) {
   // Calculate the maximum distance from the center for the menu and buttons to be fully opaque
   const maxDistanceFromCenter = Math.sqrt(windowCenterX ** 2 + windowCenterY ** 2);
 
-  // Calculate the opacity based on the mouse distance from the center
-  const menuOpacity = 1 - distanceFromCenter / maxDistanceFromCenter;
+  // Calculate the opacity for the black mist overlay
+  const mistOpacity = distanceFromCenter / maxDistanceFromCenter;
+
+  // Set the opacity of the black mist overlay
+  blackMist.style.opacity = mistOpacity;
+
+  // Calculate the opacity for the menu and buttons based on the distance from the center
+  const menuOpacity = 1 - distanceFromCenter / (maxDistanceFromCenter * 0.8);
   const buttonOpacity = 0.8 - distanceFromCenter / (maxDistanceFromCenter * 1.2);
 
   // Ensure the opacity values are within the valid range [0, 1]
@@ -107,7 +127,6 @@ document.addEventListener('mousemove', function (event) {
     button.style.opacity = clampedButtonOpacity;
   }
 });
-
 
   </script>
 </body>
