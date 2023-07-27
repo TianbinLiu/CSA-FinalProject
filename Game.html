@@ -338,6 +338,13 @@
   <script src="assets/js/RevealingText.js"></script>
   <script src="assets/js/init.js"></script>
   <script type="text/javascript">
+    let isAIhelperfirst = true;
+    
+    if(isAIhelperfirst){
+    $("#AIhelper").hide();
+    isAIhelperfirst = false;
+    };
+    
     var pio = new Paul_Pio({
       "mode": "fixed",
       "tips": true,
