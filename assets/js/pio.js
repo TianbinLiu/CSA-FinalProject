@@ -225,7 +225,7 @@ var Paul_Pio = function (prop) {
 
             };
             elements.info.onmouseover = function () {
-                modules.render("Wants to know more information about CS?");
+                modules.render("Am I talking too fast? Click here to see our chatting records");
             };
             current.menu.appendChild(elements.info);
 
