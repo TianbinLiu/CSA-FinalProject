@@ -7,6 +7,7 @@
 ---- */
 let isAIhelperfirst = true;
 let isAIhelper = false;
+const dialogElement = document.getElementById("dialog");
 const userInputElement = document.getElementById("user-input");
 const submitButton = document.getElementById("submit-btn");
 let userInputArray = [];
@@ -91,13 +92,25 @@ var Paul_Pio = function (prop) {
 
 
     //openai dialogy
+
+
+    function appendUserInput(input) {
+      const userInputItem = document.createElement("div");
+      userInputItem.innerText = input;
+      dialogElement.appendChild(userInputItem);
+    }
+    
     function appendResponse(response) {
       modules.render(response);
+      const responseItem = document.createElement("div");
+      responseItem.innerText = response;
+      dialogElement.appendChild(responseItem);
     }
 
     function handleUserInput() {
       const userInput = userInputElement.value;
       userInputArray.push(userInput);
+      appendUserInput(userInput);
       userInputElement.value = "";
 
       fetch("https://chatgpttesting.lol/api/chat", {
