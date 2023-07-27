@@ -93,18 +93,32 @@ var Paul_Pio = function (prop) {
     //openai dialogy
 
 
-    function appendUserInput(input) {
-      const userInputItem = document.createElement("div");
-      userInputItem.innerText = input;
-      dialogElement.appendChild(userInputItem);
-    };
-    
-    function appendResponse(response) {
-      modules.render(response);
-      const responseItem = document.createElement("div");
-      responseItem.innerText = response;
-      dialogElement.appendChild(responseItem);
-    };
+function appendUserInput(input) {
+  const chatFrame = document.createElement("div");
+  chatFrame.classList.add("chat-frame");
+  
+  const userInputItem = document.createElement("div");
+  userInputItem.innerText = input;
+  userInputItem.classList.add("user-input");
+  chatFrame.appendChild(userInputItem);
+  
+  dialogElement.appendChild(chatFrame);
+}
+
+function appendResponse(response) {
+  modules.render(response);
+  
+  const chatFrame = document.createElement("div");
+  chatFrame.classList.add("chat-frame");
+  
+  const responseItem = document.createElement("div");
+  responseItem.innerText = response;
+  responseItem.classList.add("ai-response");
+  chatFrame.appendChild(responseItem);
+  
+  dialogElement.appendChild(chatFrame);
+}
+
 
     function handleUserInput() {
       const userInput = userInputElement.value;
