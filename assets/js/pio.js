@@ -6,7 +6,6 @@
 一个支持更换 Live2D 模型的 Typecho 插件。
 ---- */
 let isAIhelper = false;
-let isAIhelperfirst = true;
 const dialogElement = document.getElementById("dialog");
 const userInputElement = document.getElementById("user-input");
 const submitButton = document.getElementById("submit-btn");
@@ -15,12 +14,7 @@ let userInputArray = [];
 function removeRow(input) {
     $("#AIhelper").hide();
     isAIhelper = false;
-}
-
-if(isAIhelperfirst){
-    $("#AIhelper").hide();
-    isAIhelperfirst = false;
-}
+};
 
 var Paul_Pio = function (prop) {
     var that = this;
@@ -103,14 +97,14 @@ var Paul_Pio = function (prop) {
       const userInputItem = document.createElement("div");
       userInputItem.innerText = input;
       dialogElement.appendChild(userInputItem);
-    }
+    };
     
     function appendResponse(response) {
       modules.render(response);
       const responseItem = document.createElement("div");
       responseItem.innerText = response;
       dialogElement.appendChild(responseItem);
-    }
+    };
 
     function handleUserInput() {
       const userInput = userInputElement.value;
@@ -134,7 +128,7 @@ var Paul_Pio = function (prop) {
         .catch(error => {
           console.error("Error:", error);
         });
-    }
+    };
 
     submitButton.addEventListener("click", handleUserInput);
     userInputElement.addEventListener("keydown", function (event) {
