@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link href="https://tianbinliu.github.io/CSA-FinalProject/dialogue/style.css" rel="stylesheet">
+    <script defer src="https://tianbinliu.github.io/CSA-FinalProject/dialogue/dialogueUnit1.js"></script>
+    <title>Dialogue 1</title>
 </head>
+
 <body>
     <div class="bg-image"></div>
     <div class="bg-box">
@@ -11,14 +15,15 @@
     </div>
     <div class="bg-text">
         <div class="container1">
-            <!-- User Input -->
-            <input type="text" id="user-input" placeholder="Type your message..." />
-            <button id="submit-btn" class="btn">Submit</button>
+            <div id="option-buttons" class="btn-grid">
+                <button class="btn">Option 1</button>
+                <button class="btn">Option 2</button>
+                <button class="btn">Option 3</button>
+            </div>
         </div>
         <br>
         <div class="container">
             <div class="charName">. . . Marlene . . .</div>
-            <!-- Dialog Text -->
             <div id="text">TEXT</div>
         </div>
         <img src="https://tianbinliu.github.io/CSA-FinalProject/images/character/student1-3.png" alt="marles"
@@ -26,50 +31,12 @@
     </div>
 </body>
 <script>
-    const textElement = document.getElementById('text');
-    const userInputElement = document.getElementById('user-input');
-    const submitButton = document.getElementById('submit-btn');
-
-    function appendUserInput(input) {
-        const userInputItem = document.createElement('div');
-        userInputItem.innerText = `User: ${input}`;
-        textElement.appendChild(userInputItem);
-    };
-
-    function appendResponse(response) {
-        const responseItem = document.createElement('div');
-        responseItem.innerText = `Marlene: ${response}`;
-        textElement.appendChild(responseItem);
-    };
-
-    function handleUserInput() {
-        const userInput = userInputElement.value;
-        appendUserInput(userInput);
-        userInputElement.value = '';
-
-        fetch("https://chatgpttesting.lol/api/chat", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                input: userInput,
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            appendResponse(data.output);
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    };
-
-    submitButton.addEventListener("click", handleUserInput);
-    userInputElement.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            handleUserInput();
-        }
+    let myImage1 = document.getElementById("myImage1");
+    // Add a click event listener to the image
+    myImage1.addEventListener("click", function () {
+        // Set the boolean variable to false
+        $("#includedContent").empty();
     });
 </script>
+
 </html>
